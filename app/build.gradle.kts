@@ -37,7 +37,7 @@ android {
         viewBinding = true
     }
     packagingOptions {
-        resources.excludes.add("META-INF/*")
+        resources.merges.add("META-INF/gradle/incremental.annotation.processors")
     }
 }
 

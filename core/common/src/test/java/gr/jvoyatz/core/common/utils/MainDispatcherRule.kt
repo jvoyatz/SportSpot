@@ -1,4 +1,4 @@
-package gr.jvoyatz.core.testing
+package gr.jvoyatz.core.common.utils
 
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.ExperimentalCoroutinesApi

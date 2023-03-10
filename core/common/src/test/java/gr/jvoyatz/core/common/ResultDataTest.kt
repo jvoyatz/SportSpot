@@ -1,8 +1,8 @@
 package gr.jvoyatz.core.common
 
 import com.google.common.truth.Truth
+import gr.jvoyatz.core.common.utils.MainDispatcherRule
 import kotlinx.coroutines.ExperimentalCoroutinesApi
-import kotlinx.coroutines.TimeoutCancellationException
 import kotlinx.coroutines.flow.first
 import kotlinx.coroutines.flow.flow
 import kotlinx.coroutines.flow.flowOf

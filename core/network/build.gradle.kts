@@ -2,18 +2,19 @@
 plugins {
     alias(libs.plugins.android.library)
     alias(libs.plugins.kotlin.android)
+    alias(libs.plugins.dagger.hilt)
+    kotlin("kapt")
 }
 
 android {
-    namespace = libs.versions.packageName.get() + ".testing"
+    namespace = libs.versions.packageName.get() + "core.network"
     compileSdk = libs.versions.compileSdk.get().toInt()
 
     defaultConfig {
         minSdk = libs.versions.minSdk.get().toInt()
         targetSdk = libs.versions.targetSdk.get().toInt()
-        testInstrumentationRunner = libs.versions.androidTestInstrumentation.get()
-        consumerProguardFiles("consumer-rules.pro")
     }
+
 
     buildTypes {
         release {
@@ -34,8 +35,11 @@ android {
 }
 
 dependencies {
-    implementation(libs.bundles.testing.unit)
-    implementation(libs.coroutines.test)
+    implementation(project(":core:testing"))
+    implementation(libs.bundles.common.android)
+    implementation(libs.bundles.dagger.hilt)
+    testImplementation(libs.bundles.testing.unit)
     androidTestImplementation(libs.bundles.testing.instr)
     implementation(libs.bundles.networking)
+    kapt(libs.moshi.codegen)
 }

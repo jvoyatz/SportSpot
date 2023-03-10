@@ -30,6 +30,9 @@ daggerHilt = "2.44"
 androidxNavigation = "2.4.1"
 
 #networking -- retrofit
+okhttp = "4.10.0"
+retrofit = "2.9.0"
+moshi = "1.14.0"
 
 #test
 junit = "4.13.2"
@@ -43,7 +46,6 @@ kotlin = "1.8.10"
 timber = "5.0.1"
 #!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 
-
 [plugins] # gradle plugins
 android-application = { id = "com.android.application", version.ref = "androidGradlePlugin" }
 android-library = { id = "com.android.library", version.ref = "androidGradlePlugin" }
@@ -53,6 +55,7 @@ kotlin-jvm = {id = "org.jetbrains.kotlin.jvm", version.ref = "kotlin"}
 kotlin-kapt = { id = "org.jetbrains.kotlin.kapt", version.ref = "kotlin" }
 dagger-hilt = { id = "com.google.dagger.hilt.android", version.ref = "daggerHilt" }
 java-library = { id = "java-library"}
+
 #!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 [libraries] # libraries--dependencies with versions
 
@@ -70,6 +73,17 @@ androidx-lifecycle-viewmodel = { module = "androidx.lifecycle:lifecycle-viewmode
 dagger-hilt-android = { module = "com.google.dagger:hilt-android", version.ref = "daggerHilt" }
 dagger-hilt-compiler = { module = "com.google.dagger:hilt-compiler", version.ref = "daggerHilt" }
 javax-inject = { module = "javax.inject:javax.inject", version = "1" }
+
+#okhttp
+okhttp = {module = "com.squareup.okhttp3:okhttp", version.ref = "okhttp" }
+okhttp-logging = { module = "com.squareup.okhttp3:logging-interceptor", version.ref = "okhttp" }
+okhttp-mockwebserver = { module = "com.squareup.okhttp3:mockwebserver", version.ref = "okhttp" }
+#retrofit
+retrofit = { module = "com.squareup.retrofit2:retrofit", version.ref = "retrofit" }
+retrofit-moshi = { module = "com.squareup.retrofit2:converter-moshi", version.ref = "retrofit" }
+#moshi
+moshi = { module = "com.squareup.moshi:moshi-kotlin", version.ref = "moshi" }
+moshi-codegen = { module = "com.squareup.moshi:moshi-kotlin-codegen", version.ref = "moshi" }
 
 #unit testing
 junit = { module = "junit:junit", version.ref = "junit"}
@@ -92,6 +106,7 @@ dagger-hilt = ["dagger-hilt-android", "dagger-hilt-compiler"]
 androidx-ui = ["androidx-appcompat", "androidx-material", "androidx-constraint"]
 androidx-navigation = ["androidx-navigation-fragment", "androidx-navigation-ui"]
 androidx-lifecycle = ["androidx-lifecycle-livedata", "androidx-lifecycle-viewmodel"]
-testing-unit = ["junit", "truth"]
+testing-unit = ["junit", "truth", "coroutines-test"]
 testing-instr = ["androidx-junit", "androidx-espresso-core"]
-common-android = ["logging-timber"]
+networking = ["okhttp", "okhttp-logging", "retrofit","retrofit-moshi", "moshi"]
+common-android = ["logging-timber", "androidx-core-ktx"]

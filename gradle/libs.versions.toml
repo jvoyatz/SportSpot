@@ -1,0 +1,66 @@
+[versions] # versions referenced by the plugins or libs
+
+#app configuration
+compileSdk = "33"
+minSdk = "21"
+targetSdk = "33"
+versionCode = "1"
+versionName = "1.0"
+buildToolsVersion = "29.0.3"
+androidTestInstrumentation = "androidx.test.runner.AndroidJUnitRunner"
+packageName = "gr.jvoyatz.sportspot"
+
+#android libraries versions
+androidGradlePlugin = "7.5.0"
+androidxCore = "1.9.0"
+androidxAppcompat = "1.6.1"
+androidMaterial = "1.5.0"
+androidxLifecycle = "2.4.1"
+androidxConstraint = "2.1.4"
+
+#android -- test
+androidxJunit = "1.1.5"
+androidxEspresso = "3.5.1"
+
+#android -- di
+#android -- room
+#android -- navigation
+androidxNavigation = "2.4.1"
+
+#networking -- retrofit
+
+#test
+junit = "4.13.2"
+
+#other
+kotlin = "1.8.0"
+timber = "5.0.1"
+
+[plugins] # gradle plugins
+android-application = { id = "com.android.application", version.ref = "androidGradlePlugin" }
+android-library = { id = "com.android.library", version.ref = "androidGradlePlugin" }
+kotlin-android = { id = "org.jetbrains.kotlin.android", version = "kotlin" }
+
+[libraries] # libraries--dependencies with versions
+
+androidx-core-ktx = { module = "androidx.core:core-ktx", version.ref = "androidxCore" }
+androidx-appcompat = { module = "androidx.appcompat:appcompat" , version.ref = "androidxAppcompat" }
+androidx-material = { module = "com.google.android.material:material" , version.ref = "androidMaterial" }
+androidx-constraint = { module = "androidx.constraintlayout:constraintlayout", version.ref = "androidxConstraint"}
+#navigation
+androidx-navigation-fragment = { module = "androidx.navigation:navigation-fragment-ktx", version.ref = "androidxNavigation"}
+androidx-navigation-ui = { module = "androidx.navigation:navigation-ui-ktx", version.ref = "androidxNavigation" }
+#lifecycler
+androidx-lifecycle-livedata = { module = "androidx.lifecycle:lifecycle-livedata-ktx", version.ref = "androidxLifecycle" }
+androidx-lifecycle-viewmodel = { module = "androidx.lifecycle:lifecycle-viewmodel-ktx", version.ref = "androidxLifecycle" }
+
+#unit testing
+junit = { module = "junit:junit", version.ref = "junit"}
+#instrumented testing
+androidx-junit = { module = "androidx.test.ext:junit", version.ref = "androidxJunit"}
+androidx-espresso-core = { module = "androidx.test.espresso:espresso-core", version.ref = "androidxEspresso"}
+
+[bundles] # combines multiple libraries
+androidx-ui = ["androidx-appcompat", "androidx-material", "androidx-constraint"]
+androidx-navigation = ["androidx-navigation-fragment", "androidx-navigation-ui"]
+androidx-lifecycle = ["androidx-lifecycle-livedata", "androidx-lifecycle-viewmodel"]

@@ -1,0 +1,1175 @@
+[
+  {
+    "i": "FOOT",
+    "d": "SOCCER",
+    "e": [
+      {
+        "d": "Juventus FC - Paris Saint-Germain",
+        "i": "29135390",
+        "si": "FOOT",
+        "sh": "Juventus FC - Paris Saint-Germain",
+        "tt": 1667447160
+      },
+      {
+        "d": "AC Milan - FC Red Bull Salzburg",
+        "i": "29135368",
+        "si": "FOOT",
+        "sh": "AC Milan - FC Red Bull Salzburg",
+        "tt": 1672026900
+      },
+      {
+        "d": "Maccabi Haifa - SL Benfica",
+        "i": "29135365",
+        "si": "FOOT",
+        "sh": "Maccabi Haifa - SL Benfica",
+        "tt": 1669743180
+      },
+      {
+        "d": "Chelsea FC - GNK Dinamo Zagreb",
+        "i": "29135369",
+        "si": "FOOT",
+        "sh": "Chelsea FC - GNK Dinamo Zagreb",
+        "tt": 1671402480
+      },
+      {
+        "d": "Manchester City - Sevilla FC",
+        "i": "29135391",
+        "si": "FOOT",
+        "sh": "Manchester City - Sevilla FC",
+        "tt": 1673945880
+      },
+      {
+        "d": "FC Copenhagen - Borussia Dortmund",
+        "i": "29135392",
+        "si": "FOOT",
+        "sh": "FC Copenhagen - Borussia Dortmund",
+        "tt": 1675280460
+      },
+      {
+        "d": "Norwich City - Queens Park Rangers",
+        "i": "28763668",
+        "si": "FOOT",
+        "sh": "Norwich City - Queens Park Rangers",
+        "tt": 1671520260
+      },
+      {
+        "d": "Birmingham - Millwall FC",
+        "i": "28763664",
+        "si": "FOOT",
+        "sh": "Birmingham - Millwall FC",
+        "tt": 1674194880
+      },
+      {
+        "d": "Burnley FC - Rotherham",
+        "i": "28763665",
+        "si": "FOOT",
+        "sh": "Burnley FC - Rotherham",
+        "tt": 1671172020
+      },
+      {
+        "d": "Cardiff City - Watford FC",
+        "i": "28763666",
+        "si": "FOOT",
+        "sh": "Cardiff City - Watford FC",
+        "tt": 1675678620
+      },
+      {
+        "d": "Huddersfield Town - Sunderland",
+        "i": "28763667",
+        "si": "FOOT",
+        "sh": "Huddersfield Town - Sunderland",
+        "tt": 1667856780
+      },
+      {
+        "d": "Wigan - Stoke City",
+        "i": "28763669",
+        "si": "FOOT",
+        "sh": "Wigan - Stoke City",
+        "tt": 1672654260
+      },
+      {
+        "d": "CD Mirandes - CD Tenerife",
+        "i": "27403453",
+        "si": "FOOT",
+        "sh": "CD Mirandes - CD Tenerife",
+        "tt": 1673757180
+      },
+      {
+        "d": "Charlton - Brighton & Hove Albion U21",
+        "i": "29106249",
+        "si": "FOOT",
+        "sh": "Charlton - Brighton & Hove Albion U21",
+        "tt": 1669739580
+      },
+      {
+        "d": "Havant & Waterlooville - Ebbsfleet United",
+        "i": "29162401",
+        "si": "FOOT",
+        "sh": "Havant & Waterlooville - Ebbsfleet United",
+        "tt": 1672662240
+      },
+      {
+        "d": "Widnes FC - Clitheroe FC",
+        "i": "29319428",
+        "si": "FOOT",
+        "sh": "Widnes FC - Clitheroe FC",
+        "tt": 1672173900
+      },
+      {
+        "d": "Biggleswade FC - AFC Kempston Rovers",
+        "i": "29343022",
+        "si": "FOOT",
+        "sh": "Biggleswade FC - AFC Kempston Rovers",
+        "tt": 1674828660
+      },
+      {
+        "d": "CA Tigre - Racing Club",
+        "i": "29287172",
+        "si": "FOOT",
+        "sh": "CA Tigre - Racing Club",
+        "tt": 1672533900
+      },
+      {
+        "d": "Atletico Marquesado - Deportivo Aberastain",
+        "i": "29341728",
+        "si": "FOOT",
+        "sh": "Atletico Marquesado - Deportivo Aberastain",
+        "tt": 1675775460
+      },
+      {
+        "d": "Argentino Mendoza - Independiente Rivadavia II",
+        "i": "29318955",
+        "si": "FOOT",
+        "sh": "Argentino Mendoza - Independiente Rivadavia II",
+        "tt": 1673079180
+      },
+      {
+        "d": "Oud-Heverlee Leuven U21 - Royal Antwerp FC U21",
+        "i": "29313886",
+        "si": "FOOT",
+        "sh": "Oud-Heverlee Leuven U21 - Royal Antwerp FC U21",
+        "tt": 1675921320
+      },
+      {
+        "d": "America MG - Internacional RS",
+        "i": "28807830",
+        "si": "FOOT",
+        "sh": "America MG - Internacional RS",
+        "tt": 1673907420
+      },
+      {
+        "d": "Athletico PR - Goiás GO",
+        "i": "28807904",
+        "si": "FOOT",
+        "sh": "Athletico PR - Goiás GO",
+        "tt": 1676487420
+      },
+      {
+        "d": "Baraunas RN - Alecrim FC",
+        "i": "29318951",
+        "si": "FOOT",
+        "sh": "Baraunas RN - Alecrim FC",
+        "tt": 1673571240
+      },
+      {
+        "d": "Turk Gucu Friedberg - Offenbacher Kickers",
+        "i": "29288026",
+        "si": "FOOT",
+        "sh": "Turk Gucu Friedberg - Offenbacher Kickers",
+        "tt": 1677130020
+      },
+      {
+        "d": "Meyrin FC - Servette FC II",
+        "i": "29314836",
+        "si": "FOOT",
+        "sh": "Meyrin FC - Servette FC II",
+        "tt": 1676799000
+      },
+      {
+        "d": "Glebe North - Bangor GG FC",
+        "i": "29288064",
+        "si": "FOOT",
+        "sh": "Glebe North - Bangor GG FC",
+        "tt": 1671043800
+      },
+      {
+        "d": "UD Alzira - CD Arenteiro",
+        "i": "29261287",
+        "si": "FOOT",
+        "sh": "UD Alzira - CD Arenteiro",
+        "tt": 1674602640
+      },
+      {
+        "d": "Catanzaro - Rossoblu Potenza",
+        "i": "29260506",
+        "si": "FOOT",
+        "sh": "Catanzaro - Rossoblu Potenza",
+        "tt": 1674490800
+      },
+      {
+        "d": "LR Vicenza - Union Arzignanochiampo",
+        "i": "29260507",
+        "si": "FOOT",
+        "sh": "LR Vicenza - Union Arzignanochiampo",
+        "tt": 1667603160
+      },
+      {
+        "d": "Juve Stabia - US Foggia",
+        "i": "29260508",
+        "si": "FOOT",
+        "sh": "Juve Stabia - US Foggia",
+        "tt": 1670026320
+      },
+      {
+        "d": "Bagnolese - Correggese",
+        "i": "29260302",
+        "si": "FOOT",
+        "sh": "Bagnolese - Correggese",
+        "tt": 1672096500
+      },
+      {
+        "d": "Seravezza Pozzi Calcio - Pistoiese",
+        "i": "29260408",
+        "si": "FOOT",
+        "sh": "Seravezza Pozzi Calcio - Pistoiese",
+        "tt": 1675446900
+      },
+      {
+        "d": "Marsaskala FC - Attard FC",
+        "i": "29125676",
+        "si": "FOOT",
+        "sh": "Marsaskala FC - Attard FC",
+        "tt": 1667554620
+      },
+      {
+        "d": "Tarxien Rainbows - St Andrews FC",
+        "i": "29125716",
+        "si": "FOOT",
+        "sh": "Tarxien Rainbows - St Andrews FC",
+        "tt": 1674189840
+      },
+      {
+        "d": "FBC Melgar - Sporting Cristal",
+        "i": "29287791",
+        "si": "FOOT",
+        "sh": "FBC Melgar - Sporting Cristal",
+        "tt": 1668436440
+      },
+      {
+        "d": "Santiago Wanderers - Deportes Santa Cruz",
+        "i": "29225756",
+        "si": "FOOT",
+        "sh": "Santiago Wanderers - Deportes Santa Cruz",
+        "tt": 1672438500
+      },
+      {
+        "d": "AS FAR (W) - Green Buffaloes (W)",
+        "i": "29264996",
+        "si": "FOOT",
+        "sh": "AS FAR (W) - Green Buffaloes (W)",
+        "tt": 1670827200
+      },
+      {
+        "d": "Southampton FC (W) - Coventry United (W)",
+        "i": "29260027",
+        "si": "FOOT",
+        "sh": "Southampton FC (W) - Coventry United (W)",
+        "tt": 1669211460
+      },
+      {
+        "d": "Derry City LFC (W) - Mid Ulster Ladies (W)",
+        "i": "29260156",
+        "si": "FOOT",
+        "sh": "Derry City LFC (W) - Mid Ulster Ladies (W)",
+        "tt": 1677255180
+      },
+      {
+        "d": "Linfield FC (W) - Crusaders Newtownabbey Strikers (W)",
+        "i": "29260157",
+        "si": "FOOT",
+        "sh": "Linfield FC (W) - Crusaders Newtownabbey Strikers (W)",
+        "tt": 1676813220
+      },
+      {
+        "d": "Sion Swifts LFC (W) - Lisburn LFC (W)",
+        "i": "29260158",
+        "si": "FOOT",
+        "sh": "Sion Swifts LFC (W) - Lisburn LFC (W)",
+        "tt": 1677596580
+      },
+      {
+        "d": "Ferroviaria SP (W) - Portuguesa De Desportos SP (W)",
+        "i": "29287377",
+        "si": "FOOT",
+        "sh": "Ferroviaria SP (W) - Portuguesa De Desportos SP (W)",
+        "tt": 1670902020
+      },
+      {
+        "d": "Valencia CF (W) - Real Betis Balompie (W)",
+        "i": "29261291",
+        "si": "FOOT",
+        "sh": "Valencia CF (W) - Real Betis Balompie (W)",
+        "tt": 1673962860
+      },
+      {
+        "d": "Partick Thistle (W) - Motherwell FC (W)",
+        "i": "29261208",
+        "si": "FOOT",
+        "sh": "Partick Thistle (W) - Motherwell FC (W)",
+        "tt": 1670085480
+      },
+      {
+        "d": "Tottenham Hotspur (Boki) (Esports) - Liverpool FC (Makcwelllm) (Esports)",
+        "i": "29319909",
+        "si": "FOOT",
+        "sh": "Tottenham Hotspur (Boki) (Esports) - Liverpool FC (Makcwelllm) (Esports)",
+        "tt": 1675262400
+      },
+      {
+        "d": "Manchester United FC (Lukenzi) (Esports) - Manchester City FC (Buyuk) (Esports)",
+        "i": "29319933",
+        "si": "FOOT",
+        "sh": "Manchester United FC (Lukenzi) (Esports) - Manchester City FC (Buyuk) (Esports)",
+        "tt": 1668033660
+      },
+      {
+        "d": "Manchester City FC (Buyuk) (Esports) - Tottenham Hotspur (Boki) (Esports)",
+        "i": "29319908",
+        "si": "FOOT",
+        "sh": "Manchester City FC (Buyuk) (Esports) - Tottenham Hotspur (Boki) (Esports)",
+        "tt": 1674184020
+      },
+      {
+        "d": "Liverpool FC (Makcwelllm) (Esports) - Chelsea FC (Peja) (Esports)",
+        "i": "29319926",
+        "si": "FOOT",
+        "sh": "Liverpool FC (Makcwelllm) (Esports) - Chelsea FC (Peja) (Esports)",
+        "tt": 1670949660
+      },
+      {
+        "d": "Eintracht Frankfurt (Myxlunka) (Esports) - Real Betis (K1W1Q) (Esports)",
+        "i": "29318578",
+        "si": "FOOT",
+        "sh": "Eintracht Frankfurt (Myxlunka) (Esports) - Real Betis (K1W1Q) (Esports)",
+        "tt": 1675617120
+      }
+    ]
+  },
+  {
+    "i": "BASK",
+    "d": "BASKETBALL",
+    "e": [
+      {
+        "d": "Unicaja Malaga - PAOK",
+        "i": "28979021",
+        "si": "BASK",
+        "sh": "Unicaja Malaga - PAOK",
+        "tt": 1670767380
+      },
+      {
+        "d": "Reyer Venezia - Cedevita Olimpija Ljubljana",
+        "i": "29161858",
+        "si": "BASK",
+        "sh": "Reyer Venezia - Cedevita Olimpija Ljubljana",
+        "tt": 1671840360
+      },
+      {
+        "d": "Joventut Badalona - SC Prometey",
+        "i": "29161908",
+        "si": "BASK",
+        "sh": "Joventut Badalona - SC Prometey",
+        "tt": 1668362100
+      },
+      {
+        "d": "Paris Basketball - Gran Canaria",
+        "i": "29161950",
+        "si": "BASK",
+        "sh": "Paris Basketball - Gran Canaria",
+        "tt": 1671197460
+      },
+      {
+        "d": "Donar Groningen - BC Kalev/Cramo Tallinn",
+        "i": "29266774",
+        "si": "BASK",
+        "sh": "Donar Groningen - BC Kalev/Cramo Tallinn",
+        "tt": 1670051460
+      },
+      {
+        "d": "Budivelnyk - Brindisi",
+        "i": "29317773",
+        "si": "BASK",
+        "sh": "Budivelnyk - Brindisi",
+        "tt": 1672917960
+      },
+      {
+        "d": "Bamberg - Niners Chemnitz",
+        "i": "29317778",
+        "si": "BASK",
+        "sh": "Bamberg - Niners Chemnitz",
+        "tt": 1670209020
+      },
+      {
+        "d": "Heroes Den Bosch - Fribourg Olympic",
+        "i": "29317782",
+        "si": "BASK",
+        "sh": "Heroes Den Bosch - Fribourg Olympic",
+        "tt": 1670471100
+      },
+      {
+        "d": "Kangoeroes Basket Mechelen - Rilski Sportist Samokov",
+        "i": "29317783",
+        "si": "BASK",
+        "sh": "Kangoeroes Basket Mechelen - Rilski Sportist Samokov",
+        "tt": 1675717440
+      },
+      {
+        "d": "FC Porto - Parnu",
+        "i": "29317790",
+        "si": "BASK",
+        "sh": "FC Porto - Parnu",
+        "tt": 1670241900
+      },
+      {
+        "d": "Leuven Bears - Excelsior Brussels",
+        "i": "29320670",
+        "si": "BASK",
+        "sh": "Leuven Bears - Excelsior Brussels",
+        "tt": 1674787140
+      },
+      {
+        "d": "BC Boncourt - BBC Monthey",
+        "i": "29125674",
+        "si": "BASK",
+        "sh": "BC Boncourt - BBC Monthey",
+        "tt": 1672991760
+      },
+      {
+        "d": "Gjakova E Re - AS Prishtina",
+        "i": "29317861",
+        "si": "BASK",
+        "sh": "Gjakova E Re - AS Prishtina",
+        "tt": 1668376380
+      },
+      {
+        "d": "Slask Wroclaw II - GKS Tychy",
+        "i": "29179149",
+        "si": "BASK",
+        "sh": "Slask Wroclaw II - GKS Tychy",
+        "tt": 1669012320
+      },
+      {
+        "d": "UD Oliveirense - SL Benfica",
+        "i": "29236601",
+        "si": "BASK",
+        "sh": "UD Oliveirense - SL Benfica",
+        "tt": 1672215960
+      },
+      {
+        "d": "Valencia (W) - USK Prague (W)",
+        "i": "29288841",
+        "si": "BASK",
+        "sh": "Valencia (W) - USK Prague (W)",
+        "tt": 1669230600
+      },
+      {
+        "d": "Perfumerias Avenida (W) - Basket Landes (W)",
+        "i": "29288842",
+        "si": "BASK",
+        "sh": "Perfumerias Avenida (W) - Basket Landes (W)",
+        "tt": 1674258000
+      },
+      {
+        "d": "Virtus Bologna (W) - Bourges (W)",
+        "i": "29288843",
+        "si": "BASK",
+        "sh": "Virtus Bologna (W) - Bourges (W)",
+        "tt": 1670140380
+      },
+      {
+        "d": "Girona (W) - Famila Schio (W)",
+        "i": "29209427",
+        "si": "BASK",
+        "sh": "Girona (W) - Famila Schio (W)",
+        "tt": 1673878080
+      },
+      {
+        "d": "Casademont Zaragoza (W) - Sedis (W)",
+        "i": "29317831",
+        "si": "BASK",
+        "sh": "Casademont Zaragoza (W) - Sedis (W)",
+        "tt": 1674352320
+      },
+      {
+        "d": "Movistar Estudiantes (W) - Rutronik Stars Keltern (W)",
+        "i": "29317843",
+        "si": "BASK",
+        "sh": "Movistar Estudiantes (W) - Rutronik Stars Keltern (W)",
+        "tt": 1667818080
+      },
+      {
+        "d": "Gernika Bizkaia (W) - Reyer Venezia (W)",
+        "i": "29317851",
+        "si": "BASK",
+        "sh": "Gernika Bizkaia (W) - Reyer Venezia (W)",
+        "tt": 1673194140
+      },
+      {
+        "d": "Gipuzkoa (W) - Zabiny Brno (W)",
+        "i": "29317852",
+        "si": "BASK",
+        "sh": "Gipuzkoa (W) - Zabiny Brno (W)",
+        "tt": 1671536760
+      },
+      {
+        "d": "Angers (W) - KP Brno (W)",
+        "i": "29317858",
+        "si": "BASK",
+        "sh": "Angers (W) - KP Brno (W)",
+        "tt": 1670980440
+      },
+      {
+        "d": "Thor AK (W) - KR Reykjavik (W)",
+        "i": "29317885",
+        "si": "BASK",
+        "sh": "Thor AK (W) - KR Reykjavik (W)",
+        "tt": 1671297060
+      },
+      {
+        "d": "IR Reykjavik (W) - Haukar (W)",
+        "i": "29125671",
+        "si": "BASK",
+        "sh": "IR Reykjavik (W) - Haukar (W)",
+        "tt": 1670440320
+      },
+      {
+        "d": "Fjolnir Reykjavik (W) - Grindavik (W)",
+        "i": "29179195",
+        "si": "BASK",
+        "sh": "Fjolnir Reykjavik (W) - Grindavik (W)",
+        "tt": 1671327420
+      },
+      {
+        "d": "Memphis Grizzlies (Asap) - Cleveland Cavaliers (Dazai)",
+        "i": "29316951",
+        "si": "BASK",
+        "sh": "Memphis Grizzlies (Asap) - Cleveland Cavaliers (Dazai)",
+        "tt": 1674329460
+      },
+      {
+        "d": "Boston Celtics (Nazgul) - Minnesota Timberwolves (Pharos)",
+        "i": "29319473",
+        "si": "BASK",
+        "sh": "Boston Celtics (Nazgul) - Minnesota Timberwolves (Pharos)",
+        "tt": 1667821320
+      }
+    ]
+  },
+  {
+    "i": "TENN",
+    "d": "TENNIS",
+    "e": [
+      {
+        "d": "Katerina Siniakova / Barbora Krejcikova - Zhaoxuan Yang / Yifan Xu",
+        "i": "29314176",
+        "si": "TENN",
+        "sh": "Katerina Siniakova / Barbora Krejcikova - Zhaoxuan Yang / Yifan Xu",
+        "tt": 1671180960
+      },
+      {
+        "d": "Pablo Carreno-Busta - Denis Shapovalov",
+        "i": "29320449",
+        "si": "TENN",
+        "sh": "Pablo Carreno-Busta - Denis Shapovalov",
+        "tt": 1669295580
+      },
+      {
+        "d": "Katrina Scott - Robin Anderson",
+        "i": "29264536",
+        "si": "TENN",
+        "sh": "Katrina Scott - Robin Anderson",
+        "tt": 1675281840
+      },
+      {
+        "d": "Catherine Harrison / Sabrina Santamaria - Robin Montgomery / Ashlyn Krueger",
+        "i": "29267016",
+        "si": "TENN",
+        "sh": "Catherine Harrison / Sabrina Santamaria - Robin Montgomery / Ashlyn Krueger",
+        "tt": 1669146600
+      },
+      {
+        "d": "Aleksandar Kovacevic - Inaki Montes-De La Torre",
+        "i": "29312240",
+        "si": "TENN",
+        "sh": "Aleksandar Kovacevic - Inaki Montes-De La Torre",
+        "tt": 1669379520
+      },
+      {
+        "d": "Roman Andres Burruchaga - Tomas Martin Etcheverry",
+        "i": "29320520",
+        "si": "TENN",
+        "sh": "Roman Andres Burruchaga - Tomas Martin Etcheverry",
+        "tt": 1672773360
+      },
+      {
+        "d": "Thiago Seyboth Wild - Daniel Altmaier",
+        "i": "29320549",
+        "si": "TENN",
+        "sh": "Thiago Seyboth Wild - Daniel Altmaier",
+        "tt": 1668187740
+      },
+      {
+        "d": "Alvaro Guillen Meza - Andres Andrade",
+        "i": "29287137",
+        "si": "TENN",
+        "sh": "Alvaro Guillen Meza - Andres Andrade",
+        "tt": 1673409660
+      },
+      {
+        "d": "Nicolas Kicker - Santiago Fa Rodriguez Taverna",
+        "i": "29287123",
+        "si": "TENN",
+        "sh": "Nicolas Kicker - Santiago Fa Rodriguez Taverna",
+        "tt": 1671643380
+      },
+      {
+        "d": "Dominic Stephan Stricker - Vit Kopriva",
+        "i": "29313181",
+        "si": "TENN",
+        "sh": "Dominic Stephan Stricker - Vit Kopriva",
+        "tt": 1673124540
+      },
+      {
+        "d": "Despina Papamichail - Raveena Kingsley",
+        "i": "29319313",
+        "si": "TENN",
+        "sh": "Despina Papamichail - Raveena Kingsley",
+        "tt": 1669623720
+      },
+      {
+        "d": "Viktoria Morvayova - Reka-Luca Jani",
+        "i": "29321837",
+        "si": "TENN",
+        "sh": "Viktoria Morvayova - Reka-Luca Jani",
+        "tt": 1668486540
+      },
+      {
+        "d": "Hurricane Tyra Black - Angelina Wirges",
+        "i": "29321838",
+        "si": "TENN",
+        "sh": "Hurricane Tyra Black - Angelina Wirges",
+        "tt": 1677391200
+      },
+      {
+        "d": "Joanna Garland - Maia Lumsden",
+        "i": "29299298",
+        "si": "TENN",
+        "sh": "Joanna Garland - Maia Lumsden",
+        "tt": 1676085240
+      },
+      {
+        "d": "Arthur Bellegy - Nguyen Andy",
+        "i": "29324817",
+        "si": "TENN",
+        "sh": "Arthur Bellegy - Nguyen Andy",
+        "tt": 1675674480
+      },
+      {
+        "d": "Enrique Luque Rico -  Karl Lee",
+        "i": "29324818",
+        "si": "TENN",
+        "sh": "Enrique Luque Rico -  Karl Lee",
+        "tt": 1667733300
+      },
+      {
+        "d": "Cheri Darley - Sara Alejandra Seivane Torres",
+        "i": "29324821",
+        "si": "TENN",
+        "sh": "Cheri Darley - Sara Alejandra Seivane Torres",
+        "tt": 1677138780
+      },
+      {
+        "d": "Alanna Di Francesco - Brenda Yoris",
+        "i": "29324822",
+        "si": "TENN",
+        "sh": "Alanna Di Francesco - Brenda Yoris",
+        "tt": 1677352080
+      }
+    ]
+  },
+  {
+    "i": "TABL",
+    "d": "TABLE TENNIS",
+    "e": [
+      {
+        "d": "Sharon Alguetti / Jishan Liang - Vitor Ishiy / Eric Jouti",
+        "i": "29345528",
+        "si": "TABL",
+        "sh": "Sharon Alguetti / Jishan Liang - Vitor Ishiy / Eric Jouti",
+        "tt": 1671551820
+      },
+      {
+        "d": "Lukas Veigl - Lukas Rulc",
+        "i": "29317533",
+        "si": "TABL",
+        "sh": "Lukas Veigl - Lukas Rulc",
+        "tt": 1674707520
+      },
+      {
+        "d": "Tibor Batthyany - Marcel Pikous",
+        "i": "29317654",
+        "si": "TABL",
+        "sh": "Tibor Batthyany - Marcel Pikous",
+        "tt": 1671663300
+      },
+      {
+        "d": "Michal Jezek - Martin Huk",
+        "i": "29317655",
+        "si": "TABL",
+        "sh": "Michal Jezek - Martin Huk",
+        "tt": 1673965740
+      },
+      {
+        "d": "Szymon Radlo - Wojciech Gluszek",
+        "i": "29317244",
+        "si": "TABL",
+        "sh": "Szymon Radlo - Wojciech Gluszek",
+        "tt": 1674229380
+      },
+      {
+        "d": "Piotr Chodorski - Dosz Slawomir",
+        "i": "29317211",
+        "si": "TABL",
+        "sh": "Piotr Chodorski - Dosz Slawomir",
+        "tt": 1668140820
+      }
+    ]
+  },
+  {
+    "i": "VOLL",
+    "d": "VOLLEYBALL",
+    "e": [
+      {
+        "d": "Olympiacos Piraeus (W) - ASP Thetis (W)",
+        "i": "29241783",
+        "si": "VOLL",
+        "sh": "Olympiacos Piraeus (W) - ASP Thetis (W)",
+        "tt": 1668159060
+      },
+      {
+        "d": "Pineto - Macerata",
+        "i": "29284333",
+        "si": "VOLL",
+        "sh": "Pineto - Macerata",
+        "tt": 1672136580
+      },
+      {
+        "d": "QuantWare Napoli - Normanna Aversa Academy",
+        "i": "29178696",
+        "si": "VOLL",
+        "sh": "QuantWare Napoli - Normanna Aversa Academy",
+        "tt": 1672002420
+      },
+      {
+        "d": "Farmitalia Catania - Pallavolo Bari",
+        "i": "29178703",
+        "si": "VOLL",
+        "sh": "Farmitalia Catania - Pallavolo Bari",
+        "tt": 1671714960
+      },
+      {
+        "d": "Mursa Osijek - VCA Amstetten NO",
+        "i": "29125741",
+        "si": "VOLL",
+        "sh": "Mursa Osijek - VCA Amstetten NO",
+        "tt": 1669643340
+      },
+      {
+        "d": "Brasilia - Renata",
+        "i": "28937074",
+        "si": "VOLL",
+        "sh": "Brasilia - Renata",
+        "tt": 1672380900
+      },
+      {
+        "d": "Nice - Paris",
+        "i": "28334455",
+        "si": "VOLL",
+        "sh": "Nice - Paris",
+        "tt": 1675893120
+      },
+      {
+        "d": "Plessis Robinson - Poitiers",
+        "i": "28334486",
+        "si": "VOLL",
+        "sh": "Plessis Robinson - Poitiers",
+        "tt": 1670597580
+      },
+      {
+        "d": "Toulouse - Narbonne",
+        "i": "29101344",
+        "si": "VOLL",
+        "sh": "Toulouse - Narbonne",
+        "tt": 1672801140
+      },
+      {
+        "d": "Cambrai - Tourcoing Lille Metropole",
+        "i": "29179152",
+        "si": "VOLL",
+        "sh": "Cambrai - Tourcoing Lille Metropole",
+        "tt": 1671297600
+      },
+      {
+        "d": "Tours - Arago de Sete",
+        "i": "29179170",
+        "si": "VOLL",
+        "sh": "Tours - Arago de Sete",
+        "tt": 1670373720
+      },
+      {
+        "d": "Chaumont 52 Haute Marne - Saint Nazaire",
+        "i": "29179175",
+        "si": "VOLL",
+        "sh": "Chaumont 52 Haute Marne - Saint Nazaire",
+        "tt": 1674674820
+      },
+      {
+        "d": "Renata U21 - Suzano U21",
+        "i": "29311012",
+        "si": "VOLL",
+        "sh": "Renata U21 - Suzano U21",
+        "tt": 1676620680
+      },
+      {
+        "d": "Busto Arsizio (W) - Novara (W)",
+        "i": "28972528",
+        "si": "VOLL",
+        "sh": "Busto Arsizio (W) - Novara (W)",
+        "tt": 1671150900
+      },
+      {
+        "d": "Scandicci (W) - Casalmaggiore (W)",
+        "i": "28972529",
+        "si": "VOLL",
+        "sh": "Scandicci (W) - Casalmaggiore (W)",
+        "tt": 1672006380
+      },
+      {
+        "d": "Conegliano (W) - Chieri (W)",
+        "i": "28972881",
+        "si": "VOLL",
+        "sh": "Conegliano (W) - Chieri (W)",
+        "tt": 1668968220
+      },
+      {
+        "d": "Pinerolo (W) - Vallefoglia (W)",
+        "i": "29179172",
+        "si": "VOLL",
+        "sh": "Pinerolo (W) - Vallefoglia (W)",
+        "tt": 1674865920
+      },
+      {
+        "d": "Perugia (W) - Monza (W)",
+        "i": "28972532",
+        "si": "VOLL",
+        "sh": "Perugia (W) - Monza (W)",
+        "tt": 1676408940
+      },
+      {
+        "d": "Sliedrecht Sport - TT Papendal Arnhem",
+        "i": "29179168",
+        "si": "VOLL",
+        "sh": "Sliedrecht Sport - TT Papendal Arnhem",
+        "tt": 1669959780
+      },
+      {
+        "d": "Lycurgus Groningen - VoCasa Nijmegen",
+        "i": "29179164",
+        "si": "VOLL",
+        "sh": "Lycurgus Groningen - VoCasa Nijmegen",
+        "tt": 1675905420
+      },
+      {
+        "d": "Prima Donna Kaas Huizen - Orion Doetinchem",
+        "i": "29179166",
+        "si": "VOLL",
+        "sh": "Prima Donna Kaas Huizen - Orion Doetinchem",
+        "tt": 1669706640
+      },
+      {
+        "d": "SSS Barneveld - VCN",
+        "i": "29179200",
+        "si": "VOLL",
+        "sh": "SSS Barneveld - VCN",
+        "tt": 1671941760
+      },
+      {
+        "d": "Taurus - ZVH",
+        "i": "29179206",
+        "si": "VOLL",
+        "sh": "Taurus - ZVH",
+        "tt": 1669212480
+      },
+      {
+        "d": "Draisma Dynamo - Limburg",
+        "i": "29179211",
+        "si": "VOLL",
+        "sh": "Draisma Dynamo - Limburg",
+        "tt": 1670524860
+      },
+      {
+        "d": "Eurosped (W) - Sudosa-Desto (W)",
+        "i": "29179169",
+        "si": "VOLL",
+        "sh": "Eurosped (W) - Sudosa-Desto (W)",
+        "tt": 1677048060
+      },
+      {
+        "d": "Zwolle (W) - Apollo 8 (W)",
+        "i": "29179176",
+        "si": "VOLL",
+        "sh": "Zwolle (W) - Apollo 8 (W)",
+        "tt": 1669150620
+      },
+      {
+        "d": "Voltena (W) - Sliedrecht Sport (W)",
+        "i": "29179204",
+        "si": "VOLL",
+        "sh": "Voltena (W) - Sliedrecht Sport (W)",
+        "tt": 1669543020
+      },
+      {
+        "d": "Zeleznicar (W) - Tent Obrenovac (W)",
+        "i": "29317111",
+        "si": "VOLL",
+        "sh": "Zeleznicar (W) - Tent Obrenovac (W)",
+        "tt": 1676700300
+      },
+      {
+        "d": "Rzeszow - ZAKSA Kedzierzyn-Kozle",
+        "i": "29179153",
+        "si": "VOLL",
+        "sh": "Rzeszow - ZAKSA Kedzierzyn-Kozle",
+        "tt": 1676739900
+      },
+      {
+        "d": "Hermes Oostende (W) - Gent (W)",
+        "i": "29178706",
+        "si": "VOLL",
+        "sh": "Hermes Oostende (W) - Gent (W)",
+        "tt": 1676098380
+      },
+      {
+        "d": "Haasrode Leuven (W) - Oudegem (W)",
+        "i": "29231405",
+        "si": "VOLL",
+        "sh": "Haasrode Leuven (W) - Oudegem (W)",
+        "tt": 1674281940
+      },
+      {
+        "d": "Waremme - Menen",
+        "i": "29179158",
+        "si": "VOLL",
+        "sh": "Waremme - Menen",
+        "tt": 1670425860
+      },
+      {
+        "d": "Gent - Achel",
+        "i": "29179180",
+        "si": "VOLL",
+        "sh": "Gent - Achel",
+        "tt": 1674464820
+      },
+      {
+        "d": "Roeselare - Maaseik",
+        "i": "29179221",
+        "si": "VOLL",
+        "sh": "Roeselare - Maaseik",
+        "tt": 1675910760
+      },
+      {
+        "d": "Hebar - Neftochimic Burgas",
+        "i": "29240709",
+        "si": "VOLL",
+        "sh": "Hebar - Neftochimic Burgas",
+        "tt": 1675290480
+      },
+      {
+        "d": "Houston Cougars (W) - Tulane Green Wave (W)",
+        "i": "29338548",
+        "si": "VOLL",
+        "sh": "Houston Cougars (W) - Tulane Green Wave (W)",
+        "tt": 1673779860
+      },
+      {
+        "d": "Hjerm FIF (W) - Shima (W)",
+        "i": "29317097",
+        "si": "VOLL",
+        "sh": "Hjerm FIF (W) - Shima (W)",
+        "tt": 1675799460
+      },
+      {
+        "d": "ASV Aarhus (W) C - Aalborg (W) II",
+        "i": "29317099",
+        "si": "VOLL",
+        "sh": "ASV Aarhus (W) C - Aalborg (W) II",
+        "tt": 1675599780
+      },
+      {
+        "d": "Throttur Reykjavik (W) - Alftanes (W)",
+        "i": "29317096",
+        "si": "VOLL",
+        "sh": "Throttur Reykjavik (W) - Alftanes (W)",
+        "tt": 1671545640
+      }
+    ]
+  },
+  {
+    "i": "ESPS",
+    "d": "ESPORTS",
+    "e": [
+      {
+        "d": "PACT - M1 Gaming",
+        "i": "29189466",
+        "si": "ESPS",
+        "sh": "PACT - M1 Gaming",
+        "tt": 1673614140
+      },
+      {
+        "d": "Entropiq - ECSTATIC",
+        "i": "29160512",
+        "si": "ESPS",
+        "sh": "Entropiq - ECSTATIC",
+        "tt": 1669996380
+      },
+      {
+        "d": "Team Atlantic - OG Academy",
+        "i": "29328030",
+        "si": "ESPS",
+        "sh": "Team Atlantic - OG Academy",
+        "tt": 1671989160
+      }
+    ]
+  },
+  {
+    "i": "ICEH",
+    "d": "ICE HOCKEY",
+    "e": [
+      {
+        "d": "Dusseldorfer EG - Grizzlys Wolfsburg",
+        "i": "28331847",
+        "si": "ICEH",
+        "sh": "Dusseldorfer EG - Grizzlys Wolfsburg",
+        "tt": 1676224380
+      },
+      {
+        "d": "Straubing Tigers - Augsburger Panther",
+        "i": "28331849",
+        "si": "ICEH",
+        "sh": "Straubing Tigers - Augsburger Panther",
+        "tt": 1667792340
+      },
+      {
+        "d": "Sodertalje SK - VIK Vasteraas U20",
+        "i": "28693222",
+        "si": "ICEH",
+        "sh": "Sodertalje SK - VIK Vasteraas U20",
+        "tt": 1668939360
+      },
+      {
+        "d": "Tingsryds Aif - IF Bjorkloven",
+        "i": "29179161",
+        "si": "ICEH",
+        "sh": "Tingsryds Aif - IF Bjorkloven",
+        "tt": 1668828420
+      },
+      {
+        "d": "AIK IF - Djurgaardens IF",
+        "i": "29179186",
+        "si": "ICEH",
+        "sh": "AIK IF - Djurgaardens IF",
+        "tt": 1670598960
+      },
+      {
+        "d": "Modo Hockey - HC Vita Hasten",
+        "i": "29179194",
+        "si": "ICEH",
+        "sh": "Modo Hockey - HC Vita Hasten",
+        "tt": 1670533140
+      },
+      {
+        "d": "Mora IK - Almtuna IS",
+        "i": "29179205",
+        "si": "ICEH",
+        "sh": "Mora IK - Almtuna IS",
+        "tt": 1667649000
+      }
+    ]
+  },
+  {
+    "i": "HAND",
+    "d": "HANDBALL",
+    "e": [
+      {
+        "d": "THW Kiel - Aalborg Handbold",
+        "i": "29129684",
+        "si": "HAND",
+        "sh": "THW Kiel - Aalborg Handbold",
+        "tt": 1671832500
+      },
+      {
+        "d": "Wolfe Wurzburg - HBW Balingen-Weilstetten",
+        "i": "28331848",
+        "si": "HAND",
+        "sh": "Wolfe Wurzburg - HBW Balingen-Weilstetten",
+        "tt": 1670738520
+      },
+      {
+        "d": "Bayer Dormagen - HSC 2000 Coburg",
+        "i": "28815534",
+        "si": "HAND",
+        "sh": "Bayer Dormagen - HSC 2000 Coburg",
+        "tt": 1674611280
+      },
+      {
+        "d": "VfL Lubeck Schwartau - SG BBM Bietigheim",
+        "i": "29179212",
+        "si": "HAND",
+        "sh": "VfL Lubeck Schwartau - SG BBM Bietigheim",
+        "tt": 1675581780
+      },
+      {
+        "d": "Glassverket (W) - Haslum HK (W)",
+        "i": "29179190",
+        "si": "HAND",
+        "sh": "Glassverket (W) - Haslum HK (W)",
+        "tt": 1674270060
+      }
+    ]
+  },
+  {
+    "i": "SNOO",
+    "d": "SNOOKER",
+    "e": [
+      {
+        "d": "Judd Trump - Mark Allen",
+        "i": "29345346",
+        "si": "SNOO",
+        "sh": "Judd Trump - Mark Allen",
+        "tt": 1677214560
+      }
+    ]
+  },
+  {
+    "i": "BADM",
+    "d": "BADMINTON",
+    "e": [
+      {
+        "d": "Miklos Kis Kasza / Vivien Sandorhazi - Csanad Horvath / Carey Hart",
+        "i": "29341655",
+        "si": "BADM",
+        "sh": "Miklos Kis Kasza / Vivien Sandorhazi - Csanad Horvath / Carey Hart",
+        "tt": 1671741360
+      }
+    ]
+  }
+]

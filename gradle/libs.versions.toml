@@ -40,6 +40,7 @@ timber = "5.0.1"
 android-application = { id = "com.android.application", version.ref = "androidGradlePlugin" }
 android-library = { id = "com.android.library", version.ref = "androidGradlePlugin" }
 kotlin-android = { id = "org.jetbrains.kotlin.android", version.ref = "kotlinAndroid" }
+kotlin-jvm = {id = "org.jetbrains.kotlin.jvm", version.ref = "kotlinAndroid"}
 
 [libraries] # libraries--dependencies with versions
 
@@ -60,9 +61,13 @@ junit = { module = "junit:junit", version.ref = "junit"}
 androidx-junit = { module = "androidx.test.ext:junit", version.ref = "androidxJunit"}
 androidx-espresso-core = { module = "androidx.test.espresso:espresso-core", version.ref = "androidxEspresso"}
 
+#other
+logging-timber = {module = "com.jakewharton.timber:timber", version.ref = "timber"}
+
 [bundles] # combines multiple libraries
 androidx-ui = ["androidx-appcompat", "androidx-material", "androidx-constraint"]
 androidx-navigation = ["androidx-navigation-fragment", "androidx-navigation-ui"]
 androidx-lifecycle = ["androidx-lifecycle-livedata", "androidx-lifecycle-viewmodel"]
 testing-unit = ["junit"]
 testing-instr = ["androidx-junit", "androidx-espresso-core"]
+common-android = ["logging-timber"]

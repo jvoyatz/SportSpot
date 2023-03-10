@@ -16,3 +16,4 @@ dependencyResolutionManagement {
 }
 rootProject.name = "SportSpot"
 include(":app")
+include(":core:testing")

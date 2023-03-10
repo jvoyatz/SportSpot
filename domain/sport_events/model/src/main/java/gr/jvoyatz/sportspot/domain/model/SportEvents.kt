@@ -1,4 +1,4 @@
-package gr.jvoyatz.domain.model
+package gr.jvoyatz.sportspot.domain.model
 
 /**
  * Events scheduled for a certain sport

@@ -1,4 +1,4 @@
-package gr.jvoyatz.domain.model
+package gr.jvoyatz.sportspot.domain.model
 
 /**
  * A custom exception for handling error cases during fetching of sport events

@@ -1,8 +1,8 @@
-package gr.jvoyatz.domain.model.utils
+package gr.jvoyatz.sportspot.domain.model.utils
 
-import gr.jvoyatz.domain.model.Event
-import gr.jvoyatz.domain.model.FavorableEvent
-import gr.jvoyatz.domain.model.SportEvents
+import gr.jvoyatz.sportspot.domain.model.Event
+import gr.jvoyatz.sportspot.domain.model.FavorableEvent
+import gr.jvoyatz.sportspot.domain.model.SportEvents
 
 object MockData {
     val mockEvent = Event(1, "name", "sportId", null, startDateTimeStamp = 100234L)

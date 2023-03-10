@@ -1,7 +1,7 @@
-package gr.jvoyatz.domain.model
+package gr.jvoyatz.sportspot.domain.model
 
 import com.google.common.truth.Truth
-import gr.jvoyatz.domain.model.utils.MockData
+import gr.jvoyatz.sportspot.domain.model.utils.MockData
 import org.junit.Test
 
 class FavorableEventTest{

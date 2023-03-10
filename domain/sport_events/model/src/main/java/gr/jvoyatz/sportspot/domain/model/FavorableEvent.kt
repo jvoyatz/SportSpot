@@ -1,4 +1,4 @@
-package gr.jvoyatz.domain.model
+package gr.jvoyatz.sportspot.domain.model
 
 /**
  * A certain event that it has been marked as favorite by the user

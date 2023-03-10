@@ -1,4 +1,4 @@
-package gr.jvoyatz.domain.model
+package gr.jvoyatz.sportspot.domain.model
 
 /**
  * A certain event arranged on specific date

@@ -23,6 +23,8 @@ androidxJunit = "1.1.5"
 androidxEspresso = "3.5.1"
 
 #android -- di
+daggerHilt = "2.44"
+
 #android -- room
 #android -- navigation
 androidxNavigation = "2.4.1"
@@ -33,15 +35,21 @@ androidxNavigation = "2.4.1"
 junit = "4.13.2"
 
 #other
-kotlinAndroid = "1.8.10"
+kotlin = "1.8.10"
 timber = "5.0.1"
+#!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
 
 [plugins] # gradle plugins
 android-application = { id = "com.android.application", version.ref = "androidGradlePlugin" }
 android-library = { id = "com.android.library", version.ref = "androidGradlePlugin" }
-kotlin-android = { id = "org.jetbrains.kotlin.android", version.ref = "kotlinAndroid" }
-kotlin-jvm = {id = "org.jetbrains.kotlin.jvm", version.ref = "kotlinAndroid"}
+kotlin-android = { id = "org.jetbrains.kotlin.android", version.ref = "kotlin" }
+kotlin-parcelize = { id = "org.jetbrains.kotlin.plugin.parcelize", version.ref = "kotlin" }
+kotlin-jvm = {id = "org.jetbrains.kotlin.jvm", version.ref = "kotlin"}
+kotlin-kapt = { id = "org.jetbrains.kotlin.kapt", version.ref = "kotlin" }
+dagger-hilt = { id = "com.google.dagger.hilt.android", version.ref = "daggerHilt" }
 
+#!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 [libraries] # libraries--dependencies with versions
 
 androidx-core-ktx = { module = "androidx.core:core-ktx", version.ref = "androidxCore" }
@@ -54,6 +62,9 @@ androidx-navigation-ui = { module = "androidx.navigation:navigation-ui-ktx", ver
 #lifecycler
 androidx-lifecycle-livedata = { module = "androidx.lifecycle:lifecycle-livedata-ktx", version.ref = "androidxLifecycle" }
 androidx-lifecycle-viewmodel = { module = "androidx.lifecycle:lifecycle-viewmodel-ktx", version.ref = "androidxLifecycle" }
+#di
+dagger-hilt-android = { module = "com.google.dagger:hilt-android", version.ref = "daggerHilt" }
+dagger-hilt-compiler = { module = "com.google.dagger:hilt-compiler", version.ref = "daggerHilt" }
 
 #unit testing
 junit = { module = "junit:junit", version.ref = "junit"}
@@ -63,8 +74,10 @@ androidx-espresso-core = { module = "androidx.test.espresso:espresso-core", vers
 
 #other
 logging-timber = {module = "com.jakewharton.timber:timber", version.ref = "timber"}
+#!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 
 [bundles] # combines multiple libraries
+dagger-hilt = ["dagger-hilt-android", "dagger-hilt-compiler"]
 androidx-ui = ["androidx-appcompat", "androidx-material", "androidx-constraint"]
 androidx-navigation = ["androidx-navigation-fragment", "androidx-navigation-ui"]
 androidx-lifecycle = ["androidx-lifecycle-livedata", "androidx-lifecycle-viewmodel"]

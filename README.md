@@ -25,7 +25,7 @@ The application is an upcoming sport events viewer which allows users to check s
     * `model`: contains the models that needed (and used) across the app
  + **Data Layer**
  + **Presentation (or UI) Layer**
- + tba
+ + **Core Layer** contains common functionality used throughout the project
 
 
 ### Libraries or concepts used

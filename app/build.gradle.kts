@@ -2,6 +2,8 @@
 plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.kotlin.android)
+  //  alias(libs.plugins.dagger.hilt)
+    kotlin("kapt")
 }
 
 android {
@@ -34,6 +36,9 @@ android {
     buildFeatures {
         viewBinding = true
     }
+    packagingOptions {
+        resources.excludes.add("META-INF/*")
+    }
 }
 
 dependencies {
@@ -42,6 +47,7 @@ dependencies {
     implementation(libs.bundles.androidx.ui)
     implementation(libs.bundles.androidx.navigation)
     implementation(libs.bundles.androidx.lifecycle)
+    implementation(libs.bundles.dagger.hilt)
 
     testImplementation(libs.bundles.testing.unit)
     androidTestImplementation(libs.bundles.testing.instr)

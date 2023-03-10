@@ -43,3 +43,7 @@ dependencies {
     implementation(libs.bundles.networking)
     kapt(libs.moshi.codegen)
 }
+
+kapt {
+    correctErrorTypes = true
+}

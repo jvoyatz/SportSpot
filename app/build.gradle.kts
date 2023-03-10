@@ -52,3 +52,7 @@ dependencies {
     testImplementation(libs.bundles.testing.unit)
     androidTestImplementation(libs.bundles.testing.instr)
 }
+
+kapt {
+    correctErrorTypes = true
+}

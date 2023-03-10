@@ -41,3 +41,7 @@ dependencies {
     androidTestImplementation(libs.bundles.testing.instr)
     implementation(libs.bundles.networking)
 }
+
+kapt {
+    correctErrorTypes = true
+}

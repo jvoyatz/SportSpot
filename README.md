@@ -34,6 +34,7 @@ The application is an upcoming sport events viewer which allows users to check s
   + gradle scripts as kotlin dsl scripts
     [check this](https://developer.android.com/studio/build/migrate-to-kts) as a quick reference
   + version catalog for better dependency management
+  + [gitignore](https://github.com/github/gitignore/blob/main/Android.gitignore)
  
 
 

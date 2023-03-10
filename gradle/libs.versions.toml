@@ -11,7 +11,7 @@ androidTestInstrumentation = "androidx.test.runner.AndroidJUnitRunner"
 packageName = "gr.jvoyatz.sportspot"
 
 #android libraries versions
-androidGradlePlugin = "7.5.0"
+androidGradlePlugin = "7.4.2"
 androidxCore = "1.9.0"
 androidxAppcompat = "1.6.1"
 androidMaterial = "1.5.0"
@@ -33,13 +33,13 @@ androidxNavigation = "2.4.1"
 junit = "4.13.2"
 
 #other
-kotlin = "1.8.0"
+kotlinAndroid = "1.8.10"
 timber = "5.0.1"
 
 [plugins] # gradle plugins
 android-application = { id = "com.android.application", version.ref = "androidGradlePlugin" }
 android-library = { id = "com.android.library", version.ref = "androidGradlePlugin" }
-kotlin-android = { id = "org.jetbrains.kotlin.android", version = "kotlin" }
+kotlin-android = { id = "org.jetbrains.kotlin.android", version.ref = "kotlinAndroid" }
 
 [libraries] # libraries--dependencies with versions
 
@@ -64,3 +64,5 @@ androidx-espresso-core = { module = "androidx.test.espresso:espresso-core", vers
 androidx-ui = ["androidx-appcompat", "androidx-material", "androidx-constraint"]
 androidx-navigation = ["androidx-navigation-fragment", "androidx-navigation-ui"]
 androidx-lifecycle = ["androidx-lifecycle-livedata", "androidx-lifecycle-viewmodel"]
+testing-unit = ["junit"]
+testing-instr = ["androidx-junit", "androidx-espresso-core"]

@@ -5,6 +5,8 @@ pluginManagement {
         gradlePluginPortal()
     }
 }
+//not needed since 7.4
+//enableFeaturePreview("VERSION_CATALOGS")
 dependencyResolutionManagement {
     repositoriesMode.set(RepositoriesMode.FAIL_ON_PROJECT_REPOS)
     repositories {
@@ -12,5 +14,5 @@ dependencyResolutionManagement {
         mavenCentral()
     }
 }
-rootProject.name = "SportSpotActivity"
-include ':app'
+rootProject.name = "SportSpot"
+include(":app")

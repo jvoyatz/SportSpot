@@ -17,7 +17,16 @@ The application is an upcoming sport events viewer which allows users to check s
 + MinSDK: 21
 
 ## Implementation Notes
-TBA
+
+### App architecture
+
+ + **Domain Layer**
+    * `domain`: contains the use cases and the business logic needed in this app
+    * `model`: contains the models that needed (and used) across the app
+ + **Data Layer**
+ + **Presentation (or UI) Layer**
+ + tba
+ 
 
 
   

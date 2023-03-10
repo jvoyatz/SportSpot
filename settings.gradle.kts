@@ -17,4 +17,6 @@ dependencyResolutionManagement {
 rootProject.name = "SportSpot"
 include(":app")
 include(":core:testing")
-include(":domain:model")
+include(":domain:sport_events:model")
+include(":domain:sport_events:usecases")
+include(":core:common")

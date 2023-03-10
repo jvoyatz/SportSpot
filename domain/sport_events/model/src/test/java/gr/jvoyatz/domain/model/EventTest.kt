@@ -2,7 +2,6 @@ package gr.jvoyatz.domain.model
 
 import com.google.common.truth.Truth
 import gr.jvoyatz.domain.model.utils.MockData
-import org.junit.Assert.*
 import org.junit.Test
 
 class EventTest{

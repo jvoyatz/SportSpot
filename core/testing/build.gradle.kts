@@ -34,6 +34,7 @@ android {
 }
 
 dependencies {
-    testImplementation(libs.bundles.testing.unit)
+    implementation(libs.bundles.testing.unit)
+    implementation(libs.coroutines.test)
     androidTestImplementation(libs.bundles.testing.instr)
 }

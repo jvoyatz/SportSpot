@@ -26,6 +26,14 @@ The application is an upcoming sport events viewer which allows users to check s
  + **Data Layer**
  + **Presentation (or UI) Layer**
  + tba
+
+
+### Libraries or concepts used
+
++ Build Configuration
+  + gradle scripts as kotlin dsl scripts
+    [check this](https://developer.android.com/studio/build/migrate-to-kts) as a quick reference
+  + version catalog for better dependency management
  
 
 

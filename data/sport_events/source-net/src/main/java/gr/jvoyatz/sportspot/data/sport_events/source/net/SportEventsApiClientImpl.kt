@@ -1,8 +1,11 @@
 package gr.jvoyatz.sportspot.data.sport_events.source.net
 
 import gr.jvoyatz.sportspot.core.network.ApiResponse
-import gr.jvoyatz.sportspot.core.network.safeRawApiCall
+import gr.jvoyatz.sportspot.core.network.SportEventsApiClient
+import gr.jvoyatz.sportspot.core.network.SportEventsApiService
+import gr.jvoyatz.sportspot.core.network.config.safeRawApiCall
 import gr.jvoyatz.sportspot.core.network.dto.SportEventDto
+import javax.inject.Inject
 
 /**
  * Implements the [SportEventsApiClient] interface.
@@ -11,7 +14,7 @@ import gr.jvoyatz.sportspot.core.network.dto.SportEventDto
  *
  * It is responsible of providing a way to get the data from the server.
  */
-class SportEventsApiClientImpl(
+class SportEventsApiClientImpl @Inject constructor(
     private val sportsApi: SportEventsApiService
 ) : SportEventsApiClient {
 

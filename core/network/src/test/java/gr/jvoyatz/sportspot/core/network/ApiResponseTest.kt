@@ -1,9 +1,14 @@
 package gr.jvoyatz.sportspot.core.network
 
 import com.google.common.truth.Truth
+import kotlinx.coroutines.ExperimentalCoroutinesApi
+import kotlinx.coroutines.flow.first
+import kotlinx.coroutines.flow.toList
 import kotlinx.coroutines.test.runTest
 import org.junit.Test
 
+
+@OptIn(ExperimentalCoroutinesApi::class)
 class ApiResponseTest {
 
     val success = ApiResponse.success<String, Unit>("234")
@@ -237,6 +242,28 @@ class ApiResponseTest {
     }
 
     @Test
+    fun `invoke() returns null data when any other instance`(){
+        //when
+        val data = httpError.getOrNull()
+
+        //then
+        Truth.assertThat(data).isNull()
+    }
+
+    @Test
+    fun `invoke() returns not null data when ApiSuccess`(){
+        //given
+        val body = "234"
+
+        //when
+        val data = success.getOrNull()
+
+        //then
+        Truth.assertThat(data).isNotNull()
+        Truth.assertThat(data).isEqualTo(body)
+    }
+
+    @Test
     fun `getOrNull returns null data when any other instance`(){
         //when
         val data = httpError.getOrNull()
@@ -272,6 +299,35 @@ class ApiResponseTest {
         //then
         Truth.assertThat(isExecuted).isFalse()
     }
+    @Test
+    fun `onSuccess with map block is executed when apiResponse is of an ApiSuccess instance`(){
+        //given
+        var isExecuted = false
+
+        //when
+        success.onSuccess({
+            isExecuted = true
+            1
+        }) {}
+
+        //then
+        Truth.assertThat(isExecuted).isTrue()
+    }
+
+    @Test
+    fun `onSuccess with map is not executed when apiResponse is not an ApiSuccess instance`(){
+        //given
+        var isExecuted = false
+
+        //when
+        httpError.onSuccess({
+            isExecuted = true
+            1
+        }) {}
+
+        //then
+        Truth.assertThat(isExecuted).isFalse()
+    }
 
     @Test
     fun `onSuspendedSuccess is executed when apiResponse is of an ApiSuccess instance`() = runTest {
@@ -299,5 +355,328 @@ class ApiResponseTest {
 
         //then
         Truth.assertThat(isExecuted).isFalse()
+    }
+
+    @Test
+    fun `onSuspendedSuccess with map block is executed when apiResponse is of an ApiSuccess instance`()= runTest {
+        //given
+        var isExecuted = false
+
+        //when
+        success.onSuspendedSuccess({
+            isExecuted = true
+            1
+        }) {}
+
+        //then
+        Truth.assertThat(isExecuted).isTrue()
+    }
+
+    @Test
+    fun `onSuspendedSuccess with map is not executed when apiResponse is not an ApiSuccess instance`()=runTest{
+        //given
+        var isExecuted = false
+
+        //when
+        httpError.onSuspendedSuccess({
+            isExecuted = true
+            1
+        }) {}
+
+        //then
+        Truth.assertThat(isExecuted).isFalse()
+    }
+
+
+    @Test
+    fun `onError is executed when apiResponse is an ApiError instance`(){
+        //given
+        var isExecuted = false
+
+        //when
+        httpError.onError {
+            isExecuted = true
+        }
+
+        //then
+        Truth.assertThat(isExecuted).isTrue()
+    }
+
+    @Test
+    fun `onError is not executed when apiResponse is of an ApiSuccess instance`(){
+        //given
+        var isExecuted = false
+
+        //when
+        success.onError {
+            isExecuted = true
+        }
+
+        //then
+        Truth.assertThat(isExecuted).isFalse()
+    }
+
+    @Test
+    fun `onSuspendedError is executed when apiResponse is an ApiError instance`()= runTest{
+        //given
+        var isExecuted = false
+
+        //when
+        httpError.onSuspendedError {
+            isExecuted = true
+        }
+
+        //then
+        Truth.assertThat(isExecuted).isTrue()
+    }
+
+    @Test
+    fun `onSuspendedError is not executed when apiResponse is of an ApiSuccess instance`()=runTest{
+        //given
+        var isExecuted = false
+
+        //when
+        success.onSuspendedError {
+            isExecuted = true
+        }
+
+        //then
+        Truth.assertThat(isExecuted).isFalse()
+    }
+
+    @Test
+    fun `onHttpError is executed when apiResponse is an HttpError instance`(){
+        //given
+        var isExecuted = false
+
+        //when
+        httpError.onHttpError {
+            isExecuted = true
+        }
+
+        //then
+        Truth.assertThat(isExecuted).isTrue()
+    }
+
+    @Test
+    fun `onHttpError is not executed when apiResponse is not of an HttpError instance`(){
+        //given
+        var isExecuted = false
+
+        //when
+        success.onHttpError {
+            isExecuted = true
+        }
+
+        //then
+        Truth.assertThat(isExecuted).isFalse()
+    }
+
+    @Test
+    fun `onSuspendedHttpError is executed when apiResponse is an HttpError instance`()= runTest{
+        //given
+        var isExecuted = false
+
+        //when
+        httpError.onSuspendedHttpError {
+            isExecuted = true
+        }
+
+        //then
+        Truth.assertThat(isExecuted).isTrue()
+    }
+
+    @Test
+    fun `onSuspendedHttpError is not executed when apiResponse is not of an HttpError instance`()=runTest{
+        //given
+        var isExecuted = false
+
+        //when
+        success.onSuspendedHttpError {
+            isExecuted = true
+        }
+
+        //then
+        Truth.assertThat(isExecuted).isFalse()
+    }
+    @Test
+    fun `onNetworkError is executed when apiResponse is an NetworkError instance`(){
+        //given
+        var isExecuted = false
+
+        //when
+        networkError.onNetworkError {
+            isExecuted = true
+        }
+
+        //then
+        Truth.assertThat(isExecuted).isTrue()
+    }
+
+    @Test
+    fun `onNetworkError is not executed when apiResponse is not of an NetworkError instance`(){
+        //given
+        var isExecuted = false
+
+        //when
+        success.onNetworkError {
+            isExecuted = true
+        }
+
+        //then
+        Truth.assertThat(isExecuted).isFalse()
+    }
+
+    @Test
+    fun `onSuspendedNetworkError is executed when apiResponse is an NetworkError instance`()=runTest{
+        //given
+        var isExecuted = false
+
+        //when
+        networkError.onSuspendedNetworkError {
+            isExecuted = true
+        }
+
+        //then
+        Truth.assertThat(isExecuted).isTrue()
+    }
+
+    @Test
+    fun `onSuspendedNetworkError is not executed when apiResponse is not of an NetworkError instance`()=runTest{
+        //given
+        var isExecuted = false
+
+        //when
+        success.onSuspendedNetworkError {
+            isExecuted = true
+        }
+
+        //then
+        Truth.assertThat(isExecuted).isFalse()
+    }
+
+
+    @Test
+    fun `onUnknownError is executed when apiResponse is an UnknownError instance`(){
+        //given
+        var isExecuted = false
+
+        //when
+        unknownError.onUnknownError {
+            isExecuted = true
+        }
+
+        //then
+        Truth.assertThat(isExecuted).isTrue()
+    }
+
+    @Test
+    fun `onUnknownError is not executed when apiResponse is not of an UnknownError instance`(){
+        //given
+        var isExecuted = false
+
+        //when
+        success.onNetworkError {
+            isExecuted = true
+        }
+
+        //then
+        Truth.assertThat(isExecuted).isFalse()
+    }
+
+    @Test
+    fun `onSuspendedNetworkError is executed when apiResponse is an UnknownError instance`()= runTest{
+        //given
+        var isExecuted = false
+
+        //when
+        unknownError.onSuspendedUnknownError {
+            isExecuted = true
+        }
+
+        //then
+        Truth.assertThat(isExecuted).isTrue()
+    }
+
+    @Test
+    fun `onSuspendedNetworkError is not executed when apiResponse is not of an UnknownError instance`()=runTest{
+        //given
+        var isExecuted = false
+
+        //when
+        success.onSuspendedUnknownError {
+            isExecuted = true
+        }
+
+        //then
+        Truth.assertThat(isExecuted).isFalse()
+    }
+
+    @Test
+    fun `apiResponse toFlow emit the body type when success`()= runTest{
+        //when
+        val flow = success.toFlow()
+        val data = flow.first()
+
+        //then
+        Truth.assertThat(data).isEqualTo("234")
+    }
+
+    @Test
+    fun `apiResponse toFlow emit nothing when error`()= runTest{
+        //when
+        val flow = httpError.toFlow()
+        val data = flow.toList()
+
+        //then
+        Truth.assertThat(data).isEmpty()
+    }
+
+    @Test
+    fun `apiResponse toFlow with map block func emit the body type when success`()= runTest{
+        //when
+        val flow = success.toFlow{
+            1
+        }
+        val data = flow.first()
+
+        //then
+        Truth.assertThat(data).isEqualTo(1)
+    }
+
+    @Test
+    fun `apiResponse toFlow with map block func emit nothing when error`()= runTest{
+        //when
+        val flow = httpError.toFlow{
+            1
+        }
+        val data = flow.toList()
+
+        //then
+        Truth.assertThat(data).isEmpty()
+    }
+
+    @Test
+    fun `apiResponse toSuspendFlow with map block func emit nothing when error`()= runTest{
+        //when
+        val flow = httpError.toSuspendFlow{
+            1
+        }
+        val data = flow.toList()
+
+        //then
+        Truth.assertThat(data).isEmpty()
+    }
+
+    @Test
+    fun `apiResponse toSuspendFlow with map block func emit data when success`()= runTest{
+        //when
+        val flow = httpError.toSuspendFlow{
+            1
+        }
+        val data = flow.toList()
+
+        //then
+        Truth.assertThat(data).isEmpty()
     }
 }

@@ -191,10 +191,10 @@ inline fun <S, E, R> ApiResponse<S, E>.toFlow(
     }
 }
 suspend inline fun <S, E, R> ApiResponse<S, E>.toSuspendFlow(
-    crossinline transformer: suspend S.() -> R
+    crossinline mapper: suspend S.() -> R
 ): Flow<R>{
     return if(this is ApiSuccess){
-        flowOf(this.body.transformer())
+        flowOf(this.body.mapper())
     }else{
         emptyFlow()
     }

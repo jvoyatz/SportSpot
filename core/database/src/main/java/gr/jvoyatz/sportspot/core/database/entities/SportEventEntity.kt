@@ -1,7 +1,7 @@
 package gr.jvoyatz.sportspot.core.database.entities
 
 
-data class SportEvent(
+data class SportEventEntity(
     val id: Long,
     val name: String,
     val sportId: String,

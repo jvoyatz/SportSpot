@@ -10,5 +10,5 @@ data class SportEventsEntity(
     @PrimaryKey
     val id: String,
     val name: String = "Not Provided",
-    val events : List<SportEvent> = listOf()
+    val events : List<SportEventEntity> = listOf()
 )

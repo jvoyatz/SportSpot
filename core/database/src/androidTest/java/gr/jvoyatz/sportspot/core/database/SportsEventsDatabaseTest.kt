@@ -6,7 +6,7 @@ import androidx.test.core.app.ApplicationProvider
 import androidx.test.ext.junit.runners.AndroidJUnit4
 import com.google.common.truth.Truth
 import com.squareup.moshi.Moshi
-import gr.jvoyatz.sportspot.core.database.entities.SportEvent
+import gr.jvoyatz.sportspot.core.database.entities.SportEventEntity
 import gr.jvoyatz.sportspot.core.database.entities.SportEventsEntity
 import gr.jvoyatz.sportspot.core.testing.utils.Utils
 import kotlinx.coroutines.Dispatchers
@@ -30,7 +30,7 @@ class SportsEventsDatabaseTest {
     private lateinit var db: SportSpotDatabase
     private val moshi: Moshi = Utils.moshi
 
-    private val event = SportEvent(1, "asdf", "foot","", 1234)
+    private val event = SportEventEntity(1, "asdf", "foot","", 1234)
     private val eventsEntity = SportEventsEntity("foot", "name",/*  EventHolder(*/listOf(event))//)
 
     @Before

@@ -47,7 +47,8 @@ dependencies {
     androidTestImplementation(libs.room.testing)
 
     implementation(libs.bundles.common.android)
-    implementation(libs.bundles.dagger.hilt)
+    implementation(libs.dagger.hilt.android)
+    kapt(libs.dagger.hilt.compiler)
     testImplementation(libs.bundles.testing.unit)
     androidTestImplementation(libs.bundles.testing.unit)
     androidTestImplementation(libs.bundles.testing.instr)

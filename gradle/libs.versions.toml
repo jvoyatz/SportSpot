@@ -108,7 +108,6 @@ logging-timber = {module = "com.jakewharton.timber:timber", version.ref = "timbe
 #!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 
 [bundles] # combines multiple libraries
-dagger-hilt = ["dagger-hilt-android", "dagger-hilt-compiler"]
 androidx-ui = ["androidx-appcompat", "androidx-material", "androidx-constraint"]
 androidx-navigation = ["androidx-navigation-fragment", "androidx-navigation-ui"]
 androidx-lifecycle = ["androidx-lifecycle-livedata", "androidx-lifecycle-viewmodel"]

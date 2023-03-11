@@ -6,7 +6,7 @@ import gr.jvoyatz.sportspot.data.sport_events.source.net.SportEventsApiClient
 import kotlinx.coroutines.flow.Flow
 import javax.inject.Inject
 
-internal class SportEventRepositoryImpl @Inject constructor(
+internal class SportEventRepositoryImpl constructor(
     private val apiClient: SportEventsApiClient,
     private val dbClient: SportEventsDbClient
 ): SportEventsRepository {

@@ -2,7 +2,7 @@
 plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.kotlin.android)
-  //  alias(libs.plugins.dagger.hilt)
+    alias(libs.plugins.dagger.hilt)
     kotlin("kapt")
 }
 
@@ -43,14 +43,23 @@ android {
 
 dependencies {
 
+    implementation(project(":core:common"))
+    implementation(project(":domain:sport_events:model"))
+    implementation(project(":domain:sport_events:usecases"))
+    implementation(project(":data:sport_events:repo"))
+
+    implementation(libs.dagger.hilt.android)
+    kapt(libs.dagger.hilt.compiler)
+
     implementation(libs.androidx.core.ktx)
     implementation(libs.bundles.androidx.ui)
     implementation(libs.bundles.androidx.navigation)
     implementation(libs.bundles.androidx.lifecycle)
-    implementation(libs.bundles.dagger.hilt)
+    implementation(libs.logging.timber)
 
     testImplementation(libs.bundles.testing.unit)
     androidTestImplementation(libs.bundles.testing.instr)
+
 }
 
 kapt {

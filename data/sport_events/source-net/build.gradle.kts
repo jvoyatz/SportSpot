@@ -8,13 +8,12 @@ plugins {
 
 
 android {
-    namespace = libs.versions.packageName.get() + "core.network"
+    namespace = libs.versions.packageName.get() + ".data.sports_events.source.net"
     compileSdk = libs.versions.compileSdk.get().toInt()
 
     defaultConfig {
         minSdk = libs.versions.minSdk.get().toInt()
         targetSdk = libs.versions.targetSdk.get().toInt()
-        buildConfigField("String", "API_ENDPOINT", "\"https://618d3aa7fe09aa001744060a.mockapi.io/api/\"")
     }
 
 
@@ -40,7 +39,8 @@ dependencies {
     implementation(project(":core:network"))
 
     implementation(libs.bundles.common.android)
-    implementation(libs.bundles.dagger.hilt)
+    implementation(libs.dagger.hilt.android)
+    kapt(libs.dagger.hilt.compiler)
     testImplementation(project(":core:testing"))
     testImplementation(libs.bundles.testing.unit)
     testImplementation(libs.okhttp.mockwebserver)

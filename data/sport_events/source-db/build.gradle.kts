@@ -8,7 +8,7 @@ plugins {
 
 
 android {
-    namespace = libs.versions.packageName.get() + "core.network"
+    namespace = libs.versions.packageName.get() + ".data.sports_events.source.db"
     compileSdk = libs.versions.compileSdk.get().toInt()
 
     defaultConfig {
@@ -40,7 +40,8 @@ dependencies {
     implementation(project(":core:database"))
 
     implementation(libs.bundles.common.android)
-    implementation(libs.bundles.dagger.hilt)
+    implementation(libs.dagger.hilt.android)
+    kapt(libs.dagger.hilt.compiler)
     testImplementation(project(":core:testing"))
     testImplementation(libs.bundles.testing.unit)
 

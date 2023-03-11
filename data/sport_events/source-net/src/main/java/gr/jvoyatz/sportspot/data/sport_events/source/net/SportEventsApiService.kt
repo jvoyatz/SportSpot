@@ -1,4 +1,4 @@
-package gr.jvoyatz.sportspot.data.sport_events.source.net.api
+package gr.jvoyatz.sportspot.data.sport_events.source.net
 
 import gr.jvoyatz.sportspot.core.network.dto.SportEventDto
 import retrofit2.http.GET

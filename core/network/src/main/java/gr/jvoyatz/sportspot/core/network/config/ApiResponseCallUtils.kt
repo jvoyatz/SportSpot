@@ -2,6 +2,7 @@ package gr.jvoyatz.sportspot.core.network.config
 
 import com.squareup.moshi.JsonEncodingException
 import com.squareup.moshi.Moshi
+import gr.jvoyatz.sportspot.core.network.ApiResponse
 import okhttp3.ResponseBody
 import retrofit2.HttpException
 import retrofit2.Response

@@ -2,7 +2,6 @@ package gr.jvoyatz.sportspot.core.testing.utils
 
 import com.squareup.moshi.Moshi
 import gr.jvoyatz.common.testing.MainDispatcherRule
-import okhttp3.OkHttpClient
 import okhttp3.mockwebserver.MockResponse
 import okhttp3.mockwebserver.MockWebServer
 import okhttp3.mockwebserver.SocketPolicy
@@ -21,11 +20,9 @@ abstract class ApiServer<T: Any> {
     protected lateinit var apiClient: T
 
     @get:Rule
-    val rule: MainDispatcherRule = MainDispatcherRule()
-
-    private val okHttpClient = OkHttpClient.Builder().build()
-    //Use JsonReader.setLenient(true) to accept malformed JSON at path
-    private val moshi = Moshi.Builder().build()
+    val rule: MainDispatcherRule = Utils.coroutineRule
+    private val okHttpClient = Utils.okHttpClient
+    private val moshi = Utils.moshi
 
     @Before
     open fun setupServer(){
@@ -35,6 +32,7 @@ abstract class ApiServer<T: Any> {
         apiClient = Retrofit.Builder()
             .baseUrl(webServer.url("/"))
             .client(okHttpClient)
+            //Use JsonReader.setLenient(true) to accept malformed JSON at path
             .addConverterFactory(MoshiConverterFactory.create(moshi).asLenient())
             .build()
             .create(clazz)

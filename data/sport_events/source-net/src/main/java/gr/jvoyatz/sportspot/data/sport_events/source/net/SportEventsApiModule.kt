@@ -1,4 +1,4 @@
-package gr.jvoyatz.sportspot.data.sport_events.source.net.di
+package gr.jvoyatz.sportspot.data.sport_events.source.net
 
 import com.squareup.moshi.Moshi
 import dagger.Binds
@@ -6,9 +6,6 @@ import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
 import dagger.hilt.components.SingletonComponent
-import gr.jvoyatz.sportspot.data.sport_events.source.net.SportEventsApiClient
-import gr.jvoyatz.sportspot.data.sport_events.source.net.SportEventsApiClientImpl
-import gr.jvoyatz.sportspot.data.sport_events.source.net.api.SportEventsApiService
 import okhttp3.OkHttpClient
 import retrofit2.Retrofit
 import retrofit2.converter.moshi.MoshiConverterFactory
@@ -16,7 +13,7 @@ import javax.inject.Singleton
 
 @Module
 @InstallIn(SingletonComponent::class)
-class ApiModule {
+class SportEventsApiModule {
 
     @Singleton
     @Provides

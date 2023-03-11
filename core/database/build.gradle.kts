@@ -13,6 +13,8 @@ android {
     defaultConfig {
         minSdk = libs.versions.minSdk.get().toInt()
         targetSdk = libs.versions.targetSdk.get().toInt()
+
+        testInstrumentationRunner = libs.versions.androidTestInstrumentation.get()
     }
 
 
@@ -32,6 +34,9 @@ android {
     kotlinOptions {
         jvmTarget = JavaVersion.VERSION_11.toString()
     }
+    packagingOptions {
+        resources.merges.add("META-INF/gradle/incremental.annotation.processors")
+    }
 }
 
 dependencies {
@@ -44,7 +49,13 @@ dependencies {
     implementation(libs.bundles.common.android)
     implementation(libs.bundles.dagger.hilt)
     testImplementation(libs.bundles.testing.unit)
+    androidTestImplementation(libs.bundles.testing.unit)
     androidTestImplementation(libs.bundles.testing.instr)
+    androidTestImplementation(libs.coroutines.test)
+
+    androidTestImplementation("app.cash.turbine:turbine:0.9.0")
+    implementation(libs.moshi)
+    implementation(libs.moshi.codegen)
 }
 
 kapt {

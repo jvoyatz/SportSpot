@@ -4,7 +4,6 @@ import com.google.common.truth.Truth
 import gr.jvoyatz.sportspot.core.network.*
 import gr.jvoyatz.sportspot.core.testing.utils.ApiServer
 import gr.jvoyatz.sportspot.core.testing.utils.loadResourceFile
-import gr.jvoyatz.sportspot.data.sport_events.source.net.api.SportEventsApiService
 import kotlinx.coroutines.test.runTest
 import org.junit.Test
 

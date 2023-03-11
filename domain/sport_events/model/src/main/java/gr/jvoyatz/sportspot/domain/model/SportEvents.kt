@@ -6,5 +6,5 @@ package gr.jvoyatz.sportspot.domain.model
 data class SportEvents(
     val id: String,
     val name: String,
-    val events: List<FavorableEvent> = listOf()
+    val events: List<FavorableSportEvent> = listOf()
 )

@@ -4,7 +4,7 @@ import com.google.common.truth.Truth
 import gr.jvoyatz.sportspot.domain.model.utils.MockData
 import org.junit.Test
 
-class EventTest{
+class SportEventEventTest{
 
     @Test
     fun `test Event object instance variables are the same as the given`(){
@@ -13,7 +13,7 @@ class EventTest{
         val (id, eventName, sportId, descr,  startDateTs) = givenEvent
 
         //when
-        val event = Event(id, eventName, sportId, startDateTimeStamp = startDateTs)
+        val event = SportEvent(id, eventName, sportId, startDateTimeStamp = startDateTs)
 
         //then
         Truth.assertThat(event == givenEvent).isTrue()
@@ -27,7 +27,7 @@ class EventTest{
         val (id, eventName, sportId, descr, startDateTs) = givenEvent
 
         //when
-        val event = Event(id, eventName, sportId, descr, startDateTimeStamp = startDateTs)
+        val event = SportEvent(id, eventName, sportId, descr, startDateTimeStamp = startDateTs)
 
         //then
         Truth.assertThat(event.description).isNotNull()

@@ -13,7 +13,7 @@ class FavorableEventTest{
         val isFavorite = false
 
         //when
-        val favorableEvent = FavorableEvent(given, isFavorite)
+        val favorableEvent = FavorableSportEvent(given, isFavorite)
 
         //then
         Truth.assertThat(favorableEvent.isFavorite).isTrue()
@@ -27,7 +27,7 @@ class FavorableEventTest{
         val isFavorite = true
 
         //when
-        val favorableEvent = FavorableEvent(given, isFavorite)
+        val favorableEvent = FavorableSportEvent(given, isFavorite)
 
         //then
         Truth.assertThat(favorableEvent.isFavorite).isTrue()

@@ -10,7 +10,7 @@ package gr.jvoyatz.sportspot.domain.model
  *  ! a nullable description,
  *  ! a timestamp
  */
-data class Event(
+data class SportEvent(
     val id: Long,
     val name: String,
     val sportId: String,

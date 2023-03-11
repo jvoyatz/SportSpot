@@ -1,7 +1,6 @@
 package gr.jvoyatz.sportspot.data.sport_events.source.net
 
 import gr.jvoyatz.sportspot.core.network.ApiResponse
-import gr.jvoyatz.sportspot.core.network.SportEventsApiClient
 import gr.jvoyatz.sportspot.core.network.SportEventsApiService
 import gr.jvoyatz.sportspot.core.network.config.safeRawApiCall
 import gr.jvoyatz.sportspot.core.network.dto.SportEventDto

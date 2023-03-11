@@ -34,8 +34,10 @@ android {
 }
 
 dependencies {
+    implementation(project(":domain:sport_events:model"))
     implementation(project(":domain:sport_events:usecases"))
     implementation(project(":data:sport_events:source-net"))
+    implementation(project(":data:sport_events:source-db"))
     implementation(libs.bundles.common.android)
     implementation(libs.bundles.dagger.hilt)
     testImplementation(libs.bundles.testing.unit)

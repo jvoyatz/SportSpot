@@ -1,4 +1,4 @@
-package gr.jvoyatz.sportspot.data.sport_events.source.net
+package gr.jvoyatz.sportspot.data.sport_events.source.db
 
 import dagger.Binds
 import dagger.Module
@@ -8,8 +8,9 @@ import javax.inject.Singleton
 
 @Module
 @InstallIn(SingletonComponent::class)
-abstract class SportEventsApiModule{
-    @Binds
+abstract class SportEventDbModule {
+
     @Singleton
-    abstract fun bindSportEventsApiClient(apiClientImpl: SportEventsApiClientImpl): SportEventsApiClient
+    @Binds
+    abstract fun bindSportDbClient(impl: SportEventsDbClientImpl): SportEventsDbClient
 }

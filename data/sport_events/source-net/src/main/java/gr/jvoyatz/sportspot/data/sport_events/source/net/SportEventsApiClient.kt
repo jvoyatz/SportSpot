@@ -1,4 +1,4 @@
-package gr.jvoyatz.sportspot.core.network
+package gr.jvoyatz.sportspot.data.sport_events.source.net
 
 import gr.jvoyatz.sportspot.core.network.ApiResponse
 import gr.jvoyatz.sportspot.core.network.dto.SportEventDto

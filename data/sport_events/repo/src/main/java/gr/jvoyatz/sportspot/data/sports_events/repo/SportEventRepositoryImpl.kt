@@ -11,7 +11,7 @@ internal class SportEventRepositoryImpl constructor(
     private val dbClient: SportEventsDbClient
 ): SportEventsRepository {
 
-    override suspend fun getSportEvents(): Flow<Result<List<gr.jvoyatz.sportspot.domain.model.SportEvents>>> {
+    override suspend fun getSportEvents(): Flow<List<gr.jvoyatz.sportspot.domain.model.SportEvents>> {
         TODO("Not yet implemented")
     }
 

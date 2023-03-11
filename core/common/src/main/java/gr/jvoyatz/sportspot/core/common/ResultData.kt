@@ -90,5 +90,9 @@ fun <T> Flow<T>.asResult(): Flow<ResultData<T>> =
     this.map {
         resultOf { it }
     }.catch {
-        emit(ResultData.error(it))
+        if(it !is CancellationException) {
+            emit(ResultData.error(it))
+        }else {
+            throw it
+        }
     }

@@ -1,0 +1,33 @@
+package gr.jvoyatz.sportpot.domain.usecases.usecases
+
+import gr.jvoyatz.core.common.AppDispatchers
+import gr.jvoyatz.sportpot.domain.usecases.repository.SportEventsRepository
+import gr.jvoyatz.sportspot.core.common.asResult
+import javax.inject.Inject
+import javax.inject.Singleton
+
+/**
+ * Acts as `facade` class, meaning that contains the several use cases defined for a specific feature of
+ * the App, eg SportEvents.
+ * We use this class, to avoid polluting our dagger graph with multiple dependencies (--> usecases).
+ * We can get them by injecting this class and accessing the field declared in here
+ * eg getSportEvents
+ */
+@Singleton
+class SportEventsUseCases @Inject constructor(
+    repository: SportEventsRepository
+) {
+    val getSportEvents: GetSportEvents
+    val refreshSportEvents: RefreshSportEvents
+    val getSportEventById: GetSportEventById
+
+    init {
+        getSportEvents = bindMethodSignatureToGetSportEventInterface(repository)
+
+        refreshSportEvents = RefreshSportEvents { repository.refreshSportEvents() }
+
+        getSportEventById = GetSportEventById {
+            repository.getSportEventById(it).asResult()
+        }
+    }
+}

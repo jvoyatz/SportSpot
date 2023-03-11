@@ -13,4 +13,5 @@ dependencies{
     implementation(project(":core:common"))
     implementation(project(":domain:sport_events:model"))
     implementation(libs.coroutines)
+    implementation(libs.javax.inject)
 }

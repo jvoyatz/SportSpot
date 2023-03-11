@@ -11,5 +11,5 @@ interface SportEventsApiClient {
      * Fetches the sports events from the remote service and after parsing the
      * response returned, encapsulates the data into an ApiResponse object.
      */
-    fun getSportEvents():ApiResponse<SportEventsDtoList, String>
+    suspend fun getSportEvents():ApiResponse<SportEventsDtoList, String>
 }

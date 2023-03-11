@@ -1,4 +1,4 @@
-package gr.jvoyatz.sportspot.sport_events.repo
+package gr.jvoyatz.sportspot.data.repo
 
 import org.junit.Test
 

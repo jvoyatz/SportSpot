@@ -17,10 +17,10 @@ dependencyResolutionManagement {
 rootProject.name = "SportSpot"
 include(":app")
 include(":core:testing")
-include(":domain:sport_events:model")
-include(":domain:sport_events:usecases")
 include(":core:common")
 include(":core:network")
+include(":domain:sport_events:model")
+include(":domain:sport_events:usecases")
 include(":data:sport_events:repo")
 include(":data:sport_events:source-net")
 include(":data:sport_events:source-db")

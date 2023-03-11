@@ -42,7 +42,7 @@ fun <S, E> ApiResponse<S, E>.asUnknownError(): UnknownError<S, E>?{
 
 fun<S, E> ApiResponse<S, E>.isSuccess() = this is ApiSuccess
 fun<S, E> ApiResponse<S, E>.isSuccessEmpty() = (this is ApiSuccess) && this.body === Unit
-fun<S, E> ApiResponse<S, E>.isError() = this is Error
+fun<S, E> ApiResponse<S, E>.isError() = this is ApiError
 
 fun<S, E> ApiResponse<S, E>.getOrNull(): S? {
     return when (this) {

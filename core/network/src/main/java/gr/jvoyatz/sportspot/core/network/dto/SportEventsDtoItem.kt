@@ -1,4 +1,4 @@
-package gr.jvoyatz.sportspot.data.sport_events.source.net.dto
+package gr.jvoyatz.sportspot.core.network.dto
 
 
 import com.squareup.moshi.Json

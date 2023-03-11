@@ -26,6 +26,7 @@ androidxEspresso = "3.5.1"
 daggerHilt = "2.44"
 
 #android -- room
+room = "2.5.0"
 #android -- navigation
 androidxNavigation = "2.5.3"
 
@@ -84,6 +85,12 @@ retrofit-moshi = { module = "com.squareup.retrofit2:converter-moshi", version.re
 moshi = { module = "com.squareup.moshi:moshi-kotlin", version.ref = "moshi" }
 moshi-codegen = { module = "com.squareup.moshi:moshi-kotlin-codegen", version.ref = "moshi" }
 
+#room
+room = {module = "androidx.room:room-runtime", version.ref = "room" }
+room-compiler = { module = "androidx.room:room-compiler", version.ref = "room" }
+room-testing = { module = "androidx.room:room-testing", version.ref = "room" }
+room-ktx = { module = "androidx.room:room-ktx", version.ref = "room" }
+
 #unit testing
 junit = { module = "junit:junit", version.ref = "junit"}
 truth = { module = "com.google.truth:truth", version.ref = "truth" }
@@ -108,4 +115,5 @@ androidx-lifecycle = ["androidx-lifecycle-livedata", "androidx-lifecycle-viewmod
 testing-unit = ["junit", "truth", "coroutines-test"]
 testing-instr = ["androidx-junit", "androidx-espresso-core"]
 networking = ["okhttp", "okhttp-logging", "retrofit","retrofit-moshi", "moshi"]
+room = ["room", "room-ktx"]
 common-android = ["logging-timber", "androidx-core-ktx"]

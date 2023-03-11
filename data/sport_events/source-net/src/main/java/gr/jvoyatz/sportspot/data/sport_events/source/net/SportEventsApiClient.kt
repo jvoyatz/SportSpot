@@ -1,8 +1,7 @@
 package gr.jvoyatz.sportspot.data.sport_events.source.net
 
 import gr.jvoyatz.sportspot.core.network.ApiResponse
-import gr.jvoyatz.sportspot.data.sport_events.source.net.dto.SportEventDto
-import gr.jvoyatz.sportspot.data.sport_events.source.net.dto.SportEventsDtoList
+import gr.jvoyatz.sportspot.core.network.dto.SportEventDto
 
 /**
  * Defines the methods used to fetch data for the near future Sport Events

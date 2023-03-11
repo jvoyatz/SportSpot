@@ -1,4 +1,4 @@
-package gr.jvoyatz.sportspot.core.network
+package gr.jvoyatz.sportspot.core.network.config
 
 import com.squareup.moshi.JsonEncodingException
 import com.squareup.moshi.Moshi

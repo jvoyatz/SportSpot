@@ -31,7 +31,7 @@ class DatabaseModule {
 
     @Singleton
     @Provides
-    fun provideBoredActivityDao(
+    fun provideSportEventDao(
         db: SportSpotDatabase
     ): SportsEventsDao = db.sportEventsDao()
 

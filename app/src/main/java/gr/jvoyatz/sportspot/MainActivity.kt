@@ -1,30 +1,22 @@
 package gr.jvoyatz.sportspot
 
 import android.os.Bundle
-import com.google.android.material.bottomnavigation.BottomNavigationView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.navigation.findNavController
 import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.setupActionBarWithNavController
 import androidx.navigation.ui.setupWithNavController
+import com.google.android.material.bottomnavigation.BottomNavigationView
 import dagger.hilt.android.AndroidEntryPoint
-import gr.jvoyatz.sportpot.domain.usecases.repository.SportEventsRepository
 import gr.jvoyatz.sportspot.databinding.ActivityMainBinding
-import timber.log.Timber
-import javax.inject.Inject
 
 @AndroidEntryPoint
 class MainActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityMainBinding
 
-    @Inject
-    lateinit var repository:SportEventsRepository
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-
-        Timber.d("test " + repository)
 
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)

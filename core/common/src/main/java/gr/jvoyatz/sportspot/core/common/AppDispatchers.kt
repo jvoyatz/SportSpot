@@ -1,4 +1,4 @@
-package gr.jvoyatz.core.common
+package gr.jvoyatz.sportspot.core.common
 
 import kotlinx.coroutines.CoroutineDispatcher
 import kotlinx.coroutines.Dispatchers

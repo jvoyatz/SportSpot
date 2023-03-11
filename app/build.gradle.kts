@@ -43,10 +43,7 @@ android {
 
 dependencies {
 
-    implementation(project(":core:common"))
-    implementation(project(":domain:sport_events:model"))
-    implementation(project(":domain:sport_events:usecases"))
-    implementation(project(":data:sport_events:repo"))
+    implementation(project(":core:di"))
 
     implementation(libs.dagger.hilt.android)
     kapt(libs.dagger.hilt.compiler)

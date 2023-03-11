@@ -1,13 +1,14 @@
 @Suppress("DSL_SCOPE_VIOLATION")
 plugins {
-    alias(libs.plugins.android.library)
+    alias(libs.plugins.android.application)
     alias(libs.plugins.kotlin.android)
     alias(libs.plugins.dagger.hilt)
     kotlin("kapt")
 }
 
+
 android {
-    namespace = libs.versions.packageName.get() + "core.network.v1"
+    namespace = libs.versions.packageName.get() + "XXXXXXXXXXXXXXXXXXXXXXXXXXXX"
     compileSdk = libs.versions.compileSdk.get().toInt()
 
     defaultConfig {
@@ -35,11 +36,11 @@ android {
 }
 
 dependencies {
+
     implementation(libs.bundles.common.android)
-    implementation(libs.bundles.dagger.hilt)
-    testImplementation(libs.bundles.testing.unit)
-    androidTestImplementation(libs.bundles.testing.instr)
-    implementation(libs.bundles.networking)
+    implementation(libs.dagger.hilt.android)
+    kapt(libs.dagger.hilt.compiler)
+
 }
 
 kapt {

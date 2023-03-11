@@ -1,6 +1,5 @@
 package gr.jvoyatz.sportpot.domain.usecases.usecases
 
-import gr.jvoyatz.core.common.AppDispatchers
 import gr.jvoyatz.sportpot.domain.usecases.repository.SportEventsRepository
 import gr.jvoyatz.sportspot.core.common.asResult
 import javax.inject.Inject

@@ -1,7 +1,7 @@
 package gr.jvoyatz.sportspot.core.common
 
 import com.google.common.truth.Truth
-import gr.jvoyatz.sportspot.core.common.utils.MainDispatcherRule
+import gr.jvoyatz.common.testing.MainDispatcherRule
 import kotlinx.coroutines.ExperimentalCoroutinesApi
 import kotlinx.coroutines.flow.first
 import kotlinx.coroutines.flow.flow

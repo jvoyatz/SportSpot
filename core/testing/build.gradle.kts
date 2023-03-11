@@ -34,8 +34,10 @@ android {
 }
 
 dependencies {
+    implementation(project(":core:common-testing"))
     implementation(libs.bundles.testing.unit)
     implementation(libs.coroutines.test)
-    androidTestImplementation(libs.bundles.testing.instr)
+    //androidTestImplementation(libs.bundles.testing.instr)
     implementation(libs.bundles.networking)
+    implementation(libs.okhttp.mockwebserver)
 }

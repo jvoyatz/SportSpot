@@ -38,12 +38,16 @@ android {
 
 dependencies {
     implementation(project(":core:network"))
+
     implementation(libs.bundles.common.android)
     implementation(libs.bundles.dagger.hilt)
+    testImplementation(project(":core:testing"))
     testImplementation(libs.bundles.testing.unit)
+    testImplementation(libs.okhttp.mockwebserver)
     androidTestImplementation(libs.bundles.testing.instr)
     implementation(libs.bundles.networking)
     kapt(libs.moshi.codegen)
+
 }
 
 kapt {

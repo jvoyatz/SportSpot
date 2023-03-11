@@ -5,11 +5,6 @@ package gr.jvoyatz.sportspot.core.testing.utils
  *
  * for a file file.json, pass "/sport_events.json"
  */
-internal fun String.loadResourceFile(fileName: String): String =
+fun Any.loadResourceFile(fileName: String): String =
     this.javaClass.getResourceAsStream(fileName)?.
     bufferedReader().use { it!!.readText() }
-
-/**
- * Loads the content of this json file
- */
-fun loadSportEventsData(): String = "/sport_events.json".run { loadResourceFile(this) }

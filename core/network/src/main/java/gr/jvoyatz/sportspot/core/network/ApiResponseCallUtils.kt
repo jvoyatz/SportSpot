@@ -1,5 +1,6 @@
 package gr.jvoyatz.sportspot.core.network
 
+import com.squareup.moshi.JsonEncodingException
 import com.squareup.moshi.Moshi
 import okhttp3.ResponseBody
 import retrofit2.HttpException
@@ -33,6 +34,7 @@ suspend inline fun <reified S, reified E> safeRawApiCall(
         }
     } catch (t: Throwable) {
         when (t) {
+            is JsonEncodingException -> ApiResponse.unknownError(t)
             is IOException -> ApiResponse.networkError(t)
             is HttpException -> ApiResponse.httpError(
                 t.code(),
@@ -83,7 +85,6 @@ suspend inline fun <reified S, reified E> safeApiCall(
             }
         }
     }catch (e: Exception){
-        e.printStackTrace()
         null
     }
 }

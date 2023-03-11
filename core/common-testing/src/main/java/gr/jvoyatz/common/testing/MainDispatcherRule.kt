@@ -1,4 +1,4 @@
-package gr.jvoyatz.sportspot.core.common.utils
+package gr.jvoyatz.common.testing
 
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.ExperimentalCoroutinesApi

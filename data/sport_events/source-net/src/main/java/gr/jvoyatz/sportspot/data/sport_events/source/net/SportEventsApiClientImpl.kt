@@ -4,6 +4,7 @@ import gr.jvoyatz.sportspot.core.network.ApiResponse
 import gr.jvoyatz.sportspot.core.network.safeApiCall
 import gr.jvoyatz.sportspot.core.network.safeRawApiCall
 import gr.jvoyatz.sportspot.data.sport_events.source.net.api.SportEventsApiService
+import gr.jvoyatz.sportspot.data.sport_events.source.net.dto.SportEventDto
 import gr.jvoyatz.sportspot.data.sport_events.source.net.dto.SportEventsDtoList
 
 /**
@@ -21,7 +22,7 @@ class SportEventsApiClientImpl(
      * Wrapping the result into an ApiResponse object,
      * using [safeRawApiCall]
      */
-    override suspend fun getSportEvents(): ApiResponse<SportEventsDtoList, String> {
+    override suspend fun getSportEvents(): ApiResponse<List<SportEventDto>, String> {
         return safeRawApiCall {
             sportsApi.fetchSportEvents()
         }

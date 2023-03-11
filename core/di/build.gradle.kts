@@ -36,7 +36,7 @@ android {
 }
 
 dependencies {
-
+    implementation(project(":presentation:home"))
     implementation(project(":core:common"))
     implementation(project(":domain:sport_events:usecases"))
     implementation(project(":data:sport_events:repo"))

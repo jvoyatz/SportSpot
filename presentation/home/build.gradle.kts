@@ -3,6 +3,7 @@ plugins {
     alias(libs.plugins.android.library)
     alias(libs.plugins.kotlin.android)
     alias(libs.plugins.dagger.hilt)
+    alias(libs.plugins.kotlin.parcelize)
     kotlin("kapt")
 }
 
@@ -39,6 +40,7 @@ android {
 
 dependencies {
     implementation(project(":core:common"))
+    implementation(project(":domain:sport_events:model"))
     implementation(project(":domain:sport_events:usecases"))
     implementation(project(":data:sport_events:repo"))
 

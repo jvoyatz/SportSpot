@@ -1,7 +1,6 @@
 package gr.jvoyatz.sportspot.presentation.home
 
 import android.os.Parcelable
-import gr.jvoyatz.sportspot.domain.model.SportEvents
 import gr.jvoyatz.sportspot.presentation.home.models.HomeSportEvents
 import kotlinx.parcelize.Parcelize
 
@@ -14,7 +13,7 @@ data class HomeUiState(
 
     sealed interface PrepareHomeUiState{
         object Loading: PrepareHomeUiState
-        data class OnSportsEventsFetched(val events: List<HomeSportEvents>): PrepareHomeUiState
-        data class Error(val throwable: Throwable? = null): PrepareHomeUiState
+        data class OnSportsEventsSuccess(val events: List<HomeSportEvents>): PrepareHomeUiState
+        data class OnSportEventsError(val throwable: Throwable? = null): PrepareHomeUiState
     }
 }

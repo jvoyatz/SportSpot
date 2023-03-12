@@ -17,7 +17,7 @@ class SportEventsDbClientImpl @Inject constructor(
     }
 
     override suspend fun insertSportEvents(events: List<SportEventsEntity>) {
-        TODO("Not yet implemented")
+        dao.insertSportEvents(events)
     }
 
     override suspend fun getSportEventById(id: Long) {

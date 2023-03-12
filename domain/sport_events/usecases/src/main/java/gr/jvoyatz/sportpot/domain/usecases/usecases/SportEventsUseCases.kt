@@ -25,8 +25,8 @@ class SportEventsUseCases @Inject constructor(
 
         refreshSportEvents = RefreshSportEvents { repository.refreshSportEvents() }
 
-        getSportEventById = GetSportEventById {
-            repository.getSportEventById(it).asResult()
+        getSportEventById = GetSportEventById { sportId, id ->
+            repository.getSportEventById(sportId, id).asResult()
         }
     }
 }

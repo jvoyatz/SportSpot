@@ -6,10 +6,11 @@ import gr.jvoyatz.sportspot.core.network.HttpError
 import gr.jvoyatz.sportspot.core.network.NetworkError
 import gr.jvoyatz.sportspot.domain.model.SportEventException
 
+private const val notProvidedErrorMsg = "Not Provided"
 
-object SportEventExceptionMapper : DtoMapper<ApiError<*, *>, SportEventException> {
+object SportEventDtoExceptionMapper : DtoMapper<ApiError<*, *>, SportEventException> {
     override fun ApiError<*, *>.dtoToDomain(): SportEventException {
-        val notProvidedErrorMsg = "Not Provided"
+
 
         return when(this){
             is HttpError -> SportEventException.HttpException(this.errorBody?.toString() ?: notProvidedErrorMsg)
@@ -22,4 +23,11 @@ object SportEventExceptionMapper : DtoMapper<ApiError<*, *>, SportEventException
     override fun SportEventException.domainToDto(): ApiError<*, *> {
         TODO("Not yet implemented")
     }
+}
+
+fun Throwable.asSportEventException(): SportEventException {
+    if(this !is SportEventException) {
+        return SportEventException.ErrorException(this.message ?: notProvidedErrorMsg)
+    }
+    return this
 }

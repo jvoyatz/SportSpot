@@ -3,7 +3,7 @@ package gr.jvoyatz.sportspot.data.sports_events.repo.mappers
 import com.google.common.truth.Truth
 import gr.jvoyatz.sportspot.core.network.ApiResponse
 import gr.jvoyatz.sportspot.core.network.config.asError
-import gr.jvoyatz.sportspot.data.sports_events.repo.mappers.SportEventExceptionMapper.dtoToDomain
+import gr.jvoyatz.sportspot.data.sports_events.repo.mappers.SportEventDtoExceptionMapper.dtoToDomain
 import gr.jvoyatz.sportspot.domain.model.SportEventException
 import org.junit.Test
 

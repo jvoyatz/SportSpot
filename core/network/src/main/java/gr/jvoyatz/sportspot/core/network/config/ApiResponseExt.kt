@@ -1,5 +1,7 @@
-package gr.jvoyatz.sportspot.core.network
+package gr.jvoyatz.sportspot.core.network.config
 
+import gr.jvoyatz.sportspot.core.network.*
+import gr.jvoyatz.sportspot.core.network.UnknownError
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.emptyFlow
 import kotlinx.coroutines.flow.flowOf

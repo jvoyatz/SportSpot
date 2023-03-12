@@ -1,5 +1,6 @@
 package gr.jvoyatz.sportpot.domain.usecases.repository
 
+import gr.jvoyatz.sportspot.domain.model.FavorableSportEvent
 import gr.jvoyatz.sportspot.domain.model.SportEvent
 import gr.jvoyatz.sportspot.domain.model.SportEvents
 import kotlinx.coroutines.flow.Flow
@@ -22,5 +23,5 @@ interface SportEventsRepository {
     /**
      * Finds a scheduled event with this id
      */
-    suspend fun getSportEventById(id: Long): Flow<SportEvent>
+    suspend fun getSportEventById(sportId: String, id: Long): Flow<FavorableSportEvent?>
 }

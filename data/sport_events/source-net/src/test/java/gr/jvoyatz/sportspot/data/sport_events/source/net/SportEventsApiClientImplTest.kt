@@ -2,6 +2,10 @@ package gr.jvoyatz.sportspot.data.sport_events.source.net
 
 import com.google.common.truth.Truth
 import gr.jvoyatz.sportspot.core.network.*
+import gr.jvoyatz.sportspot.core.network.config.asHttpError
+import gr.jvoyatz.sportspot.core.network.config.asSuccess
+import gr.jvoyatz.sportspot.core.network.config.isError
+import gr.jvoyatz.sportspot.core.network.config.isSuccess
 import gr.jvoyatz.sportspot.core.testing.utils.ApiServer
 import gr.jvoyatz.sportspot.core.testing.utils.loadResourceFile
 import kotlinx.coroutines.test.runTest

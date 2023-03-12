@@ -40,7 +40,7 @@ class HomeFragment : Fragment() {
         viewLifecycleOwner.lifecycleScope.launch {
             viewLifecycleOwner.repeatOnLifecycle(Lifecycle.State.STARTED){
                 viewModel.uiState.collect{
-                    Timber.e("ui state is $it")
+                    //Timber.e("ui state is $it")
                 }
             }
         }

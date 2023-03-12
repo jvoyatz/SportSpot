@@ -7,7 +7,7 @@ import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.flow
 import javax.inject.Inject
 
-internal class SportEventRepositoryImpl constructor(
+class SportEventRepositoryImpl @Inject constructor(
     private val apiClient: SportEventsApiClient,
     private val dbClient: SportEventsDbClient
 ): SportEventsRepository {

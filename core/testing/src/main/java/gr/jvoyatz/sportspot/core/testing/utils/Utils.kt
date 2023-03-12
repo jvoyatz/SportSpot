@@ -1,6 +1,7 @@
 package gr.jvoyatz.sportspot.core.testing.utils
 
 import com.squareup.moshi.Moshi
+import com.squareup.moshi.Types
 import com.squareup.moshi.kotlin.reflect.KotlinJsonAdapterFactory
 import gr.jvoyatz.common.testing.MainDispatcherRule
 import okhttp3.OkHttpClient
@@ -20,4 +21,10 @@ object Utils {
     val coroutineRule: MainDispatcherRule = MainDispatcherRule()
     val moshi = Moshi.Builder().add(KotlinJsonAdapterFactory()).build()
     val okHttpClient = OkHttpClient.Builder().build()
+}
+
+inline fun <reified T> deserializeList(content: String): List<T>? {
+    val type = Types.newParameterizedType(List::class.java, T::class.java)
+    val moshi = Utils.moshi
+    return moshi.adapter<List<T>>(type).fromJson(content).orEmpty()
 }

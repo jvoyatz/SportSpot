@@ -40,7 +40,10 @@ dependencies {
     implementation(project(":core:common"))
     implementation(project(":domain:sport_events:usecases"))
     implementation(project(":data:sport_events:repo"))
-
+    implementation(project(":data:sport_events:source-db"))
+    implementation(project(":data:sport_events:source-net"))
+    implementation(project(":core:network"))
+    implementation(project(":core:database"))
     implementation(libs.bundles.common.android)
     implementation(libs.dagger.hilt.android)
     kapt(libs.dagger.hilt.compiler)

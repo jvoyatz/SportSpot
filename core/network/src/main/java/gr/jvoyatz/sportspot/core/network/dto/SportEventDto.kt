@@ -7,13 +7,13 @@ import com.squareup.moshi.JsonClass
 @JsonClass(generateAdapter = true)
 data class SportEventDto(
     @Json(name = "d")
-    val d: String = "", // Juventus FC - Paris Saint-Germain
+    val d: String, // Juventus FC - Paris Saint-Germain
     @Json(name = "i")
-    val i: String = "", // 29135390
+    val i: String, // 29135390
     @Json(name = "sh")
     val sh: String = "", // Juventus FC - Paris Saint-Germain
     @Json(name = "si")
-    val si: String = "", // FOOT
+    val si: String, // FOOT
     @Json(name = "tt")
-    val tt: Int = 0 // 1667447160
+    val tt: Long // 1667447160
 )

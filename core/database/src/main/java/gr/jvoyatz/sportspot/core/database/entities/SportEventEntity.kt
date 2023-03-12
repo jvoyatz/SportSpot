@@ -6,5 +6,6 @@ data class SportEventEntity(
     val name: String,
     val sportId: String,
     val description: String?=null,
-    val startDateTimeStamp: Long
+    val startDateTimeStamp: Long,
+    val isFavorite: Boolean = false
 )

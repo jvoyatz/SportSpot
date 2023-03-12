@@ -1,6 +1,7 @@
 package gr.jvoyatz.sportspot.data.sports_events.repo
 
 import gr.jvoyatz.sportpot.domain.usecases.repository.SportEventsRepository
+import gr.jvoyatz.sportspot.core.common.AppDispatchers
 import gr.jvoyatz.sportspot.core.common.mapList
 import gr.jvoyatz.sportspot.core.network.config.onSuspendedError
 import gr.jvoyatz.sportspot.core.network.config.onSuspendedSuccess
@@ -12,10 +13,7 @@ import gr.jvoyatz.sportspot.data.sports_events.repo.mappers.SportEventsEntityMap
 import gr.jvoyatz.sportspot.data.sports_events.repo.mappers.SportEventsEntityMapper.entityToDomain
 import gr.jvoyatz.sportspot.data.sports_events.repo.mappers.asSportEventException
 import gr.jvoyatz.sportspot.domain.model.FavorableSportEvent
-import kotlinx.coroutines.flow.Flow
-import kotlinx.coroutines.flow.catch
-import kotlinx.coroutines.flow.map
-import kotlinx.coroutines.flow.onEach
+import kotlinx.coroutines.flow.*
 import timber.log.Timber
 import javax.inject.Inject
 
@@ -25,29 +23,32 @@ import javax.inject.Inject
 ////                Timber.d("sorted list of longs ${sorted.joinToString { "$it," }}")
 class SportEventRepositoryImpl @Inject constructor(
     private val apiClient: SportEventsApiClient,
-    private val dbClient: SportEventsDbClient
+    private val dbClient: SportEventsDbClient,
+  //  private val appDispatchers: AppDispatchers,
 ): SportEventsRepository {
 
     /**
      * It executes a query in the `in memory` db, to get all the cached data.
      * If no data found, then it calls the refreshSportEvents method to get fresh data
      */
-    override suspend fun getSportEvents(): Flow<List<gr.jvoyatz.sportspot.domain.model.SportEvents>> {
+    override /*suspend*/ fun getSportEvents(): Flow<List<gr.jvoyatz.sportspot.domain.model.SportEvents>> {
         return dbClient.getSportEvents()
             .map {entities ->
                 val list = entities.mapList { it.entityToDomain() }
                 list
             }
+
             .onEach {
                 if(it.isEmpty()){
                     refreshSportEvents()
                 }
             }.catch { throwable ->
+                throwable.printStackTrace()
                 with(throwable){
-                    Timber.e("caught an exception $this")
                     this.asSportEventException().also { throw it }
                 }
             }
+
     }
 
     /**
@@ -63,11 +64,9 @@ class SportEventRepositoryImpl @Inject constructor(
             .onSuspendedSuccess({ dtoList ->
                 dtoList.mapList { it.dtoToDomain().domainToEntity() }
             }) {
-                Timber.i("onSuspendedSuccessCalled with $this  in thread ${Thread.currentThread()}")
                 if(this.isNotEmpty()) dbClient.insertSportEvents(this)
             }
             .onSuspendedError {
-                Timber.d("getSportEvents#onError called with $this in thread ${Thread.currentThread()}")
                 this.dtoToDomain().also { throw it }
             }
     }
@@ -75,12 +74,15 @@ class SportEventRepositoryImpl @Inject constructor(
     override suspend fun getSportEventById(sportId: String, id: Long): Flow<FavorableSportEvent?> {
         return getSportEvents()
             .map {list ->
-                list.firstOrNull { it.id == sportId }
+                list.firstOrNull {
+                    it.id == sportId
+                }
             }
             .map { sportEvents ->
                 sportEvents?.events?.firstOrNull {
                     it.event.id == id
                 }
             }
+            //.flowOn(appDispatchers.io)
     }
 }

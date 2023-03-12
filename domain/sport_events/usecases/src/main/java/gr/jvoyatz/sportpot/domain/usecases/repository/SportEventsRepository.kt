@@ -13,7 +13,7 @@ interface SportEventsRepository {
     /**
      * Emits data with the new scheduled events
      */
-    suspend fun getSportEvents(): Flow<List<SportEvents>>
+    /*suspend*/ fun getSportEvents(): Flow<List<SportEvents>>
 
     /**
      * Attempts to fetch new data from the remote service

@@ -14,7 +14,7 @@ android {
     defaultConfig {
         minSdk = libs.versions.minSdk.get().toInt()
         targetSdk = libs.versions.targetSdk.get().toInt()
-        buildConfigField("String", "API_ENDPOINT", "\"https://618d3aa7fe09aa001744060a.mockapi.io/api/\"")
+        testInstrumentationRunner = libs.versions.androidTestInstrumentation.get()
     }
 
 
@@ -34,16 +34,28 @@ android {
     kotlinOptions {
         jvmTarget = JavaVersion.VERSION_11.toString()
     }
+    packagingOptions {
+        resources.merges.add("META-INF/*")
+    }
 }
 
 dependencies {
     implementation(project(":core:database"))
 
-    implementation(libs.bundles.common.android)
+    implementation(libs.moshi)
+    implementation(libs.moshi.codegen)
+    implementation(libs.logging.timber)
+
     implementation(libs.dagger.hilt.android)
     kapt(libs.dagger.hilt.compiler)
-    testImplementation(project(":core:testing"))
+
+    androidTestImplementation(project(":core:testing"))
     testImplementation(libs.bundles.testing.unit)
+    androidTestImplementation(libs.room.testing)
+    androidTestImplementation(libs.turbine)
+    androidTestImplementation(libs.bundles.testing.unit)
+    androidTestImplementation(libs.bundles.testing.instr)
+    androidTestImplementation(libs.coroutines.test)
 
 }
 

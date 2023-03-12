@@ -21,7 +21,7 @@ object SportEventDtoExceptionMapper : DtoMapper<ApiError<*, *>, SportEventExcept
     }
 
     override fun SportEventException.domainToDto(): ApiError<*, *> {
-        TODO("Not yet implemented")
+        TODO("Not yet implementeasdfasdfasdfdd")
     }
 }
 

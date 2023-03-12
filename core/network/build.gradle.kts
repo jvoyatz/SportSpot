@@ -37,7 +37,7 @@ android {
 
 dependencies {
     implementation(project(":core:testing"))
-    implementation(libs.bundles.common.android)
+    implementation(libs.logging.timber)
     implementation(libs.dagger.hilt.android)
     kapt(libs.dagger.hilt.compiler)
     testImplementation(libs.bundles.testing.unit)

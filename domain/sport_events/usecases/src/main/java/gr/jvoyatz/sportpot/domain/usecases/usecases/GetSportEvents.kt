@@ -9,7 +9,7 @@ import kotlinx.coroutines.flow.Flow
 /**
  * SAM interface that returns a list of SportEvents wrapped in ResultData container class
  */
-fun interface GetSportEvents: suspend () -> Flow<ResultData<List<SportEvents>>>
+fun interface GetSportEvents: () -> Flow<ResultData<List<SportEvents>>>
 
 /**
  * Here we use a method to bind the method signature to the SAM interface declaration

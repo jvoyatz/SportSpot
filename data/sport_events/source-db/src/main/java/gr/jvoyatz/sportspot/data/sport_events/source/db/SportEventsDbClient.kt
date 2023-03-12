@@ -11,7 +11,7 @@ interface SportEventsDbClient {
     /**
      * Returns all the events found in the local cache
      */
-    suspend fun getSportEvents(): Flow<List<SportEventsEntity>>
+    /*suspend*/ fun getSportEvents(): Flow<List<SportEventsEntity>>
 
     /**
      * Deletes all the events
@@ -22,9 +22,4 @@ interface SportEventsDbClient {
      * Inserts newly fetched events into the db
      */
     suspend fun insertSportEvents(events: List<SportEventsEntity>)
-
-    /**
-     * Attempts to find a sport event with this id
-     */
-    suspend fun getSportEventById(id: Long)
 }

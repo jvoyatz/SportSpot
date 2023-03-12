@@ -24,7 +24,7 @@ import java.util.concurrent.CountDownLatch
 
 @OptIn(ExperimentalCoroutinesApi::class)
 @RunWith(AndroidJUnit4::class)
-class SportsEventsDatabaseTest {
+class SportEventsDatabaseTest {
 
     private lateinit var sportEventsDao: SportsEventsDao
     private lateinit var db: SportSpotDatabase

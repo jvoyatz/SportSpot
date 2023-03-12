@@ -44,19 +44,20 @@ dependencies {
     implementation(libs.bundles.room)
     annotationProcessor(libs.room.compiler)
     kapt(libs.room.compiler)
-    androidTestImplementation(libs.room.testing)
 
-    implementation(libs.bundles.common.android)
-    implementation(libs.dagger.hilt.android)
-    kapt(libs.dagger.hilt.compiler)
-    testImplementation(libs.bundles.testing.unit)
-    androidTestImplementation(libs.bundles.testing.unit)
-    androidTestImplementation(libs.bundles.testing.instr)
-    androidTestImplementation(libs.coroutines.test)
 
-    androidTestImplementation("app.cash.turbine:turbine:0.9.0")
     implementation(libs.moshi)
     implementation(libs.moshi.codegen)
+    implementation(libs.logging.timber)
+    implementation(libs.dagger.hilt.android)
+    kapt(libs.dagger.hilt.compiler)
+
+    testImplementation(libs.bundles.testing.unit)
+    androidTestImplementation(libs.room.testing)
+    androidTestImplementation(libs.bundles.testing.unit)
+    androidTestImplementation(libs.bundles.testing.instr)
+
+ 
 }
 
 kapt {

@@ -8,7 +8,7 @@ import javax.inject.Inject
 class SportEventsDbClientImpl @Inject constructor(
    private val dao: SportsEventsDao
 ): SportEventsDbClient {
-    override suspend fun getSportEvents(): Flow<List<SportEventsEntity>> {
+    override /*suspend*/ fun getSportEvents(): Flow<List<SportEventsEntity>> {
         return dao.selectSportEvents()
     }
 
@@ -18,9 +18,5 @@ class SportEventsDbClientImpl @Inject constructor(
 
     override suspend fun insertSportEvents(events: List<SportEventsEntity>) {
         dao.insertSportEvents(events)
-    }
-
-    override suspend fun getSportEventById(id: Long) {
-        TODO("Not yet implemented")
     }
 }

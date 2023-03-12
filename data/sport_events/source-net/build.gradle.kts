@@ -38,7 +38,7 @@ android {
 dependencies {
     implementation(project(":core:network"))
 
-    implementation(libs.bundles.common.android)
+    implementation(libs.logging.timber)
     implementation(libs.dagger.hilt.android)
     kapt(libs.dagger.hilt.compiler)
     testImplementation(project(":core:testing"))

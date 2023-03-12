@@ -32,7 +32,6 @@ android {
 
 dependencies {
     implementation(project(":core:common"))
-    implementation(project(":core:testing"))
     implementation(project(":core:database"))
     implementation(project(":core:network"))
     implementation(project(":domain:sport_events:model"))
@@ -44,6 +43,9 @@ dependencies {
     implementation(libs.javax.inject)
     implementation(libs.coroutines)
 
+    testImplementation(project(":core:common-testing"))
+    testImplementation(project(":core:testing"))
+    testImplementation (libs.coroutines.test)
     testImplementation(libs.bundles.testing.unit)
     androidTestImplementation(libs.bundles.testing.instr)
 }

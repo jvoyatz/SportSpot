@@ -1,7 +1,6 @@
 package gr.jvoyatz.sportspot.data.sports_events.repo
 
 import gr.jvoyatz.sportpot.domain.usecases.repository.SportEventsRepository
-import gr.jvoyatz.sportspot.core.common.AppDispatchers
 import gr.jvoyatz.sportspot.core.common.mapList
 import gr.jvoyatz.sportspot.core.network.config.onSuspendedError
 import gr.jvoyatz.sportspot.core.network.config.onSuspendedSuccess
@@ -13,8 +12,10 @@ import gr.jvoyatz.sportspot.data.sports_events.repo.mappers.SportEventsEntityMap
 import gr.jvoyatz.sportspot.data.sports_events.repo.mappers.SportEventsEntityMapper.entityToDomain
 import gr.jvoyatz.sportspot.data.sports_events.repo.mappers.asSportEventException
 import gr.jvoyatz.sportspot.domain.model.FavorableSportEvent
-import kotlinx.coroutines.flow.*
-import timber.log.Timber
+import kotlinx.coroutines.flow.Flow
+import kotlinx.coroutines.flow.catch
+import kotlinx.coroutines.flow.map
+import kotlinx.coroutines.flow.onEach
 import javax.inject.Inject
 
 //keep it for debugging

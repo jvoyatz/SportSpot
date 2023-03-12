@@ -1,7 +1,10 @@
 package gr.jvoyatz.sportspot.data.sport_events.source.net
 
 import com.google.common.truth.Truth
-import gr.jvoyatz.sportspot.core.network.*
+import gr.jvoyatz.sportspot.core.network.HttpError
+import gr.jvoyatz.sportspot.core.network.NetworkError
+import gr.jvoyatz.sportspot.core.network.SportEventsApiService
+import gr.jvoyatz.sportspot.core.network.UnknownError
 import gr.jvoyatz.sportspot.core.network.config.asHttpError
 import gr.jvoyatz.sportspot.core.network.config.asSuccess
 import gr.jvoyatz.sportspot.core.network.config.isError

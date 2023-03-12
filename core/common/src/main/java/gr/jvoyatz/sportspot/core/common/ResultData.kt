@@ -51,12 +51,12 @@ fun <T> ResultData<T>.asError(): ResultData.Error? {
     }
 }
 
-inline fun <T> ResultData<T>.onSuccess(crossinline action: (value: T) -> Unit): ResultData<T> {
+inline fun <T> ResultData<T>.onSuccess(/*crossinline*/ action: (value: T) -> Unit): ResultData<T> {
     if(isSuccess()) action(asSuccess()!!.data)
     return this
 }
 
-inline fun <T> ResultData<T>.onError(crossinline action: (value: Throwable) -> Unit): ResultData<T> {
+inline fun <T> ResultData<T>.onError(/*crossinline*/ action: (value: Throwable) -> Unit): ResultData<T> {
     if(isError()) asError()!!.exception?.let{
         action(it)
     }

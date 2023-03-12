@@ -13,7 +13,8 @@ data class HomeUiState(
 ): Parcelable{
 
     sealed interface PrepareHomeUiState{
-        data class OnSportsEventsFetched(val events: List<SportEvents>): PrepareHomeUiState
+        object Loading: PrepareHomeUiState
+        data class OnSportsEventsFetched(val events: List<HomeSportEvents>): PrepareHomeUiState
         data class Error(val throwable: Throwable? = null): PrepareHomeUiState
     }
 }

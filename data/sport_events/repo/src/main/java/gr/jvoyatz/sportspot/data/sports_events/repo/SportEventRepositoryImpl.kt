@@ -4,6 +4,7 @@ import gr.jvoyatz.sportpot.domain.usecases.repository.SportEventsRepository
 import gr.jvoyatz.sportspot.data.sport_events.source.db.SportEventsDbClient
 import gr.jvoyatz.sportspot.data.sport_events.source.net.SportEventsApiClient
 import kotlinx.coroutines.flow.Flow
+import kotlinx.coroutines.flow.flow
 import javax.inject.Inject
 
 internal class SportEventRepositoryImpl constructor(
@@ -12,7 +13,9 @@ internal class SportEventRepositoryImpl constructor(
 ): SportEventsRepository {
 
     override suspend fun getSportEvents(): Flow<List<gr.jvoyatz.sportspot.domain.model.SportEvents>> {
-        TODO("Not yet implemented")
+        return flow {
+            emit(listOf())
+        }
     }
 
     override suspend fun refreshSportEvents() {

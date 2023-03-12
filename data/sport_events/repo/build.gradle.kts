@@ -2,8 +2,6 @@
 plugins {
     alias(libs.plugins.android.library)
     alias(libs.plugins.kotlin.android)
-    //alias(libs.plugins.dagger.hilt)
-    kotlin("kapt")
 }
 
 android {
@@ -13,7 +11,6 @@ android {
     defaultConfig {
         minSdk = libs.versions.minSdk.get().toInt()
         targetSdk = libs.versions.targetSdk.get().toInt()
-        buildConfigField("String", "API_ENDPOINT", "\"https://618d3aa7fe09aa001744060a.mockapi.io/api/\"")
     }
 
     buildTypes {
@@ -42,12 +39,11 @@ dependencies {
     implementation(project(":domain:sport_events:usecases"))
     implementation(project(":data:sport_events:source-net"))
     implementation(project(":data:sport_events:source-db"))
+
     implementation(libs.logging.timber)
     implementation(libs.javax.inject)
     implementation(libs.coroutines)
 
-    implementation(project(":core:network"))
     testImplementation(libs.bundles.testing.unit)
     androidTestImplementation(libs.bundles.testing.instr)
-    implementation(libs.bundles.networking)
 }

@@ -7,6 +7,8 @@ import gr.jvoyatz.sportspot.presentation.home.models.HomeSportEvent
  */
 sealed interface HomeIntent {
 
+    object OnFavoriteActionConsumed: HomeIntent
+
     object GetSportEvents: HomeIntent
     /**
      * fetches new sport events

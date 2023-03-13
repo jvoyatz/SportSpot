@@ -12,9 +12,9 @@ import gr.jvoyatz.sportspot.data.sports_events.repo.mappers.SportEventsEntityMap
 import gr.jvoyatz.sportspot.data.sports_events.repo.mappers.SportEventsEntityMapper.entityToDomain
 import gr.jvoyatz.sportspot.data.sports_events.repo.mappers.asSportEventException
 import gr.jvoyatz.sportspot.domain.model.FavorableSportEvent
+import gr.jvoyatz.sportspot.domain.model.SportEventException
 import gr.jvoyatz.sportspot.domain.model.SportEvents
 import kotlinx.coroutines.flow.*
-import timber.log.Timber
 import javax.inject.Inject
 
 //keep it for debugging
@@ -102,8 +102,12 @@ class SportEventRepositoryImpl @Inject constructor(
             //.flowOn(appDispatchers.io)
     }
 
+    /**
+     * Gets the cached events, finds if there is an existing
+     * event with this id ana marks it as favorite
+     */
     override suspend fun markSportEventAsFavorite(sportId: String, id: Long, asFavorite: Boolean) {
-        Timber.d("called in Thread ${Thread.currentThread()} !!!")
+
         val list = dbClient.getSportEvents().first()
 
         val entity = list.firstOrNull {
@@ -111,15 +115,13 @@ class SportEventRepositoryImpl @Inject constructor(
         }?.events?.firstOrNull {
             it.id == id
         }
-        if(entity != null && entity.isFavorite != asFavorite){
+
+        if (entity != null && entity.isFavorite != asFavorite) {
             entity.isFavorite = asFavorite
-            Timber.d("marking it as favorite!!")
-            Timber.d("list $list")
-        }else {
-            Timber.d("no change made")
+        } else {
+            throw SportEventException.ErrorException("adsfsdf")
         }
         if (list.isNotEmpty()) {
-            Timber.i("updating db")
             dbClient.insertSportEvents(list)
         }
     }

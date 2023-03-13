@@ -1,15 +1,13 @@
 package gr.jvoyatz.sportspot.presentation.home
 
+import android.util.Log
 import androidx.lifecycle.SavedStateHandle
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import dagger.hilt.android.lifecycle.HiltViewModel
 import gr.jvoyatz.sportpot.domain.usecases.usecases.GetSportEvents
 import gr.jvoyatz.sportpot.domain.usecases.usecases.MarkSportEventAsFavorite
-import gr.jvoyatz.sportspot.core.common.AppDispatchers
-import gr.jvoyatz.sportspot.core.common.mapList
-import gr.jvoyatz.sportspot.core.common.onError
-import gr.jvoyatz.sportspot.core.common.onSuccess
+import gr.jvoyatz.sportspot.core.common.*
 import gr.jvoyatz.sportspot.presentation.home.HomeUiState.PrepareHomeUiState
 import gr.jvoyatz.sportspot.presentation.home.HomeUiState.PrepareHomeUiState.OnSportsEventsSuccess
 import gr.jvoyatz.sportspot.presentation.home.models.HomeSportEvent
@@ -60,7 +58,6 @@ class HomeViewModel @Inject constructor(
 
     init {
         viewModelScope.launch {
-            Timber.d("now sending intent")
             onUserIntent(HomeIntent.GetSportEvents)
         }
     }
@@ -81,6 +78,7 @@ class HomeViewModel @Inject constructor(
      * and returns the updated HomeUiState/
      */
     private fun produceHomeUiState(prevState: HomeUiState, newState: PrepareHomeUiState): HomeUiState {
+
         return when (newState) {
             is OnSportsEventsSuccess -> {
                 prevState.copy(
@@ -99,7 +97,22 @@ class HomeViewModel @Inject constructor(
                 isError = true,
                 sportsEvents = null
             )
-            else -> prevState.copy(isLoading = false, sportsEvents = null, isError = false)
+            is PrepareHomeUiState.OnFavoriteSportEventResult -> {
+                prevState.copy(
+                    isLoading = false,
+                    sportsEvents = null,
+                    isError = false,
+                    newState.isSuccess
+                )
+            }
+            else -> {
+                prevState.copy(
+                    isLoading = false,
+                    sportsEvents = null,
+                    isError = false,
+                    onFavoriteEventActionSuccess = null
+                )
+            }
         }
     }
 
@@ -112,6 +125,10 @@ class HomeViewModel @Inject constructor(
         return when(intent){
             is HomeIntent.GetSportEvents -> getEvents()
             is HomeIntent.OnFavoriteSportEvent -> markSportEventAsFavorite(intent.event, intent.isFavorite)
+            is HomeIntent.OnFavoriteActionConsumed -> flow {
+                Timber.d("emit empty!!")
+                emit(PrepareHomeUiState.Empty)
+            }
             else -> emptyFlow()
         }
     }
@@ -149,11 +166,9 @@ class HomeViewModel @Inject constructor(
         kotlinx.coroutines.delay(500)
 
         markFavoriteEvent(homeSportEvent.toDomainModel(), isFavorite)
-            .catch {
-
-            }
             .collect { result ->
-                emit(PrepareHomeUiState.OnFavoriteSportEventSuccess)
+                emit(PrepareHomeUiState.OnFavoriteSportEventResult(result.isSuccess()))
             }
-    }.flowOn(dispatchers.default)
+    }
+    .flowOn(dispatchers.default)
 }

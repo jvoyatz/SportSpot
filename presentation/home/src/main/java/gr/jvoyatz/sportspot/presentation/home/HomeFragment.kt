@@ -5,6 +5,7 @@ import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.Lifecycle
@@ -77,18 +78,32 @@ class HomeFragment : Fragment() {
                 }
             }
             uiState.sportsEvents != null -> {
-
                 handleSuccessUiState(uiState.sportsEvents)
                     .also {
                         sportsAdapter.submitList(it)
                     }
             }
+            uiState.onFavoriteEventActionSuccess != null ->{
+                handleOnFavoriteActionSuccess(uiState.onFavoriteEventActionSuccess)
+            }
             else -> {
-
+                Timber.w("reached heree!!")
+                viewModel.onUserIntent(HomeIntent.GetSportEvents)
             }
         }
     }
 
+    private fun handleOnFavoriteActionSuccess(state: Boolean){
+        state.let {
+            it.let {
+                if(it) getString(R.string.sport_event_favorite_success)
+                else getString(R.string.sport_event_favorite_error)
+            }.also {msg ->
+                Toast.makeText(context, msg, Toast.LENGTH_SHORT).show()
+                viewModel.onUserIntent(HomeIntent.OnFavoriteActionConsumed)
+            }
+        }
+    }
     private fun handleErrorUiState(): List<HomeSportEvents> {
         val errorMessage =
             getString(gr.jvoyatz.sportspot.core.common_android.R.string.sports_events_error)
@@ -99,7 +114,6 @@ class HomeFragment : Fragment() {
     }
 
     private fun handleSuccessUiState(sportEvents: List<HomeSportEvents>): List<HomeSportEvents> {
-        Timber.d("handleSuccessUiState() called with: sportEvents = " + sportEvents.size)
         return sportEvents.ifEmpty {
             listOf(getEmptyHomeSportEvent())
         }

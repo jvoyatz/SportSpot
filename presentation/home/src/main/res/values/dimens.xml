@@ -5,7 +5,7 @@
 
 
     <dimen name="margin_none">0dp</dimen>
-    <dimen name="margin_xxtiny">8dp</dimen>
+    <dimen name="margin_xxtiny">1dp</dimen>
     <dimen name="margin_xtiny">2dp</dimen>
     <dimen name="margin_tiny">4dp</dimen>
     <dimen name="margin_small">8dp</dimen>
@@ -15,10 +15,13 @@
 
     <dimen name="padding_none">0dp</dimen>
     <dimen name="padding_tiny">1dp</dimen>
+    <dimen name="padding_xxsmall">2dp</dimen>
     <dimen name="padding_xsmall">3dp</dimen>
     <dimen name="padding_small">5dp</dimen>
     <dimen name="padding_medium">10dp</dimen>
+    <dimen name="padding_xmedium">15dp</dimen>
     <dimen name="padding_large">20dp</dimen>
+    <dimen name="padding_xlarge">25dp</dimen>
 
     <dimen name="text_tiny">10sp</dimen>
     <dimen name="text_small">12sp</dimen>
@@ -33,4 +36,13 @@
     <dimen name="size_medium">2dp</dimen>
     <dimen name="size_large">4dp</dimen>
 
+    <dimen name="elevation_tiny">1dp</dimen>
+    <dimen name="elevation_small">2dp</dimen>
+    <dimen name="elevation_medium">4dp</dimen>
+    <dimen name="elevation_large">8dp</dimen>
+    <dimen name="elevation_xlarge">16dp</dimen>
+
+    <dimen name="text_max_width">100dp</dimen>
+    <dimen name="size_32dp">32dp</dimen>
+    <dimen name="size_40dp">40dp</dimen>
 </resources>

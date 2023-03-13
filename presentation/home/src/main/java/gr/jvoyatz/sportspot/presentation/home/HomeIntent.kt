@@ -1,5 +1,7 @@
 package gr.jvoyatz.sportspot.presentation.home
 
+import gr.jvoyatz.sportspot.presentation.home.models.HomeSportEvent
+
 /**
  * Represents user's actions while browsing in Home screen
  */
@@ -14,5 +16,5 @@ sealed interface HomeIntent {
     /**
      * Mark a sport event as favorite
      */
-    class FavoriteSportEvent(val sportEventId: Long) : HomeIntent
+    class OnFavoriteSportEvent(val event: HomeSportEvent, val isFavorite: Boolean) : HomeIntent
 }

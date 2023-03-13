@@ -5,5 +5,5 @@ package gr.jvoyatz.sportspot.domain.model
  */
 data class FavorableSportEvent(
     val event: SportEvent,
-    val isFavorite: Boolean
+    var isFavorite: Boolean
 )

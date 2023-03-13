@@ -3,6 +3,7 @@ package gr.jvoyatz.sportspot.core.network
 
 import com.google.common.truth.Truth
 import gr.jvoyatz.sportspot.core.network.*
+import gr.jvoyatz.sportspot.core.network.config.*
 import gr.jvoyatz.sportspot.core.testing.utils.RetrofitMockData
 
 import kotlinx.coroutines.ExperimentalCoroutinesApi
@@ -14,10 +15,10 @@ import java.io.IOException
 
 
 @OptIn(ExperimentalCoroutinesApi::class)
-class ApiResponseCallUtilsTest{
+class ApiResponseCallUtilsTest {
 
     @Test
-    fun `when response returns successfully, then returns success`() = runTest{
+    fun `when response returns successfully, then returns success`() = runTest {
         //given
         val body = true
 
@@ -31,7 +32,7 @@ class ApiResponseCallUtilsTest{
     }
 
     @Test
-    fun `safe api call with empty(null) body, returns api unknown error empty`() = runTest{
+    fun `safe api call with empty(null) body, returns api unknown error empty`() = runTest {
         //given
         val body = null
 
@@ -45,7 +46,7 @@ class ApiResponseCallUtilsTest{
     }
 
     @Test
-    fun `safe api call with empty(null) body, returns api success empty`() = runTest{
+    fun `safe api call with empty(null) body, returns api success empty`() = runTest {
         //given
         val body = null
 
@@ -60,17 +61,17 @@ class ApiResponseCallUtilsTest{
 
     @Test
     fun `safe api call with unit body, returns api success empty`() = runTest {
-            //given
-            val body = Unit
+        //given
+        val body = Unit
 
-            //when
-            val response= safeApiCall<Unit, Unit>  {
-                Response.success(body)
-            }
-
-            Truth.assertThat(response).isNotNull()
-            Truth.assertThat(response.isSuccessEmpty()).isTrue()
+        //when
+        val response = safeApiCall<Unit, Unit> {
+            Response.success(body)
         }
+
+        Truth.assertThat(response).isNotNull()
+        Truth.assertThat(response.isSuccessEmpty()).isTrue()
+    }
 
     @Test
     fun `safe api call http error bad request, returns http error `() = runTest {
@@ -87,41 +88,34 @@ class ApiResponseCallUtilsTest{
         //then
         Truth.assertThat(errorResponse).isInstanceOf(HttpError::class.java)
         Truth.assertThat(errorResponse.asHttpError()!!.code).isEqualTo(400)
-        Truth.assertThat(errorResponse.asHttpError()!!.errorBody).isEqualTo(RetrofitMockData.ERROR_RESPONSE)
+        Truth.assertThat(errorResponse.asHttpError()!!.errorBody)
+            .isEqualTo(RetrofitMockData.ERROR_RESPONSE)
     }
 
-
-
-        @Test
+    @Test
     fun `safe api call network error, returns api network error `() = runTest {
-        //given
-        val body = null
-
         //when
         val errorResponse = safeApiCall<Unit, Unit> {
             throw IOException("io exception ")
-            Response.error(500, body)
         }
 
         //then
         Truth.assertThat(errorResponse).isInstanceOf(NetworkError::class.java)
-        Truth.assertThat(errorResponse.asNetworkError()!!.error).isInstanceOf(IOException::class.java)
+        Truth.assertThat(errorResponse.asNetworkError()!!.error)
+            .isInstanceOf(IOException::class.java)
     }
 
     @Test
     fun `safe api call unexpected error, returns api unknown error `() = runTest {
-        //given
-        val body = RetrofitMockData.RESPONSE
-
         //when
         val errorResponse = safeApiCall<String, String> {
             throw IllegalStateException("test state exception")
-            Response.success(body)
         }
 
         //then
         Truth.assertThat(errorResponse).isInstanceOf(UnknownError::class.java)
-        Truth.assertThat(errorResponse.asUnknownError()!!.error).isInstanceOf(IllegalStateException::class.java)
+        Truth.assertThat(errorResponse.asUnknownError()!!.error)
+            .isInstanceOf(IllegalStateException::class.java)
     }
 
 
@@ -142,7 +136,7 @@ class ApiResponseCallUtilsTest{
 //    }
 
     @Test
-    fun ` safe raw api call, when response returns successfully, then returns success`() = runTest{
+    fun ` safe raw api call, when response returns successfully, then returns success`() = runTest {
         //given
         val body = true
 
@@ -156,7 +150,7 @@ class ApiResponseCallUtilsTest{
     }
 
     @Test
-    fun `safe raw api call with empty(null) body, returns api unknown error empty`() = runTest{
+    fun `safe raw api call with empty(null) body, returns api unknown error empty`() = runTest {
         //given
         val body = null
 
@@ -170,7 +164,7 @@ class ApiResponseCallUtilsTest{
     }
 
     @Test
-    fun `safe raw api call with empty(null) body, returns api success empty`() = runTest{
+    fun `safe raw api call with empty(null) body, returns api success empty`() = runTest {
         //given
         val body = null
 
@@ -189,7 +183,7 @@ class ApiResponseCallUtilsTest{
         val body = Unit
 
         //when
-        val response= safeApiCall<Unit, Unit>  {
+        val response = safeApiCall<Unit, Unit> {
             Response.success(body)
         }
 
@@ -212,38 +206,33 @@ class ApiResponseCallUtilsTest{
         //then
         Truth.assertThat(errorResponse).isInstanceOf(HttpError::class.java)
         Truth.assertThat(errorResponse.asHttpError()!!.code).isEqualTo(400)
-        Truth.assertThat(errorResponse.asHttpError()!!.errorBody).isEqualTo(RetrofitMockData.ERROR_RESPONSE)
+        Truth.assertThat(errorResponse.asHttpError()!!.errorBody)
+            .isEqualTo(RetrofitMockData.ERROR_RESPONSE)
     }
 
     @Test
     fun `safe raw api call network error, returns api network error `() = runTest {
-        //given
-        val body = null
-
         //when
         val errorResponse = safeRawApiCall<Unit, Unit> {
             throw IOException("io exception ")
-            body
         }
 
         //then
         Truth.assertThat(errorResponse).isInstanceOf(NetworkError::class.java)
-        Truth.assertThat(errorResponse.asNetworkError()!!.error).isInstanceOf(IOException::class.java)
+        Truth.assertThat(errorResponse.asNetworkError()!!.error)
+            .isInstanceOf(IOException::class.java)
     }
 
     @Test
     fun `safe raw api call unexpected error, returns api unknown error `() = runTest {
-        //given
-        val body = RetrofitMockData.RESPONSE
-
         //when
         val errorResponse = safeRawApiCall<String, String> {
             throw IllegalStateException("test state exception")
-            body
         }
 
         //then
         Truth.assertThat(errorResponse).isInstanceOf(UnknownError::class.java)
-        Truth.assertThat(errorResponse.asUnknownError()!!.error).isInstanceOf(IllegalStateException::class.java)
+        Truth.assertThat(errorResponse.asUnknownError()!!.error)
+            .isInstanceOf(IllegalStateException::class.java)
     }
 }

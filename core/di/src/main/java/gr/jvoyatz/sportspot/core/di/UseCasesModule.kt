@@ -5,10 +5,7 @@ import dagger.Provides
 import dagger.hilt.InstallIn
 import dagger.hilt.android.components.ViewModelComponent
 import dagger.hilt.android.scopes.ViewModelScoped
-import gr.jvoyatz.sportpot.domain.usecases.usecases.GetSportEventById
-import gr.jvoyatz.sportpot.domain.usecases.usecases.GetSportEvents
-import gr.jvoyatz.sportpot.domain.usecases.usecases.RefreshSportEvents
-import gr.jvoyatz.sportpot.domain.usecases.usecases.SportEventsUseCases
+import gr.jvoyatz.sportpot.domain.usecases.usecases.*
 
 @Module
 @InstallIn(ViewModelComponent::class)
@@ -18,6 +15,12 @@ class UseCasesModule {
     @Provides
     fun provideGetSportEvents(useCases: SportEventsUseCases): GetSportEvents {
         return useCases.getSportEvents
+    }
+
+    @ViewModelScoped
+    @Provides
+    fun provideMarkEventAsFavorite(useCases: SportEventsUseCases): MarkSportEventAsFavorite {
+        return useCases.markSportEventAsFavorite
     }
 
     @ViewModelScoped

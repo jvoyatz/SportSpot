@@ -1,3 +1,4 @@
+@file:Suppress("UnstableApiUsage")
 @Suppress("DSL_SCOPE_VIOLATION")
 plugins {
     alias(libs.plugins.android.library)
@@ -15,7 +16,6 @@ android {
         minSdk = libs.versions.minSdk.get().toInt()
         targetSdk = libs.versions.targetSdk.get().toInt()
     }
-
 
     buildTypes {
         release {
@@ -39,18 +39,24 @@ android {
 }
 
 dependencies {
+    //dependent projects
     implementation(project(":core:common"))
+    implementation(project(":core:common-android"))
     implementation(project(":domain:sport_events:model"))
     implementation(project(":domain:sport_events:usecases"))
     implementation(project(":data:sport_events:repo"))
 
-    implementation(libs.androidx.core.ktx)
+    //other
     implementation(libs.logging.timber)
-    implementation(libs.bundles.androidx.ui)
-    implementation(libs.bundles.androidx.lifecycle)
 
+    //dagger
     implementation(libs.dagger.hilt.android)
     kapt(libs.dagger.hilt.compiler)
 
+    //ui
+    implementation(libs.androidx.core.ktx)
+    implementation(libs.bundles.androidx.ui.common)
     implementation(libs.bundles.androidx.navigation)
+    implementation(libs.androidx.cardview)
+    implementation(libs.androidx.recyclerview)
 }

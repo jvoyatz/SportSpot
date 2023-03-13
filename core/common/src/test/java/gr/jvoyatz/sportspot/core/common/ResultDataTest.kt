@@ -1,22 +1,17 @@
 package gr.jvoyatz.sportspot.core.common
 
 import com.google.common.truth.Truth
-import gr.jvoyatz.common.testing.MainDispatcherRule
 import kotlinx.coroutines.ExperimentalCoroutinesApi
 import kotlinx.coroutines.flow.first
 import kotlinx.coroutines.flow.flow
 import kotlinx.coroutines.flow.flowOf
 import kotlinx.coroutines.test.runTest
 import org.junit.Assert
-import org.junit.Rule
 import org.junit.Test
 import kotlin.coroutines.cancellation.CancellationException
 
 @OptIn(ExperimentalCoroutinesApi::class)
 class ResultDataTest {
-
-    @get:Rule
-    val rule: MainDispatcherRule = MainDispatcherRule()
 
     @Test
     fun `resultdata state success with data non null`(){
@@ -210,7 +205,7 @@ class ResultDataTest {
         val res = flow.first()
 
         //then
-        Truth.assertThat(res.isSuccess())
+        Truth.assertThat(res.isSuccess()).isTrue()
         Truth.assertThat(res.asSuccess()!!.data).isEqualTo(1)
     }
 
@@ -219,7 +214,7 @@ class ResultDataTest {
         //given
         val flow = flow<Int> {
             throw IllegalStateException("test exception")
-            emit(1)
+         //   emit(1)
         }.asResult()
 
 

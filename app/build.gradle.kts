@@ -1,4 +1,5 @@
 @Suppress("DSL_SCOPE_VIOLATION")
+
 plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.kotlin.android)
@@ -38,31 +39,26 @@ android {
     }
     packagingOptions {
         resources.merges.add("META-INF/gradle/incremental.annotation.processors")
-        exclude("META-INF/LICENSE.md")
-        exclude("META-INF/LICENSE-notice.md")
+        resources.merges.add("META-INF/LICENSE.md")
+        resources.merges.add("META-INF/LICENSE-notice.md")
     }
 }
 
 dependencies {
+    //dependent modules
     implementation(project(":presentation:home"))
     implementation(project(":core:di"))
     implementation(project(":core:common"))
 
+    //dagger
     implementation(libs.dagger.hilt.android)
-    implementation("androidx.appcompat:appcompat:1.6.1")
-    implementation("com.google.android.material:material:1.4.0")
-    implementation("androidx.constraintlayout:constraintlayout:2.1.4")
     kapt(libs.dagger.hilt.compiler)
-
+    //ui
     implementation(libs.androidx.core.ktx)
     implementation(libs.bundles.androidx.ui)
     implementation(libs.bundles.androidx.navigation)
-    implementation(libs.bundles.androidx.lifecycle)
+    //other
     implementation(libs.logging.timber)
-
-    testImplementation(libs.bundles.testing.unit)
-    androidTestImplementation(libs.bundles.testing.instr)
-
 }
 
 kapt {

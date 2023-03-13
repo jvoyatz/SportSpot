@@ -5,15 +5,17 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import dagger.hilt.android.lifecycle.HiltViewModel
 import gr.jvoyatz.sportpot.domain.usecases.usecases.GetSportEvents
+import gr.jvoyatz.sportpot.domain.usecases.usecases.MarkSportEventAsFavorite
 import gr.jvoyatz.sportspot.core.common.AppDispatchers
 import gr.jvoyatz.sportspot.core.common.mapList
 import gr.jvoyatz.sportspot.core.common.onError
 import gr.jvoyatz.sportspot.core.common.onSuccess
 import gr.jvoyatz.sportspot.presentation.home.HomeUiState.PrepareHomeUiState
 import gr.jvoyatz.sportspot.presentation.home.HomeUiState.PrepareHomeUiState.OnSportsEventsSuccess
+import gr.jvoyatz.sportspot.presentation.home.models.HomeSportEvent
+import gr.jvoyatz.sportspot.presentation.home.models.toDomainModel
 import gr.jvoyatz.sportspot.presentation.home.models.toUiModel
 import kotlinx.coroutines.FlowPreview
-import kotlinx.coroutines.delay
 import kotlinx.coroutines.flow.*
 import kotlinx.coroutines.launch
 import timber.log.Timber
@@ -24,6 +26,7 @@ private const val SAVED_HOME_FRAGMENT_UI_STATE = "sportsSpotEventsHomeFragmentUi
 @HiltViewModel
 class HomeViewModel @Inject constructor(
     private val getSportEvents: GetSportEvents,
+    private val markFavoriteEvent: MarkSportEventAsFavorite,
     private val savedStateHandle: SavedStateHandle,
     private val dispatchers: AppDispatchers,
     initialUiState: HomeUiState
@@ -45,7 +48,9 @@ class HomeViewModel @Inject constructor(
     init {
         viewModelScope.launch {
             homeIntentFlow.flatMapMerge { mapHomeIntentToUseCase(it) }
-            .scan(uiState.value) { a, b -> produceHomeUiState(a, b) }
+            .scan(uiState.value) { a, b ->
+                produceHomeUiState(a, b)
+             }
             .catch { Timber.e("caught an error $it") }
             .collect{
                 savedStateHandle[SAVED_HOME_FRAGMENT_UI_STATE] = it
@@ -55,7 +60,6 @@ class HomeViewModel @Inject constructor(
 
     init {
         viewModelScope.launch {
-            delay(5000)
             Timber.d("now sending intent")
             onUserIntent(HomeIntent.GetSportEvents)
         }
@@ -76,13 +80,15 @@ class HomeViewModel @Inject constructor(
      * Gets the current state of HomeUiState, and parses the newState (PrepareHomeUiState)
      * and returns the updated HomeUiState/
      */
-    private fun produceHomeUiState(prevState: HomeUiState, newState: PrepareHomeUiState): HomeUiState =
-        when(newState){
-            is OnSportsEventsSuccess -> prevState.copy(
-                isLoading = false,
-                isError = false,
-                sportsEvents = newState.events
-            )
+    private fun produceHomeUiState(prevState: HomeUiState, newState: PrepareHomeUiState): HomeUiState {
+        return when (newState) {
+            is OnSportsEventsSuccess -> {
+                prevState.copy(
+                    isLoading = false,
+                    isError = false,
+                    sportsEvents = newState.events
+                )
+            }
             is PrepareHomeUiState.Loading -> prevState.copy(
                 isLoading = true,
                 isError = false,
@@ -93,7 +99,9 @@ class HomeViewModel @Inject constructor(
                 isError = true,
                 sportsEvents = null
             )
+            else -> prevState.copy(isLoading = false, sportsEvents = null, isError = false)
         }
+    }
 
     /**
      * Takes as a parameter a [HomeIntent] and after
@@ -103,6 +111,7 @@ class HomeViewModel @Inject constructor(
     private fun mapHomeIntentToUseCase(intent: HomeIntent): Flow<PrepareHomeUiState> {
         return when(intent){
             is HomeIntent.GetSportEvents -> getEvents()
+            is HomeIntent.OnFavoriteSportEvent -> markSportEventAsFavorite(intent.event, intent.isFavorite)
             else -> emptyFlow()
         }
     }
@@ -118,14 +127,29 @@ class HomeViewModel @Inject constructor(
         getSportEvents()
             .onStart { emit(PrepareHomeUiState.Loading) }
             .collect { result ->
-                Timber.d("Thread ${Thread.currentThread()}")
                 result
                     .onSuccess { events ->
-                        with(events.mapList { it.toUiModel() }) {
-                            emit(OnSportsEventsSuccess(this))
+                        val onFavoriteActionBlock: (HomeSportEvent, Boolean) -> Unit = { event, isFavorite ->
+                            Timber.d("will be your favorite sport event and will send intent !!! $event and is favorite $isFavorite")
+                            onUserIntent(HomeIntent.OnFavoriteSportEvent(event, !isFavorite))
                         }
+                        events.mapList { it.toUiModel(onFavoriteActionBlock) }
+                          .also {
+                              emit(OnSportsEventsSuccess(it))
+                          }
                     }
                     .onError { emit(PrepareHomeUiState.OnSportEventsError(it)) }
+            }
+    }.flowOn(dispatchers.default)
+
+    private fun markSportEventAsFavorite(homeSportEvent: HomeSportEvent, isFavorite: Boolean): Flow<PrepareHomeUiState> = flow {
+
+        emit(PrepareHomeUiState.Loading)
+        kotlinx.coroutines.delay(450)
+
+        markFavoriteEvent(homeSportEvent.toDomainModel(), isFavorite)
+            .collect { result ->
+                emit(PrepareHomeUiState.OnFavoriteSportEventSuccess)
             }
     }.flowOn(dispatchers.default)
 }

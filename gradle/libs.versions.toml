@@ -14,7 +14,7 @@ packageName = "gr.jvoyatz.sportspot"
 androidGradlePlugin = "7.4.1"
 androidxCore = "1.9.0"
 androidxAppcompat = "1.6.1"
-androidMaterial = "1.5.0"
+androidMaterial = "1.8.0"
 androidxLifecycle = "2.5.1"
 androidxConstraint = "2.1.4"
 
@@ -66,6 +66,9 @@ androidx-core-ktx = { module = "androidx.core:core-ktx", version.ref = "androidx
 androidx-appcompat = { module = "androidx.appcompat:appcompat" , version.ref = "androidxAppcompat" }
 androidx-material = { module = "com.google.android.material:material" , version.ref = "androidMaterial" }
 androidx-constraint = { module = "androidx.constraintlayout:constraintlayout", version.ref = "androidxConstraint"}
+androidx-cardview = { module = "androidx.cardview:cardview", version = "1.0.0"}
+androidx-recyclerview = { module = "androidx.recyclerview:recyclerview", version = "1.3.0"}
+androidx-viewbinding = { module = "androidx.databinding:viewbinding", version = "7.4.2" }
 #navigation
 androidx-navigation-fragment = { module = "androidx.navigation:navigation-fragment-ktx", version.ref = "androidxNavigation"}
 androidx-navigation-ui = { module = "androidx.navigation:navigation-ui-ktx", version.ref = "androidxNavigation" }
@@ -89,36 +92,63 @@ moshi = { module = "com.squareup.moshi:moshi-kotlin", version.ref = "moshi" }
 moshi-codegen = { module = "com.squareup.moshi:moshi-kotlin-codegen", version.ref = "moshi" }
 
 #room
-room = {module = "androidx.room:room-runtime", version.ref = "room" }
-room-compiler = { module = "androidx.room:room-compiler", version.ref = "room" }
-room-testing = { module = "androidx.room:room-testing", version.ref = "room" }
-room-ktx = { module = "androidx.room:room-ktx", version.ref = "room" }
-
-#unit testing
-junit = { module = "junit:junit", version.ref = "junit"}
-truth = { module = "com.google.truth:truth", version.ref = "truth" }
-turbine = { module = "app.cash.turbine:turbine", version.ref = "turbine" }
-mockk = { module = "io.mockk:mockk", version.ref = "mockk" }
-coroutines-test = { module = "org.jetbrains.kotlinx:kotlinx-coroutines-test", version.ref = "coroutines" }
-
-#instrumented testing
-androidx-junit = { module = "androidx.test.ext:junit", version.ref = "androidxJunit"}
-androidx-espresso-core = { module = "androidx.test.espresso:espresso-core", version.ref = "androidxEspresso"}
+room                                            = {module = "androidx.room:room-runtime", version.ref = "room" }
+room-compiler                                   = { module = "androidx.room:room-compiler", version.ref = "room" }
+room-testing                                    = { module = "androidx.room:room-testing", version.ref = "room" }
+room-ktx                                        = { module = "androidx.room:room-ktx", version.ref = "room" }
 
 # coroutines
-coroutines = { module = "org.jetbrains.kotlinx:kotlinx-coroutines-android", version.ref = "coroutines" }
-
-
+coroutines                                      = { module = "org.jetbrains.kotlinx:kotlinx-coroutines-android", version.ref = "coroutines" }
+coroutines-test                                 = { module = "org.jetbrains.kotlinx:kotlinx-coroutines-test", version.ref = "coroutines" }
 #other
-logging-timber = {module = "com.jakewharton.timber:timber", version.ref = "timber"}
-#!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+logging-timber                                  = { module = "com.jakewharton.timber:timber", version.ref = "timber" }
+
+#unit testing
+junit                                           = { module = "junit:junit", version.ref = "junit"}
+truth                                           = { module = "com.google.truth:truth", version.ref = "truth" }
+turbine                                         = { module = "app.cash.turbine:turbine", version.ref = "turbine" }
+mockk                                           = { module = "io.mockk:mockk", version.ref = "mockk" }
+
+#instrumented testing
+androidx-junit                                  = { module = "androidx.test.ext:junit", version.ref = "androidxJunit"}
+androidx-espresso-core                          = { module = "androidx.test.espresso:espresso-core", version.ref = "androidxEspresso"}
+
+
 
 [bundles] # combines multiple libraries
+#new
+androidx-ui-common = [
+    "androidx-appcompat",
+    "androidx-material",
+    "androidx-constraint",
+    "androidx-lifecycle-viewmodel"
+]
+androidx-navigation = [
+    "androidx-navigation-fragment",
+    "androidx-navigation-ui"
+]
+testing-common = [
+    "junit",
+    "truth",
+    "coroutines-test",
+    "turbine",
+    "mockk"
+]
+testing-common-android = [
+    "androidx-junit",
+    "androidx-espresso-core"
+]
+
+networking = [
+    "okhttp",
+    "okhttp-logging",
+    "retrofit",
+    "retrofit-moshi",
+    "moshi"
+]
+
 androidx-ui = ["androidx-appcompat", "androidx-material", "androidx-constraint"]
-androidx-navigation = ["androidx-navigation-fragment", "androidx-navigation-ui"]
-androidx-lifecycle = ["androidx-lifecycle-livedata", "androidx-lifecycle-viewmodel"]
 testing-unit = ["junit", "truth", "coroutines-test", "turbine", "mockk"]
 testing-instr = ["androidx-junit", "androidx-espresso-core"]
-networking = ["okhttp", "okhttp-logging", "retrofit","retrofit-moshi", "moshi"]
+
 room = ["room", "room-ktx"]
-common-android = ["logging-timber", "androidx-core-ktx"]

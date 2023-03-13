@@ -15,5 +15,6 @@ data class HomeUiState(
         object Loading: PrepareHomeUiState
         data class OnSportsEventsSuccess(val events: List<HomeSportEvents>): PrepareHomeUiState
         data class OnSportEventsError(val throwable: Throwable? = null): PrepareHomeUiState
+        object OnFavoriteSportEventSuccess: PrepareHomeUiState
     }
 }

@@ -2,60 +2,63 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="wrap_content"
+    android:layout_width="@dimen/text_max_width"
     android:layout_height="wrap_content"
-    android:padding="@dimen/padding_small"
+    android:layout_margin="@dimen/margin_tiny"
+    android:padding="@dimen/padding_xxsmall"
     tools:context=".HomeFragment">
 
     <com.google.android.material.card.MaterialCardView
         android:id="@+id/event_time_cardview"
+        style="@style/CardViewStrokeStyle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        app:cardBackgroundColor="@android:color/transparent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        style="@style/CardViewStrokeStyle">
-    <com.google.android.material.textview.MaterialTextView
-        android:id="@+id/event_time"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        style="@style/Body1Style"
-        tools:text="HH:MM:SS" />
+        app:layout_constraintTop_toTopOf="parent">
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/event_time"
+            style="@style/Body1Style"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:maxLines="1"
+            android:ellipsize="end"
+            tools:text="HH:MM:SS" />
     </com.google.android.material.card.MaterialCardView>
 
     <ImageView
         android:id="@+id/event_favorite"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="@dimen/size_32dp"
+        android:layout_height="@dimen/size_32dp"
         android:layout_marginTop="@dimen/margin_small"
+        android:contentDescription="@null"
+        app:tint="@color/gold"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toBottomOf="@id/event_time_cardview"
-        app:srcCompat="@drawable/baseline_star_24" />
-
+        app:srcCompat="@drawable/sport_favorite" />
 
     <com.google.android.material.textview.MaterialTextView
         android:id="@+id/event_teams_first"
         style="@style/SportEventBodyTextStyle"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        app:layout_constraintTop_toBottomOf="@id/event_favorite"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        tools:text="Barcelona"
         android:layout_marginTop="@dimen/margin_small"
-        />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/event_favorite"
+        tools:text="Donar Groningen asdfasdfasdfasdffadsfasdf" />
+
     <com.google.android.material.textview.MaterialTextView
         android:id="@+id/event_teams_second"
+        style="@style/SportEventBodyTextStyle"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        app:layout_constraintTop_toBottomOf="@id/event_teams_first"
-        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        tools:text="Manchester United Fc Test"
-        style="@style/SportEventBodyTextStyle"
-        />
-
-
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/event_teams_first"
+        tools:text="BC Kalev/Cramo Tallinn" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

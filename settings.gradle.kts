@@ -1,3 +1,5 @@
+@file:Suppress("UnstableApiUsage")
+
 pluginManagement {
     repositories {
         google()
@@ -28,3 +30,4 @@ include(":core:common-testing")
 include(":core:database")
 include(":core:di")
 include(":presentation:home")
+include(":core:common-android")

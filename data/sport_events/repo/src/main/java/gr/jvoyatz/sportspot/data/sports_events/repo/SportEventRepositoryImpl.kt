@@ -12,10 +12,9 @@ import gr.jvoyatz.sportspot.data.sports_events.repo.mappers.SportEventsEntityMap
 import gr.jvoyatz.sportspot.data.sports_events.repo.mappers.SportEventsEntityMapper.entityToDomain
 import gr.jvoyatz.sportspot.data.sports_events.repo.mappers.asSportEventException
 import gr.jvoyatz.sportspot.domain.model.FavorableSportEvent
-import kotlinx.coroutines.flow.Flow
-import kotlinx.coroutines.flow.catch
-import kotlinx.coroutines.flow.map
-import kotlinx.coroutines.flow.onEach
+import gr.jvoyatz.sportspot.domain.model.SportEvents
+import kotlinx.coroutines.flow.*
+import timber.log.Timber
 import javax.inject.Inject
 
 //keep it for debugging
@@ -32,13 +31,14 @@ class SportEventRepositoryImpl @Inject constructor(
      * It executes a query in the `in memory` db, to get all the cached data.
      * If no data found, then it calls the refreshSportEvents method to get fresh data
      */
-    override /*suspend*/ fun getSportEvents(): Flow<List<gr.jvoyatz.sportspot.domain.model.SportEvents>> {
+    override /*suspend*/ fun getSportEvents(): Flow<List<SportEvents>> {
         return dbClient.getSportEvents()
             .map {entities ->
-                val list = entities.mapList { it.entityToDomain() }
-                list
+                entities.mapList { it.entityToDomain() }
             }
-
+            .map { sportCategories ->
+                getFilteredAndSortedEvents(sportCategories)
+            }
             .onEach {
                 if(it.isEmpty()){
                     refreshSportEvents()
@@ -49,9 +49,24 @@ class SportEventRepositoryImpl @Inject constructor(
                     this.asSportEventException().also { throw it }
                 }
             }
-
     }
 
+    /**
+     * Sort the events found for each sport category
+     * based on if they have been marked as favorite or not
+     * as well as their date.
+     */
+    private fun getFilteredAndSortedEvents(sportCategory: List<SportEvents>): List<SportEvents> {
+        return sportCategory.map { category ->
+            val favEventsMap = category.events.groupBy { it.isFavorite }.toMap()
+
+            val favorites = favEventsMap[true]?.sortedBy { it.event.startDateTimeStamp } ?: listOf()
+            val nonFavorites = favEventsMap[false]?.sortedBy { it.event.startDateTimeStamp } ?: listOf()
+
+            val combinedLists = favorites + nonFavorites
+            category.copy(events = combinedLists)
+        }.toList()
+    }
     /**
      * Executes a network request to fetch sport events
      *  in case of a success, it saves them into the local cache after having
@@ -85,5 +100,27 @@ class SportEventRepositoryImpl @Inject constructor(
                 }
             }
             //.flowOn(appDispatchers.io)
+    }
+
+    override suspend fun markSportEventAsFavorite(sportId: String, id: Long, asFavorite: Boolean) {
+        Timber.d("called in Thread ${Thread.currentThread()} !!!")
+        val list = dbClient.getSportEvents().first()
+
+        val entity = list.firstOrNull {
+            it.id == sportId
+        }?.events?.firstOrNull {
+            it.id == id
+        }
+        if(entity != null && entity.isFavorite != asFavorite){
+            entity.isFavorite = asFavorite
+            Timber.d("marking it as favorite!!")
+            Timber.d("list $list")
+        }else {
+            Timber.d("no change made")
+        }
+        if (list.isNotEmpty()) {
+            Timber.i("updating db")
+            dbClient.insertSportEvents(list)
+        }
     }
 }

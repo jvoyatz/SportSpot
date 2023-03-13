@@ -45,4 +45,6 @@
     <dimen name="text_max_width">100dp</dimen>
     <dimen name="size_32dp">32dp</dimen>
     <dimen name="size_40dp">40dp</dimen>
+    <dimen name="size_1dp">1dp</dimen>
+    <dimen name="size_4dp">4dp</dimen>
 </resources>

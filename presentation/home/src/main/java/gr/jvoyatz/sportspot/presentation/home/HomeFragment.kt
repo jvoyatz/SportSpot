@@ -11,6 +11,7 @@ import androidx.lifecycle.lifecycleScope
 import androidx.lifecycle.repeatOnLifecycle
 import androidx.recyclerview.widget.LinearLayoutManager
 import dagger.hilt.android.AndroidEntryPoint
+import gr.jvoyatz.core.common_android.adapters.setup
 import gr.jvoyatz.sportspot.presentation.home.adapters.SportAdapter
 import gr.jvoyatz.sportspot.presentation.home.databinding.FragmentHomeBinding
 import gr.jvoyatz.sportspot.presentation.home.models.LoadingHomeSportEvent
@@ -42,10 +43,10 @@ class HomeFragment : Fragment() {
 
     private fun init(binding: FragmentHomeBinding, viewModel: HomeViewModel){
         binding.homeSportsRv.apply {
-            this.layoutManager = LinearLayoutManager(this@HomeFragment.context)
-            this.adapter = sportsAdapter
-            setHasFixedSize(true)
-            setItemViewCacheSize(10)
+            sportsAdapter.apply {
+                setHasFixedSize(true)
+            }
+            setup(sportsAdapter, LinearLayoutManager(this@HomeFragment.context))
         }
         initFlow(viewModel)
     }

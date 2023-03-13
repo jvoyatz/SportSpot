@@ -27,10 +27,9 @@ class SportEventsAdapter :
             holder.bind(it)
         }
     }
-
-    override fun getItemId(position: Int): Long {
-        return getItem(position).event.id.hashCode().toLong()
-    }
+//    override fun getItemId(position: Int): Long {
+//        return getItem(position).event.id.hashCode().toLong()
+//    }
 }
 
 private val FAVORABLE_SPORT_EVENT_DIFF_CALLBACK =

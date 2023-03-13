@@ -3,6 +3,7 @@ package gr.jvoyatz.sportspot.presentation.home.adapters.viewholders
 import android.view.View
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import gr.jvoyatz.core.common_android.adapters.setup
 import gr.jvoyatz.sportspot.presentation.home.R
 import gr.jvoyatz.sportspot.presentation.home.adapters.SportEventsAdapter
 import gr.jvoyatz.sportspot.presentation.home.databinding.FragmentHomeRvItemBinding
@@ -22,11 +23,7 @@ class SportViewHolder(
     init {
         binding.apply {
             sportExpandIcon.setOnClickListener{ onHandleItemExpansion() }
-            sportEventsRv.layoutManager = LinearLayoutManager(root.context, LinearLayoutManager.HORIZONTAL, false)
-            eventsAdapter.setHasStableIds(true)
-            sportEventsRv.adapter = eventsAdapter
-            sportEventsRv.setHasFixedSize(true)
-            sportEventsRv.setItemViewCacheSize(20)
+            sportEventsRv.setup(eventsAdapter, LinearLayoutManager(root.context, LinearLayoutManager.HORIZONTAL, false))
             sportExpandIcon.setImageResource(R.drawable.arrow_up)
         }
     }

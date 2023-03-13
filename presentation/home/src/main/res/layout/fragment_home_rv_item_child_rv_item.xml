@@ -8,26 +8,29 @@
     android:padding="@dimen/padding_xxsmall"
     tools:context=".HomeFragment">
 
-    <com.google.android.material.card.MaterialCardView
-        android:id="@+id/event_time_cardview"
-        style="@style/CardViewStrokeStyle"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:cardBackgroundColor="@android:color/transparent"
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/event_time"
+        style="@style/Body1Style"
+        android:background="@drawable/stroke_bg"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:maxLines="1"
+        android:ellipsize="end"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/cardview_guideline"
+        tools:text="HH:MM:SS" />
 
-        <com.google.android.material.textview.MaterialTextView
-            android:id="@+id/event_time"
-            style="@style/Body1Style"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:maxLines="1"
-            android:ellipsize="end"
-            tools:text="HH:MM:SS" />
-    </com.google.android.material.card.MaterialCardView>
 
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/cardview_guideline"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.25"
+        />
     <ImageView
         android:id="@+id/event_favorite"
         android:layout_width="@dimen/size_32dp"
@@ -37,15 +40,16 @@
         app:tint="@color/gold"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/event_time_cardview"
+        app:layout_constraintTop_toBottomOf="@id/cardview_guideline"
         app:srcCompat="@drawable/sport_favorite" />
 
     <com.google.android.material.textview.MaterialTextView
         android:id="@+id/event_teams_first"
         style="@style/SportEventBodyTextStyle"
-        android:layout_width="0dp"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="@dimen/margin_small"
+        app:layout_constrainedWidth="true"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/event_favorite"
@@ -54,8 +58,9 @@
     <com.google.android.material.textview.MaterialTextView
         android:id="@+id/event_teams_second"
         style="@style/SportEventBodyTextStyle"
-        android:layout_width="0dp"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        app:layout_constrainedWidth="true"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/event_teams_first"

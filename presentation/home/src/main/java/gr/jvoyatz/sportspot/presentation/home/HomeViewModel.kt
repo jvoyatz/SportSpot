@@ -145,7 +145,7 @@ class HomeViewModel @Inject constructor(
     private fun markSportEventAsFavorite(homeSportEvent: HomeSportEvent, isFavorite: Boolean): Flow<PrepareHomeUiState> = flow {
 
         emit(PrepareHomeUiState.Loading)
-        kotlinx.coroutines.delay(450)
+        kotlinx.coroutines.delay(500)
 
         markFavoriteEvent(homeSportEvent.toDomainModel(), isFavorite)
             .collect { result ->

@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <style name="SportSubtitleAllCapsTextStyle" parent="TextAppearance.MaterialComponents.Subtitle2">
+        <item name="textAllCaps">true</item>
+        <item name="android:textSize">@dimen/text_medium</item>
+        <item name="android:padding">@dimen/padding_small</item>
+        <item name="android:autoSizeTextType" tools:ignore="NewApi">uniform</item>
+        <item name="autoSizeTextType">uniform</item>
+        <item name="autoSizeStepGranularity">1sp</item>
+        <item name="android:autoSizeStepGranularity" tools:ignore="NewApi">1sp</item>
+        <item name="autoSizeMinTextSize">@dimen/text_small</item>
+        <item name="autoSizeMaxTextSize">@dimen/text_medium</item>
+        <item name="android:autoSizeMinTextSize" tools:ignore="NewApi">@dimen/text_small</item>
+        <item name="android:autoSizeMaxTextSize" tools:ignore="NewApi">@dimen/text_medium</item>
+    </style>
+
+    <style name="SportEventBodyTextStyle" parent="TextAppearance.MaterialComponents.Body2">
+        <item name="android:textSize">@dimen/text_normal</item>
+        <item name="android:maxLines">2</item>
+        <item name="maxLines">2</item>
+        <item name="android:ellipsize">end</item>
+        <item name="android:autoSizeTextType" tools:ignore="NewApi">uniform</item>
+        <item name="autoSizeTextType">uniform</item>
+        <item name="autoSizeStepGranularity">1sp</item>
+        <item name="android:autoSizeStepGranularity" tools:ignore="NewApi">1sp</item>
+        <item name="autoSizeMinTextSize">@dimen/text_small</item>
+        <item name="autoSizeMaxTextSize">@dimen/text_normal</item>
+        <item name="android:autoSizeMinTextSize" tools:ignore="NewApi">@dimen/text_small</item>
+        <item name="android:autoSizeMaxTextSize" tools:ignore="NewApi">@dimen/text_normal</item>
+        <item name="android:gravity">center</item>
+        <!--<item name="android:layout_margin">@dimen/margin_none</item>-->
+        <!--<item name="android:padding">@dimen/padding_none</item>-->
+    </style>
+
+    <style name="Body1Style" parent="TextAppearance.MaterialComponents.Body1">
+        <item name="android:textSize">@dimen/text_medium</item>
+        <item name="android:maxLines">2</item>
+        <item name="maxLines">2</item>
+        <item name="android:ellipsize">end</item>
+        <item name="android:autoSizeTextType" tools:ignore="NewApi">uniform</item>
+        <item name="autoSizeTextType">uniform</item>
+        <item name="autoSizeStepGranularity">1sp</item>
+        <item name="android:autoSizeStepGranularity" tools:ignore="NewApi">1sp</item>
+        <item name="autoSizeMinTextSize">@dimen/text_small</item>
+        <item name="autoSizeMaxTextSize">@dimen/text_normal</item>
+        <item name="android:autoSizeMinTextSize" tools:ignore="NewApi">@dimen/text_small</item>
+        <item name="android:autoSizeMaxTextSize" tools:ignore="NewApi">@dimen/text_medium</item>
+        <item name="android:gravity">center</item>
+        <item name="android:padding">@dimen/padding_tiny</item>
+    </style>
+    
+    <style name="CardViewStrokeStyle" parent="Widget.MaterialComponents.CardView">
+        <item name="strokeColor">?attr/colorSecondary</item>
+        <item name="strokeWidth">@dimen/size_medium</item>
+        <item name="android:strokeWidth">@dimen/size_medium</item>
+        <item name="android:strokeColor">?attr/colorSecondary</item>
+        <item name="cardElevation">@dimen/margin_medium</item>
+        <item name="cardMaxElevation">@dimen/margin_large</item>
+    </style>
+</resources>

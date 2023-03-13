@@ -130,7 +130,6 @@ class HomeViewModel @Inject constructor(
                 result
                     .onSuccess { events ->
                         val onFavoriteActionBlock: (HomeSportEvent, Boolean) -> Unit = { event, isFavorite ->
-                            Timber.d("will be your favorite sport event and will send intent !!! $event and is favorite $isFavorite")
                             onUserIntent(HomeIntent.OnFavoriteSportEvent(event, !isFavorite))
                         }
                         events.mapList { it.toUiModel(onFavoriteActionBlock) }
@@ -142,12 +141,17 @@ class HomeViewModel @Inject constructor(
             }
     }.flowOn(dispatchers.default)
 
+    /**
+     * Marks an event as favorite
+     */
     private fun markSportEventAsFavorite(homeSportEvent: HomeSportEvent, isFavorite: Boolean): Flow<PrepareHomeUiState> = flow {
-
         emit(PrepareHomeUiState.Loading)
         kotlinx.coroutines.delay(500)
 
         markFavoriteEvent(homeSportEvent.toDomainModel(), isFavorite)
+            .catch {
+
+            }
             .collect { result ->
                 emit(PrepareHomeUiState.OnFavoriteSportEventSuccess)
             }

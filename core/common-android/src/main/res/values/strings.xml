@@ -3,4 +3,8 @@
     <string name="loading">Loading…</string>
     <string name="days">days</string>
     <string name="not_available">not available</string>
+    <string name="sports_events_not_found">No events scheduled</string>
+    <string name="sports_events_not_provided">No data provided</string>
+    <string name="sports_events_error">An error occurred, please press retry</string>
+    <string name="retry">Retry</string>
 </resources>

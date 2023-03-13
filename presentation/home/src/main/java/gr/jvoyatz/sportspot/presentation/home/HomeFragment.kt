@@ -1,6 +1,7 @@
 package gr.jvoyatz.sportspot.presentation.home
 
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -14,8 +15,12 @@ import dagger.hilt.android.AndroidEntryPoint
 import gr.jvoyatz.core.common_android.adapters.setup
 import gr.jvoyatz.sportspot.presentation.home.adapters.SportAdapter
 import gr.jvoyatz.sportspot.presentation.home.databinding.FragmentHomeBinding
+import gr.jvoyatz.sportspot.presentation.home.models.HomeSportEvents
 import gr.jvoyatz.sportspot.presentation.home.models.LoadingHomeSportEvent
+import gr.jvoyatz.sportspot.presentation.home.models.getEmptyHomeSportEvent
+import gr.jvoyatz.sportspot.presentation.home.models.getErrorHomeSportEvent
 import kotlinx.coroutines.launch
+import timber.log.Timber
 
 
 @AndroidEntryPoint
@@ -41,7 +46,7 @@ class HomeFragment : Fragment() {
         init(binding, viewModel)
     }
 
-    private fun init(binding: FragmentHomeBinding, viewModel: HomeViewModel){
+    private fun init(binding: FragmentHomeBinding, viewModel: HomeViewModel) {
         binding.homeSportsRv.apply {
             sportsAdapter.apply {
                 setHasFixedSize(true)
@@ -51,10 +56,10 @@ class HomeFragment : Fragment() {
         initFlow(viewModel)
     }
 
-    private fun initFlow(viewModel: HomeViewModel){
+    private fun initFlow(viewModel: HomeViewModel) {
         viewLifecycleOwner.lifecycleScope.launch {
-            viewLifecycleOwner.repeatOnLifecycle(Lifecycle.State.STARTED){
-                viewModel.uiState.collect{
+            viewLifecycleOwner.repeatOnLifecycle(Lifecycle.State.STARTED) {
+                viewModel.uiState.collect {
                     submitAdapterData(it)
                 }
             }
@@ -67,14 +72,36 @@ class HomeFragment : Fragment() {
                 sportsAdapter.submitList(listOf(LoadingHomeSportEvent))
             }
             uiState.isError -> {
-
+                handleErrorUiState().also {
+                    sportsAdapter.submitList(it)
+                }
             }
             uiState.sportsEvents != null -> {
-                sportsAdapter.submitList(uiState.sportsEvents)
+
+                handleSuccessUiState(uiState.sportsEvents)
+                    .also {
+                        sportsAdapter.submitList(it)
+                    }
             }
             else -> {
-                //sportsAdapter.submitList(listOf())
+
             }
+        }
+    }
+
+    private fun handleErrorUiState(): List<HomeSportEvents> {
+        val errorMessage =
+            getString(gr.jvoyatz.sportspot.core.common_android.R.string.sports_events_error)
+        val errorModel = getErrorHomeSportEvent(errorMessage) {
+            viewModel.onUserIntent(HomeIntent.GetSportEvents)
+        }
+        return listOf(errorModel)
+    }
+
+    private fun handleSuccessUiState(sportEvents: List<HomeSportEvents>): List<HomeSportEvents> {
+        Timber.d("handleSuccessUiState() called with: sportEvents = " + sportEvents.size)
+        return sportEvents.ifEmpty {
+            listOf(getEmptyHomeSportEvent())
         }
     }
 }

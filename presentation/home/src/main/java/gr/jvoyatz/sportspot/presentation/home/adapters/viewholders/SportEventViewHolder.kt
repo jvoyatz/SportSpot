@@ -5,7 +5,7 @@ package gr.jvoyatz.sportspot.presentation.home.adapters.viewholders
 import android.os.CountDownTimer
 import android.view.View
 import androidx.recyclerview.widget.RecyclerView
-import gr.jvoyatz.sportspot.presentation.home.R
+import gr.jvoyatz.sportspot.core.common_android.R
 import gr.jvoyatz.sportspot.presentation.home.databinding.FragmentHomeRvItemChildRvItemBinding
 import gr.jvoyatz.sportspot.presentation.home.models.HomeFavorableSportEvent
 import java.util.concurrent.TimeUnit
@@ -42,7 +42,7 @@ class SportEventViewHolder(
             binding.eventTeamsFirst.text = sport.event.team1
             binding.eventTeamsSecond.text = sport.event.team2
             val icon: Int =
-                if (sport.isFavorite) R.drawable.sport_favorite else R.drawable.sport_non_favorite
+                if (sport.isFavorite) gr.jvoyatz.sportspot.presentation.home.R.drawable.sport_favorite else gr.jvoyatz.sportspot.presentation.home.R.drawable.sport_non_favorite
             val diffUntilStartDate =
                 sport.event.startDateTimeStamp * 1000 - System.currentTimeMillis()
                     .also {
@@ -63,7 +63,7 @@ class SportEventViewHolder(
                 }
 
                 override fun onFinish() {
-                    binding.eventTime.text = binding.root.context.getString(R.string.not_available)
+                    binding.eventTime.text = binding.root.context.getString(R.string.days)
                 }
             }.start()
         }

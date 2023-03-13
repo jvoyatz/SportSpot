@@ -8,19 +8,28 @@ object AdapterItemTypeConstants {
     const val LOADING = "1"
     const val ITEM = "2"
     const val ERROR = "-1"
+    const val EMPTY = "0"
+
+    const val TYPE_LOADING = 1
+    const val TYPE_ITEM = 2
+    const val TYPE_ERROR = -1
+    const val TYPE_EMPTY = 0
 }
 
 internal object RecyclerViewConfig{
     val pool = RecyclerView.RecycledViewPool().apply {
-      //  setMaxRecycledViews(AdapterItemTypeConstants.LOADING.toInt(), 1)
-      //  setMaxRecycledViews(AdapterItemTypeConstants.ITEM.toInt(), 20)
+//        setMaxRecycledViews(AdapterItemTypeConstants.TYPE_ERROR, 1)
+//        setMaxRecycledViews(AdapterItemTypeConstants.TYPE_EMPTY, 1)
+//        setMaxRecycledViews(AdapterItemTypeConstants.TYPE_LOADING, 1)
+//        setMaxRecycledViews(AdapterItemTypeConstants.TYPE_ITEM, 20)
     }
 }
 fun RecyclerView.setup(adapter: RecyclerView.Adapter<*>, linearLayoutManager: LinearLayoutManager){
     //this.setItemViewCacheSize(20)
-    this.layoutManager = linearLayoutManager.apply {
-        this.recycleChildrenOnDetach = true
-    }
-    setRecycledViewPool(pool)
+//    .apply {
+//        this.recycleChildrenOnDetach = true
+//    }
+    //setRecycledViewPool(pool)
+    this.layoutManager = linearLayoutManager
     this.adapter = adapter
 }

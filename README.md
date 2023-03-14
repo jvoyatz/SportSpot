@@ -60,8 +60,8 @@ for this screen(feature).
 + Using flows for providing using streams
 + Wrapping tasks into flows, see ResultData
 + Using MVI arch for handling the data provided to the ui. That means that UiState sealed classes exist in the code as well as a single point of taking care of user actions
-+ Used ListAdapters for the recyclerviews, supporting multiple view types in the first. Tried to config the adapters to 'play together' meaning sharing the same pool that i ran into some problems, so i commented out. For sure i would like to discuss that with you.
-+ Tweaked as much as i coould my layouts and my constraints in order to avoid flickering effects etc
++ Used ListAdapters for the recycler views, supporting multiple view types in the first. Tried to config the adapters to 'play together' meaning sharing the same pool that i ran into some problems, so i commented out. For sure i would like to discuss that with you.
++ Tweaked as much as i could my layouts and my constraints in order to avoid flickering effects etc
 + I provided some unit tests and a few instrumented tests in the lower layers of the code. Didn't have actually time to provide tests for viewmodel. As an approach i would say, that since i can play with fake or mock dependencies, it is easy to provide tests for the viewmodel as well as for the use cases. In the end a pretty integration test (meaning testing two or more components together) could be written. I would mix mocking with fakes (mocking for datasources), fakes for the rest.
 + I ve written test using the mock server dep.
 + Supporting process death using savedStateHandle and flows.

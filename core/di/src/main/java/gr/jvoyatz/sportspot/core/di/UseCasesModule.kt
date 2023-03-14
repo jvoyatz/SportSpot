@@ -19,7 +19,7 @@ class UseCasesModule {
 
     @ViewModelScoped
     @Provides
-    fun provideMarkEventAsFavorite(useCases: SportEventsUseCases): MarkSportEventAsFavorite {
+    fun provideMarkEventAsFavorite(useCases: SportEventsUseCases): SetFavoriteSportEvent {
         return useCases.markSportEventAsFavorite
     }
 

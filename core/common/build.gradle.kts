@@ -11,7 +11,7 @@ java {
 }
 
 dependencies{
-    testImplementation(project(":core:common-testing"))
+    
     implementation(libs.coroutines)
     implementation(libs.javax.inject)
     testImplementation(libs.bundles.testing.unit)

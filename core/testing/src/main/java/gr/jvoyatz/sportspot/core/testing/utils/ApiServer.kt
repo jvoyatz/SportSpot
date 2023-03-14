@@ -1,7 +1,5 @@
 package gr.jvoyatz.sportspot.core.testing.utils
 
-import com.squareup.moshi.Moshi
-import gr.jvoyatz.common.testing.MainDispatcherRule
 import okhttp3.mockwebserver.MockResponse
 import okhttp3.mockwebserver.MockWebServer
 import okhttp3.mockwebserver.SocketPolicy

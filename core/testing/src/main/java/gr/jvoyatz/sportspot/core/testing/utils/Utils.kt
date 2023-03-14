@@ -3,7 +3,6 @@ package gr.jvoyatz.sportspot.core.testing.utils
 import com.squareup.moshi.Moshi
 import com.squareup.moshi.Types
 import com.squareup.moshi.kotlin.reflect.KotlinJsonAdapterFactory
-import gr.jvoyatz.common.testing.MainDispatcherRule
 import gr.jvoyatz.sportspot.core.common.AppDispatchers
 import kotlinx.coroutines.CoroutineDispatcher
 import kotlinx.coroutines.ExperimentalCoroutinesApi

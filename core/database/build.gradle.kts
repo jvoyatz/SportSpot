@@ -36,6 +36,8 @@ android {
     }
     packagingOptions {
         resources.merges.add("META-INF/gradle/incremental.annotation.processors")
+        resources.merges.add("META-INF/LICENSE.md")
+        resources.merges.add("META-INF/LICENSE-notice.md")
     }
 }
 

@@ -35,7 +35,6 @@ android {
 
 dependencies {
     implementation(project(":core:common"))
-    implementation(project(":core:common-testing"))
 
     implementation(libs.bundles.testing.unit)
     implementation(libs.coroutines.test)

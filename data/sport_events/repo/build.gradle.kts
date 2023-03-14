@@ -43,7 +43,7 @@ dependencies {
     implementation(libs.javax.inject)
     implementation(libs.coroutines)
 
-    testImplementation(project(":core:common-testing"))
+    
     testImplementation(project(":core:testing"))
     testImplementation (libs.coroutines.test)
     testImplementation(libs.bundles.testing.unit)

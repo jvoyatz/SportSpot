@@ -26,7 +26,7 @@ include(":domain:sport_events:usecases")
 include(":data:sport_events:repo")
 include(":data:sport_events:source-net")
 include(":data:sport_events:source-db")
-include(":core:common-testing")
+
 include(":core:database")
 include(":core:di")
 include(":presentation:home")

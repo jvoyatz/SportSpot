@@ -126,7 +126,6 @@ class HomeViewModel @Inject constructor(
             is HomeIntent.GetSportEvents -> getEvents()
             is HomeIntent.OnFavoriteSportEvent -> markSportEventAsFavorite(intent.event, intent.isFavorite)
             is HomeIntent.OnFavoriteActionConsumed -> flow {
-                Timber.d("emit empty!!")
                 emit(PrepareHomeUiState.Empty)
             }
             else -> emptyFlow()

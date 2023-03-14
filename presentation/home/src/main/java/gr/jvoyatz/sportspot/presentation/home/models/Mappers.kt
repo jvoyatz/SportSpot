@@ -2,7 +2,7 @@ package gr.jvoyatz.sportspot.presentation.home.models
 
 import gr.jvoyatz.sportspot.domain.model.FavorableSportEvent
 import gr.jvoyatz.sportspot.domain.model.SportEvent
-import gr.jvoyatz.sportspot.domain.model.SportEvents
+import gr.jvoyatz.sportspot.domain.model.SportCategory
 import gr.jvoyatz.sportspot.presentation.home.R
 
 
@@ -21,7 +21,7 @@ fun FavorableSportEvent.toUiModel(onFavoriteAction: (HomeSportEvent, Boolean) ->
     this.onFavoriteAction = onFavoriteAction
 }
 
-fun SportEvents.toUiModel(onFavoriteAction: (HomeSportEvent, Boolean) -> Unit) = HomeSportEvents(
+fun SportCategory.toUiModel(onFavoriteAction: (HomeSportEvent, Boolean) -> Unit) = HomeSportCategory(
     id = id,
     name = name,
     events = events.map { it.toUiModel(onFavoriteAction) },

@@ -7,7 +7,7 @@ import androidx.test.ext.junit.runners.AndroidJUnit4
 import com.google.common.truth.Truth
 import com.squareup.moshi.Moshi
 import gr.jvoyatz.sportspot.core.database.entities.SportEventEntity
-import gr.jvoyatz.sportspot.core.database.entities.SportEventsEntity
+import gr.jvoyatz.sportspot.core.database.entities.SportCategoryEntity
 import gr.jvoyatz.sportspot.core.testing.utils.Utils
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.ExperimentalCoroutinesApi
@@ -26,12 +26,12 @@ import java.util.concurrent.CountDownLatch
 @RunWith(AndroidJUnit4::class)
 class SportEventsDatabaseTest {
 
-    private lateinit var sportEventsDao: SportsEventsDao
+    private lateinit var sportEventsDao: SportEventsDao
     private lateinit var db: SportSpotDatabase
     private val moshi: Moshi = Utils.moshi
 
     private val event = SportEventEntity(1, "asdf", "foot","", 1234)
-    private val eventsEntity = SportEventsEntity("foot", "name",/*  EventHolder(*/listOf(event))//)
+    private val eventsEntity = SportCategoryEntity("foot", "name",/*  EventHolder(*/listOf(event))//)
 
     @Before
     fun setup(){
@@ -39,7 +39,7 @@ class SportEventsDatabaseTest {
         val typeConverter = SportEventConverter(moshi)
         db = Room.inMemoryDatabaseBuilder(context, SportSpotDatabase::class.java)
             .addTypeConverter(typeConverter).build()
-        sportEventsDao = db.sportEventsDao();
+        sportEventsDao = db.sportEventsDao()
     }
 
     @After
@@ -53,10 +53,10 @@ class SportEventsDatabaseTest {
     fun insertNewSportEvents() = runTest {
 
         //when
-        sportEventsDao.insertSportEvents(listOf(eventsEntity))
+        sportEventsDao.insertEvents(listOf(eventsEntity))
 
         //then
-        val result = sportEventsDao.selectSportEvents().first()
+        val result = sportEventsDao.selectEvents().first()
         Truth.assertThat(result.size).isEqualTo(1)
     }
 
@@ -64,15 +64,15 @@ class SportEventsDatabaseTest {
     @Throws(Exception::class)
     fun deleteSportEvents() = runTest {
         //given
-        sportEventsDao.insertSportEvents(listOf(eventsEntity))
-        var storedEvents = sportEventsDao.selectSportEvents().first()
+        sportEventsDao.insertEvents(listOf(eventsEntity))
+        var storedEvents = sportEventsDao.selectEvents().first()
         Truth.assertThat(storedEvents).isNotEmpty()
 
         //when
-        sportEventsDao.deleteSportEvents()
+        sportEventsDao.deleteEvents()
 
         //then
-        storedEvents = sportEventsDao.selectSportEvents().first()
+        storedEvents = sportEventsDao.selectEvents().first()
         Truth.assertThat(storedEvents).isEmpty()
     }
 
@@ -85,12 +85,12 @@ class SportEventsDatabaseTest {
             eventsEntity,
             eventsEntity.copy(name = "new test test ! name", id = "soccer", events = listOf())
         )
-        sportEventsDao.insertSportEvents(sportEvents)
+        sportEventsDao.insertEvents(sportEvents)
 
         //when
         val latch = CountDownLatch(1)
         val job = async(Dispatchers.IO) {
-            sportEventsDao.selectSportEvents().collect{
+            sportEventsDao.selectEvents().collect{
                 latch.countDown()
             }
         }

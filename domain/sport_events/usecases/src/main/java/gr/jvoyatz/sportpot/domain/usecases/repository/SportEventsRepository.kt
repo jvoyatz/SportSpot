@@ -1,7 +1,7 @@
 package gr.jvoyatz.sportpot.domain.usecases.repository
 
 import gr.jvoyatz.sportspot.domain.model.FavorableSportEvent
-import gr.jvoyatz.sportspot.domain.model.SportEvents
+import gr.jvoyatz.sportspot.domain.model.SportCategory
 import kotlinx.coroutines.flow.Flow
 
 
@@ -12,7 +12,7 @@ interface SportEventsRepository {
     /**
      * Emits data with the new scheduled events
      */
-    /*suspend*/ fun getSportEvents(): Flow<List<SportEvents>>
+    /*suspend*/ fun getSportEvents(): Flow<List<SportCategory>>
 
     /**
      * Attempts to fetch new data from the remote service

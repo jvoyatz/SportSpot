@@ -38,7 +38,7 @@ dependencies {
 
     implementation(libs.bundles.testing.unit)
     implementation(libs.coroutines.test)
-    //androidTestImplementation(libs.bundles.testing.instr)
+    //androidTestImplementation(libs.bundles.testing.common.android)
     implementation(libs.bundles.networking)
     implementation(libs.okhttp.mockwebserver)
 }

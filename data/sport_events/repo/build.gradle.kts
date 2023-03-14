@@ -47,5 +47,5 @@ dependencies {
     testImplementation(project(":core:testing"))
     testImplementation (libs.coroutines.test)
     testImplementation(libs.bundles.testing.unit)
-    androidTestImplementation(libs.bundles.testing.instr)
+    androidTestImplementation(libs.bundles.testing.common.android)
 }

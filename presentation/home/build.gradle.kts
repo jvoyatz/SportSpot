@@ -59,4 +59,11 @@ dependencies {
     implementation(libs.bundles.androidx.navigation)
     implementation(libs.androidx.cardview)
     implementation(libs.androidx.recyclerview)
+
+    //testing
+    testImplementation(libs.bundles.testing.common)
+    testImplementation(libs.turbine)
+    testImplementation(project(":core:testing"))
+    testImplementation(project(":core:database"))
+    testImplementation(project(":core:network"))
 }

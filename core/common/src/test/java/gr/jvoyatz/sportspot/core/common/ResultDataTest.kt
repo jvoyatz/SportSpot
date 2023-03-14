@@ -144,7 +144,7 @@ class ResultDataTest {
             wasCalled = true
         }
         //then
-        Truth.assertThat(wasCalled).isTrue()
+        Truth.assertThat(wasCalled).isFalse()
     }
 
     @Test

@@ -40,14 +40,16 @@ dependencies {
 
     implementation(libs.logging.timber)
     implementation(libs.dagger.hilt.android)
+
+    implementation(libs.bundles.networking)
+
     kapt(libs.dagger.hilt.compiler)
+    kapt(libs.moshi.codegen)
+
     testImplementation(project(":core:testing"))
     testImplementation(libs.bundles.testing.unit)
     testImplementation(libs.okhttp.mockwebserver)
-    androidTestImplementation(libs.bundles.testing.instr)
-    implementation(libs.bundles.networking)
-    kapt(libs.moshi.codegen)
-
+    androidTestImplementation(libs.bundles.testing.common.android)
 }
 
 kapt {

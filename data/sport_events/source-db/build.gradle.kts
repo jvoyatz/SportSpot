@@ -54,7 +54,7 @@ dependencies {
     androidTestImplementation(libs.room.testing)
     androidTestImplementation(libs.turbine)
     androidTestImplementation(libs.bundles.testing.unit)
-    androidTestImplementation(libs.bundles.testing.instr)
+    androidTestImplementation(libs.bundles.testing.common.android)
     androidTestImplementation(libs.coroutines.test)
 
 }

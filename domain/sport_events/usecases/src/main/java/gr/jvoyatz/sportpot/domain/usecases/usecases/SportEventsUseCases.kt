@@ -1,9 +1,7 @@
 package gr.jvoyatz.sportpot.domain.usecases.usecases
 
 import gr.jvoyatz.sportpot.domain.usecases.repository.SportEventsRepository
-import gr.jvoyatz.sportspot.core.common.asError
 import gr.jvoyatz.sportspot.core.common.asResult
-import gr.jvoyatz.sportspot.core.common.isError
 import gr.jvoyatz.sportspot.core.common.resultOf
 import kotlinx.coroutines.flow.*
 import javax.inject.Inject
@@ -23,7 +21,7 @@ class SportEventsUseCases @Inject constructor(
     val getSportEvents: GetSportEvents
     val refreshSportEvents: RefreshSportEvents
     val getSportEventById: GetSportEventById
-    val markSportEventAsFavorite: MarkSportEventAsFavorite
+    val setFavoriteSportEvent: SetFavoriteSportEvent
 
     init {
         getSportEvents = bindMethodSignatureToGetSportEventInterface(repository)
@@ -34,7 +32,7 @@ class SportEventsUseCases @Inject constructor(
             repository.getSportEventById(sportId, id).asResult()
         }
 
-        markSportEventAsFavorite = MarkSportEventAsFavorite { event, isFavorite ->
+        setFavoriteSportEvent = SetFavoriteSportEvent { event, isFavorite ->
             flowOf(Unit)
             .map {
                 resultOf {

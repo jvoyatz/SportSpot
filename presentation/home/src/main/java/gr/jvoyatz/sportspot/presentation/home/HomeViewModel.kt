@@ -1,12 +1,11 @@
 package gr.jvoyatz.sportspot.presentation.home
 
-import android.util.Log
 import androidx.lifecycle.SavedStateHandle
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import dagger.hilt.android.lifecycle.HiltViewModel
 import gr.jvoyatz.sportpot.domain.usecases.usecases.GetSportEvents
-import gr.jvoyatz.sportpot.domain.usecases.usecases.MarkSportEventAsFavorite
+import gr.jvoyatz.sportpot.domain.usecases.usecases.SetFavoriteSportEvent
 import gr.jvoyatz.sportspot.core.common.*
 import gr.jvoyatz.sportspot.presentation.home.HomeUiState.PrepareHomeUiState
 import gr.jvoyatz.sportspot.presentation.home.HomeUiState.PrepareHomeUiState.OnSportsEventsSuccess
@@ -24,7 +23,7 @@ private const val SAVED_HOME_FRAGMENT_UI_STATE = "sportsSpotEventsHomeFragmentUi
 @HiltViewModel
 class HomeViewModel @Inject constructor(
     private val getSportEvents: GetSportEvents,
-    private val markFavoriteEvent: MarkSportEventAsFavorite,
+    private val markFavoriteEvent: SetFavoriteSportEvent,
     private val savedStateHandle: SavedStateHandle,
     private val dispatchers: AppDispatchers,
     initialUiState: HomeUiState

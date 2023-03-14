@@ -34,12 +34,10 @@ class SportEventRepositoryImpl @Inject constructor(
                 entities.mapList { it.entityToDomain() }
             }
             .map { sportCategories ->
-                println("came here")
                 getFilteredAndSortedEvents(sportCategories)
             }
             .distinctUntilChanged()
             .onEach {
-                println("and here $it")
                 if(it.isEmpty()){
                     refreshSportEvents()
                 }
@@ -111,10 +109,8 @@ class SportEventRepositoryImpl @Inject constructor(
 
 
         val entity = list.firstOrNull {
-            println("${it.id} -- $sportId")
             it.id == sportId
         }?.events?.firstOrNull {
-            println("${it.id} -- $id")
             it.id == id
         }
 

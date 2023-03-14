@@ -110,16 +110,19 @@ class SportEventRepositoryImpl @Inject constructor(
 
         val list = dbClient.getSportEvents().first()
 
+
         val entity = list.firstOrNull {
+            println("${it.id} -- $sportId")
             it.id == sportId
         }?.events?.firstOrNull {
+            println("${it.id} -- $id")
             it.id == id
         }
 
         if (entity != null && entity.isFavorite != asFavorite) {
             entity.isFavorite = asFavorite
         } else {
-            throw SportEventException.ErrorException("adsfsdf")
+            throw SportEventException.ErrorException("did not found an entity")
         }
         if (list.isNotEmpty()) {
             dbClient.insertSportEvents(list)

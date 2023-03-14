@@ -34,7 +34,6 @@ class SportAdapter : ListAdapter<HomeSportEvents, ViewHolder>(SPORT_DIFF_CALLBAC
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
-        Timber.d("onCreateViewHolder() called with: parent = " + parent + ", viewType = " + viewType)
         return LayoutInflater.from(parent.context).let {
 
             when (viewType) {
@@ -80,7 +79,7 @@ class SportAdapter : ListAdapter<HomeSportEvents, ViewHolder>(SPORT_DIFF_CALLBAC
             is EmptyViewHolder<*> -> {
                 holder.bind {
                     (it as ListItemBinding).errorItem.text =
-                        holder.itemView.context.getString(gr.jvoyatz.sportspot.core.common_android.R.string.sports_events_not_found)
+                        holder.itemView.context.getString(gr.jvoyatz.sportspot.core.common_android.R.string.sports_events_not_provided)
                 }
             }
             else -> {

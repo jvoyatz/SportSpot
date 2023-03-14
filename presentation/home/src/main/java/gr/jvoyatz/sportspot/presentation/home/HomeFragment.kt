@@ -114,8 +114,9 @@ class HomeFragment : Fragment() {
     }
 
     private fun handleSuccessUiState(sportEvents: List<HomeSportEvents>): List<HomeSportEvents> {
-        return sportEvents.ifEmpty {
-            listOf(getEmptyHomeSportEvent())
-        }
+//        return sportEvents.ifEmpty {
+//            listOf(getEmptyHomeSportEvent())
+//        }
+        return sportEvents
     }
 }

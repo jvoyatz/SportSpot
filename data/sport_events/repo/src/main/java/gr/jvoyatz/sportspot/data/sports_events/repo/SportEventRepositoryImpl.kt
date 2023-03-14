@@ -39,12 +39,12 @@ class SportEventRepositoryImpl @Inject constructor(
             .map { sportCategories ->
                 getFilteredAndSortedEvents(sportCategories)
             }
+            .distinctUntilChanged()
             .onEach {
                 if(it.isEmpty()){
                     refreshSportEvents()
                 }
             }.catch { throwable ->
-                throwable.printStackTrace()
                 with(throwable){
                     this.asSportEventException().also { throw it }
                 }

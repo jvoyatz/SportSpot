@@ -8,7 +8,7 @@ import org.junit.runner.RunWith
 import org.junit.runners.JUnit4
 
 @RunWith(JUnit4::class)
-class SportEventsDtoMapperTest: BaseTest(){
+class SportCategoryDtoMapperTest: BaseTest(){
 
     @Test
     fun `convert dto to favorable domain model`(){

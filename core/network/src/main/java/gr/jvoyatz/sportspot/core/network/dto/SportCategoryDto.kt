@@ -5,7 +5,7 @@ import com.squareup.moshi.Json
 import com.squareup.moshi.JsonClass
 
 @JsonClass(generateAdapter = true)
-data class SportEventsDto(
+data class SportCategoryDto(
     @Json(name = "d")
     val name: String = "", // SOCCER
     @Json(name = "e")

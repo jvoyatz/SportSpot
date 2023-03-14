@@ -6,7 +6,7 @@ import androidx.room.PrimaryKey
 
 
 @Entity
-data class SportEventsEntity(
+data class SportCategoryEntity(
     @PrimaryKey
     val id: String,
     val name: String = "Not Provided",

@@ -9,7 +9,7 @@ import dagger.hilt.android.qualifiers.ApplicationContext
 import dagger.hilt.components.SingletonComponent
 import gr.jvoyatz.sportspot.core.database.SportEventConverter
 import gr.jvoyatz.sportspot.core.database.SportSpotDatabase
-import gr.jvoyatz.sportspot.core.database.SportsEventsDao
+import gr.jvoyatz.sportspot.core.database.SportEventsDao
 import javax.inject.Singleton
 
 
@@ -33,6 +33,6 @@ class DatabaseModule {
     @Provides
     fun provideSportEventDao(
         db: SportSpotDatabase
-    ): SportsEventsDao = db.sportEventsDao()
+    ): SportEventsDao = db.sportEventsDao()
 
 }

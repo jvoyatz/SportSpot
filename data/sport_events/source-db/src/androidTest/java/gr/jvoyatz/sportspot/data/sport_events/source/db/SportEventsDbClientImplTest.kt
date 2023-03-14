@@ -8,9 +8,9 @@ import com.google.common.truth.Truth
 import com.squareup.moshi.Moshi
 import gr.jvoyatz.sportspot.core.database.SportEventConverter
 import gr.jvoyatz.sportspot.core.database.SportSpotDatabase
-import gr.jvoyatz.sportspot.core.database.SportsEventsDao
+import gr.jvoyatz.sportspot.core.database.SportEventsDao
 import gr.jvoyatz.sportspot.core.database.entities.SportEventEntity
-import gr.jvoyatz.sportspot.core.database.entities.SportEventsEntity
+import gr.jvoyatz.sportspot.core.database.entities.SportCategoryEntity
 import gr.jvoyatz.sportspot.core.testing.utils.Utils
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.ExperimentalCoroutinesApi
@@ -29,12 +29,12 @@ import java.util.concurrent.CountDownLatch
 @RunWith(AndroidJUnit4::class)
 class SportEventsDbClientImplTest {
 
-    private lateinit var sportEventsDao: SportsEventsDao
+    private lateinit var sportEventsDao: SportEventsDao
     private lateinit var db: SportSpotDatabase
     private val moshi: Moshi = Utils.moshi
 
     private val event = SportEventEntity(1, "asdf", "foot","", 1234)
-    private val eventsEntity = SportEventsEntity("foot", "name",/*  EventHolder(*/listOf(event))//)
+    private val eventsEntity = SportCategoryEntity("foot", "name",/*  EventHolder(*/listOf(event))//)
     private lateinit var dbClientImpl: SportEventsDbClient
 
     @Before

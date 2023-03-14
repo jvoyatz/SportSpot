@@ -1,6 +1,6 @@
 package gr.jvoyatz.sportspot.data.sport_events.source.db
 
-import gr.jvoyatz.sportspot.core.database.entities.SportEventsEntity
+import gr.jvoyatz.sportspot.core.database.entities.SportCategoryEntity
 import kotlinx.coroutines.flow.Flow
 
 /**
@@ -11,7 +11,7 @@ interface SportEventsDbClient {
     /**
      * Returns all the events found in the local cache
      */
-    /*suspend*/ fun getSportEvents(): Flow<List<SportEventsEntity>>
+    /*suspend*/ fun getSportEvents(): Flow<List<SportCategoryEntity>>
 
     /**
      * Deletes all the events
@@ -21,5 +21,5 @@ interface SportEventsDbClient {
     /**
      * Inserts newly fetched events into the db
      */
-    suspend fun insertSportEvents(events: List<SportEventsEntity>)
+    suspend fun insertSportEvents(events: List<SportCategoryEntity>)
 }

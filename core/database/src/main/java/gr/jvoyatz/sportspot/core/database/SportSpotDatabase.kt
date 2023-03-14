@@ -5,14 +5,14 @@ import androidx.room.Database
 import androidx.room.Room
 import androidx.room.RoomDatabase
 import androidx.room.TypeConverters
-import gr.jvoyatz.sportspot.core.database.entities.SportEventsEntity
+import gr.jvoyatz.sportspot.core.database.entities.SportCategoryEntity
 
 private const val version = 1
 
-@Database(entities = arrayOf(SportEventsEntity::class), version = version)
+@Database(entities = arrayOf(SportCategoryEntity::class), version = version)
 @TypeConverters(value = [SportEventConverter::class])
 abstract class SportSpotDatabase: RoomDatabase() {
-    abstract fun sportEventsDao(): SportsEventsDao
+    abstract fun sportEventsDao(): SportEventsDao
 
     companion object {
         private var instance: SportSpotDatabase? = null

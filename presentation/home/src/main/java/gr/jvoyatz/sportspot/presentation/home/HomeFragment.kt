@@ -87,7 +87,6 @@ class HomeFragment : Fragment() {
                 handleOnFavoriteActionSuccess(uiState.onFavoriteEventActionSuccess)
             }
             else -> {
-                Timber.w("reached heree!!")
                 viewModel.onUserIntent(HomeIntent.GetSportEvents)
             }
         }

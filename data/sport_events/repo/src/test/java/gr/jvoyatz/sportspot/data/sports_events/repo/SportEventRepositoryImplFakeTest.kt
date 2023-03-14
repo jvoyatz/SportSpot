@@ -3,7 +3,7 @@ package gr.jvoyatz.sportspot.data.sports_events.repo
 import app.cash.turbine.test
 import com.google.common.truth.Truth
 import gr.jvoyatz.sportpot.domain.usecases.repository.SportEventsRepository
-import gr.jvoyatz.sportspot.core.database.entities.SportEventsEntity
+import gr.jvoyatz.sportspot.core.database.entities.SportCategoryEntity
 import gr.jvoyatz.sportspot.core.network.ApiResponse
 import gr.jvoyatz.sportspot.core.testing.utils.Utils
 import gr.jvoyatz.sportspot.data.sport_events.source.db.SportEventsDbClient
@@ -13,10 +13,8 @@ import gr.jvoyatz.sportspot.data.sports_events.repo.mappers.BaseTest
 import gr.jvoyatz.sportspot.domain.model.SportEventException
 import kotlinx.coroutines.*
 import kotlinx.coroutines.flow.Flow
-import kotlinx.coroutines.flow.first
 import kotlinx.coroutines.flow.flow
 import kotlinx.coroutines.test.*
-import org.junit.Assert
 import org.junit.Before
 import org.junit.Rule
 import org.junit.Test
@@ -183,7 +181,7 @@ class SportEventRepositoryImplFakeTest: BaseTest(){
 
         val fakeClient = object: SportEventsDbClient{
             var wasCalled = false
-            override fun getSportEvents(): Flow<List<SportEventsEntity>> {
+            override fun getSportEvents(): Flow<List<SportCategoryEntity>> {
                 return flow {
                     emit(entities!!)
                 }
@@ -193,7 +191,7 @@ class SportEventRepositoryImplFakeTest: BaseTest(){
                 TODO("Not yet implemented")
             }
 
-            override suspend fun insertSportEvents(events: List<SportEventsEntity>) {
+            override suspend fun insertSportEvents(events: List<SportCategoryEntity>) {
                 wasCalled = true
             }
         }
@@ -218,7 +216,7 @@ class SportEventRepositoryImplFakeTest: BaseTest(){
 
         val fakeClient = object: SportEventsDbClient{
             var wasCalled = false
-            override fun getSportEvents(): Flow<List<SportEventsEntity>> {
+            override fun getSportEvents(): Flow<List<SportCategoryEntity>> {
                 return flow {
                     emit(entities!!)
                 }
@@ -228,7 +226,7 @@ class SportEventRepositoryImplFakeTest: BaseTest(){
                 TODO("Not yet implemented")
             }
 
-            override suspend fun insertSportEvents(events: List<SportEventsEntity>) {
+            override suspend fun insertSportEvents(events: List<SportCategoryEntity>) {
                 wasCalled = true
             }
         }
@@ -250,7 +248,7 @@ class SportEventRepositoryImplFakeTest: BaseTest(){
 
         val fakeClient = object: SportEventsDbClient{
             var wasCalled = false
-            override fun getSportEvents(): Flow<List<SportEventsEntity>> {
+            override fun getSportEvents(): Flow<List<SportCategoryEntity>> {
                 return flow {
                     emit(entities!!)
                 }
@@ -260,7 +258,7 @@ class SportEventRepositoryImplFakeTest: BaseTest(){
                 TODO("Not yet implemented")
             }
 
-            override suspend fun insertSportEvents(events: List<SportEventsEntity>) {
+            override suspend fun insertSportEvents(events: List<SportCategoryEntity>) {
                 wasCalled = true
             }
         }

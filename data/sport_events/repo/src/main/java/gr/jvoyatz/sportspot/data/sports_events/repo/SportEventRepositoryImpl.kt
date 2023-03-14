@@ -17,10 +17,7 @@ import gr.jvoyatz.sportspot.domain.model.SportCategory
 import kotlinx.coroutines.flow.*
 import javax.inject.Inject
 
-//keep it for debugging
-////                val sorted = list.flatMap { it.events }.map { fav -> fav.event }
-////                    .map { it.startDateTimeStamp }.sortedDescending()
-////                Timber.d("sorted list of longs ${sorted.joinToString { "$it," }}")
+
 class SportEventRepositoryImpl @Inject constructor(
     private val apiClient: SportEventsApiClient,
     private val dbClient: SportEventsDbClient,
@@ -37,10 +34,12 @@ class SportEventRepositoryImpl @Inject constructor(
                 entities.mapList { it.entityToDomain() }
             }
             .map { sportCategories ->
+                println("came here")
                 getFilteredAndSortedEvents(sportCategories)
             }
             .distinctUntilChanged()
             .onEach {
+                println("and here $it")
                 if(it.isEmpty()){
                     refreshSportEvents()
                 }

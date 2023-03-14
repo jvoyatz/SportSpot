@@ -59,6 +59,9 @@ dependencies {
     implementation(libs.bundles.androidx.navigation)
     //other
     implementation(libs.logging.timber)
+
+    implementation(libs.bundles.testing.common)
+    implementation(libs.bundles.testing.common.android)
 }
 
 kapt {

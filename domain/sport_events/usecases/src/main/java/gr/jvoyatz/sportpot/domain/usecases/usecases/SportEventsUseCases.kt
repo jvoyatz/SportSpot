@@ -21,7 +21,7 @@ class SportEventsUseCases @Inject constructor(
     val getSportEvents: GetSportEvents
     val refreshSportEvents: RefreshSportEvents
     val getSportEventById: GetSportEventById
-    val markSportEventAsFavorite: SetFavoriteSportEvent
+    val setFavoriteSportEvent: SetFavoriteSportEvent
 
     init {
         getSportEvents = bindMethodSignatureToGetSportEventInterface(repository)
@@ -32,7 +32,7 @@ class SportEventsUseCases @Inject constructor(
             repository.getSportEventById(sportId, id).asResult()
         }
 
-        markSportEventAsFavorite = SetFavoriteSportEvent { event, isFavorite ->
+        setFavoriteSportEvent = SetFavoriteSportEvent { event, isFavorite ->
             flowOf(Unit)
             .map {
                 resultOf {

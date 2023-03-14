@@ -205,7 +205,7 @@ class SportEventRepositoryImplFakeTest: BaseTest(){
         }catch (e: Exception){
             Truth.assertThat(e).isInstanceOf(SportEventException.ErrorException::class.java)
         }
-        Truth.assertThat(fakeClient.wasCalled).isFalse()
+       Truth.assertThat(fakeClient.wasCalled).isFalse()
     }
 
     @Test

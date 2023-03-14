@@ -41,7 +41,7 @@ dependencies {
     implementation(libs.dagger.hilt.android)
     kapt(libs.dagger.hilt.compiler)
     testImplementation(libs.bundles.testing.unit)
-    androidTestImplementation(libs.bundles.testing.instr)
+    androidTestImplementation(libs.bundles.testing.common.android)
     androidTestImplementation(libs.bundles.testing.unit)
     implementation(libs.bundles.networking)
     kapt(libs.moshi.codegen)

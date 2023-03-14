@@ -48,6 +48,10 @@ APP -- core etc.
 
 
 ### Other Notes
++ Build Configuration
+  + gradle scripts as kotlin dsl scripts
+    [check this](https://developer.android.com/studio/build/migrate-to-kts) as a quick reference
+  + version catalog for better dependency management
 + Used Dependency Injection with Dagger Hilt
 + Navigation Component (even if it was needed based on the assignment, but we need for sure a nav_graph in case of multiple modules)
 + Repository pattern for data fetching, using two datasources (api/db) and providing them through constructor injection
@@ -62,16 +66,8 @@ APP -- core etc.
 + I ve written test using the mock server dep.
 + Supporting process death using savedStateHandle and flows.
 
-*Thanks for making me challenge myself, i m looking forward to hearing from you*
+**Thanks for making me challenge myself, i m looking forward to hearing from you**
 
-
-### Libraries or concepts used
-
-+ Build Configuration
-  + gradle scripts as kotlin dsl scripts
-    [check this](https://developer.android.com/studio/build/migrate-to-kts) as a quick reference
-  + version catalog for better dependency management
-  + [gitignore](https://github.com/github/gitignore/blob/main/Android.gitignore)
  
 
 

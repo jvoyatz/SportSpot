@@ -24,10 +24,10 @@ i tried to avoid building a monolith app. How? Provided extra modules for the ma
 feature, same for its corresponding data layer (for this feature).
 Of course, this does not work a well for a small app like this one.
 
-    HOME:-- data: sport_events --> datasources:net, datasources:db
-   /     \- presentation:home
-APP -- core etc.
-
+*That means, for the main feature of this app, let's say the home screen, you will
+find a module home in the presentation directory and a directory sports_event with the repo and the datasources modules used 
+for this screen(feature).
+   
  + **Domain Layer**
     * `domain`: contains the use cases and the business logic needed in this app
     * `model`: contains the models that needed (and used) across the app

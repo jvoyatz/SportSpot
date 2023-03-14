@@ -39,7 +39,7 @@ class SportEventsDatabaseTest {
         val typeConverter = SportEventConverter(moshi)
         db = Room.inMemoryDatabaseBuilder(context, SportSpotDatabase::class.java)
             .addTypeConverter(typeConverter).build()
-        sportEventsDao = db.sportEventsDao();
+        sportEventsDao = db.sportEventsDao()
     }
 
     @After

@@ -1,7 +1,6 @@
 package gr.jvoyatz.sportspot.presentation.home
 
 import android.os.Bundle
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -16,12 +15,10 @@ import dagger.hilt.android.AndroidEntryPoint
 import gr.jvoyatz.core.common_android.adapters.setup
 import gr.jvoyatz.sportspot.presentation.home.adapters.SportAdapter
 import gr.jvoyatz.sportspot.presentation.home.databinding.FragmentHomeBinding
-import gr.jvoyatz.sportspot.presentation.home.models.HomeSportEvents
+import gr.jvoyatz.sportspot.presentation.home.models.HomeSportCategory
 import gr.jvoyatz.sportspot.presentation.home.models.LoadingHomeSportEvent
-import gr.jvoyatz.sportspot.presentation.home.models.getEmptyHomeSportEvent
-import gr.jvoyatz.sportspot.presentation.home.models.getErrorHomeSportEvent
+import gr.jvoyatz.sportspot.presentation.home.models.getErrorHomeSportCategory
 import kotlinx.coroutines.launch
-import timber.log.Timber
 
 
 @AndroidEntryPoint
@@ -103,16 +100,16 @@ class HomeFragment : Fragment() {
             }
         }
     }
-    private fun handleErrorUiState(): List<HomeSportEvents> {
+    private fun handleErrorUiState(): List<HomeSportCategory> {
         val errorMessage =
             getString(gr.jvoyatz.sportspot.core.common_android.R.string.sports_events_error)
-        val errorModel = getErrorHomeSportEvent(errorMessage) {
+        val errorModel = getErrorHomeSportCategory(errorMessage) {
             viewModel.onUserIntent(HomeIntent.GetSportEvents)
         }
         return listOf(errorModel)
     }
 
-    private fun handleSuccessUiState(sportEvents: List<HomeSportEvents>): List<HomeSportEvents> {
+    private fun handleSuccessUiState(sportEvents: List<HomeSportCategory>): List<HomeSportCategory> {
 //        return sportEvents.ifEmpty {
 //            listOf(getEmptyHomeSportEvent())
 //        }

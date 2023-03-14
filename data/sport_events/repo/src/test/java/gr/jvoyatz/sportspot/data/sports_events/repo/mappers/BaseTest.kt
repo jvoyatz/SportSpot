@@ -5,8 +5,8 @@ import gr.jvoyatz.sportspot.core.database.entities.SportCategoryEntity
 import gr.jvoyatz.sportspot.core.network.dto.SportCategoryDto
 import gr.jvoyatz.sportspot.core.testing.utils.deserializeList
 import gr.jvoyatz.sportspot.core.testing.utils.loadResourceFile
-import gr.jvoyatz.sportspot.data.sports_events.repo.mappers.SportEventsDtoMapper.dtoToDomain
-import gr.jvoyatz.sportspot.data.sports_events.repo.mappers.SportEventsEntityMapper.domainToEntity
+import gr.jvoyatz.sportspot.data.sports_events.repo.mappers.SportCategoryDtoMapper.dtoToDomain
+import gr.jvoyatz.sportspot.data.sports_events.repo.mappers.SportCategoryEntityMapper.domainToEntity
 import org.junit.BeforeClass
 
 abstract class BaseTest {

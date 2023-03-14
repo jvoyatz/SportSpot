@@ -7,7 +7,7 @@ import gr.jvoyatz.core.common_android.adapters.setup
 import gr.jvoyatz.sportspot.presentation.home.R
 import gr.jvoyatz.sportspot.presentation.home.adapters.SportEventsAdapter
 import gr.jvoyatz.sportspot.presentation.home.databinding.FragmentHomeRvItemBinding
-import gr.jvoyatz.sportspot.presentation.home.models.HomeSportEvents
+import gr.jvoyatz.sportspot.presentation.home.models.HomeSportCategory
 
 /**
  * Viewholder for the row which contains the events scheduled for the given Sport name
@@ -28,7 +28,7 @@ class SportViewHolder(
         }
     }
 
-    fun bind(sport: HomeSportEvents){
+    fun bind(sport: HomeSportCategory){
         binding.apply {
             sportName.text = sport.name
             if(sport.iconId != -1) sportIcon.setImageResource(sport.iconId)

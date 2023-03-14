@@ -1,6 +1,5 @@
 package gr.jvoyatz.sportspot.presentation.home.adapters
 
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.ListAdapter
@@ -16,11 +15,10 @@ import gr.jvoyatz.sportspot.core.common_android.databinding.ListItemErrorBinding
 import gr.jvoyatz.sportspot.presentation.home.adapters.viewholders.SportViewHolder
 import gr.jvoyatz.sportspot.presentation.home.databinding.FragmentHomeRvItemBinding
 import gr.jvoyatz.sportspot.presentation.home.databinding.FragmentHomeRvLoadingItemBinding
-import gr.jvoyatz.sportspot.presentation.home.models.HomeSportEvents
-import timber.log.Timber
+import gr.jvoyatz.sportspot.presentation.home.models.HomeSportCategory
 
 
-class SportAdapter : ListAdapter<HomeSportEvents, ViewHolder>(SPORT_DIFF_CALLBACK) {
+class SportAdapter : ListAdapter<HomeSportCategory, ViewHolder>(SPORT_DIFF_CALLBACK) {
 
     override fun getItemViewType(position: Int): Int {
         val item = getItem(position)
@@ -72,14 +70,14 @@ class SportAdapter : ListAdapter<HomeSportEvents, ViewHolder>(SPORT_DIFF_CALLBAC
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         when (holder) {
             is SportViewHolder -> {
-                (getItem(position) as HomeSportEvents).also {
+                (getItem(position) as HomeSportCategory).also {
                     holder.bind(it)
                 }
             }
             is EmptyViewHolder<*> -> {
                 holder.bind {
                     (it as ListItemBinding).errorItem.text =
-                        holder.itemView.context.getString(gr.jvoyatz.sportspot.core.common_android.R.string.sports_events_not_provided)
+                        holder.itemView.context.getString(R.string.sports_events_not_provided)
                 }
             }
             else -> {
@@ -89,10 +87,10 @@ class SportAdapter : ListAdapter<HomeSportEvents, ViewHolder>(SPORT_DIFF_CALLBAC
     }
 }
 
-private val SPORT_DIFF_CALLBACK = object : AdapterDiffCallback<HomeSportEvents>() {
-    override fun isSameItem(oldItem: HomeSportEvents, newItem: HomeSportEvents) =
+private val SPORT_DIFF_CALLBACK = object : AdapterDiffCallback<HomeSportCategory>() {
+    override fun isSameItem(oldItem: HomeSportCategory, newItem: HomeSportCategory) =
         oldItem.id == newItem.id
 
-    override fun isContentSame(oldItem: HomeSportEvents, newItem: HomeSportEvents) =
+    override fun isContentSame(oldItem: HomeSportCategory, newItem: HomeSportCategory) =
         oldItem == newItem
 }

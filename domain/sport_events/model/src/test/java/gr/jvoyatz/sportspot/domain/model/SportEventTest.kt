@@ -4,7 +4,7 @@ import com.google.common.truth.Truth
 import gr.jvoyatz.sportspot.domain.model.utils.MockData
 import org.junit.Test
 
-class SportEventEventTest{
+class SportEventTest{
 
     @Test
     fun `test Event object instance variables are the same as the given`(){

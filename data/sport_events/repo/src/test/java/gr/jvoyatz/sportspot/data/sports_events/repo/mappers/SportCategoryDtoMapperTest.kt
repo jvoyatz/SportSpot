@@ -1,7 +1,7 @@
 package gr.jvoyatz.sportspot.data.sports_events.repo.mappers
 
 import com.google.common.truth.Truth
-import gr.jvoyatz.sportspot.data.sports_events.repo.mappers.SportEventsDtoMapper.dtoToDomain
+import gr.jvoyatz.sportspot.data.sports_events.repo.mappers.SportCategoryDtoMapper.dtoToDomain
 import org.junit.Assert.*
 import org.junit.Test
 import org.junit.runner.RunWith

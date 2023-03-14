@@ -4,7 +4,7 @@ import com.google.common.truth.Truth
 import gr.jvoyatz.sportspot.domain.model.utils.MockData
 import org.junit.Test
 
-class SportEventsTest{
+class SportCategoryTest{
 
     @Test
     fun `test that sports events contains no scheduled events`(){
@@ -12,7 +12,7 @@ class SportEventsTest{
         val givenSportEvent = MockData.mockEmptySportsEvent
 
         //when
-        val newSportEvent = SportEvents(givenSportEvent.id, givenSportEvent.name, givenSportEvent.events)
+        val newSportEvent = SportCategory(givenSportEvent.id, givenSportEvent.name, givenSportEvent.events)
 
         //then
         Truth.assertThat(newSportEvent.events).isEmpty()
@@ -26,7 +26,7 @@ class SportEventsTest{
         val givenSportEvent = MockData.mockNonEmptySportsEvent
 
         //when
-        val newSportEvent = SportEvents(givenSportEvent.id, givenSportEvent.name, givenSportEvent.events)
+        val newSportEvent = SportCategory(givenSportEvent.id, givenSportEvent.name, givenSportEvent.events)
 
         //then
         Truth.assertThat(newSportEvent.events).isNotEmpty()

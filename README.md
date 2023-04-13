@@ -66,7 +66,6 @@ for this screen(feature).
 + I ve written test using the mock server dep.
 + Supporting process death using savedStateHandle and flows.
 
-**Thanks for making me challenge myself, i m looking forward to hearing from you**
 
  
 
